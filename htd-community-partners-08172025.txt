@@ -1,0 +1,222 @@
+<div class="partners-section">
+  <h2 class="partners-title">Our Community Partners</h2>
+  <p class="partners-intro">
+    We are grateful for the support of our community partners.<br>
+    Together, we make a difference in Saint Louis.
+  </p>
+
+  <div class="partners-grid">
+    <!-- Example partner items — replace with real logos/links -->
+
+    <a href="https://www.costco.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/costco-logo.jpg/:/rs=h:175,m" alt="Costco">
+    </a>
+
+    <a href="https://www.cheshirestl.com" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/cheshire-logo.svg/:/rs=h:175,m" alt="The Cheshire">
+    </a>
+
+    <a href="https://www.galleria6cinemas.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/galleria-6-cinemas-logo.png/:/rs=h:175,m" alt="Galleria 6 Cinemas">
+    </a>
+
+    <a href="https://www.modpizza.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/mod-pizza-logo.png/:/rs=h:175,m" alt="MOD Pizza">
+    </a>
+
+    <a href="https://www.wholefoodsmarket.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/whole-foods-logo.jpg/:/rs=h:175,m" alt="Whole Foods Market">
+    </a>
+
+    <a href="https://www.spectrum.com" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/spectrum-logo.jpg/:/rs=h:175,m" alt="Spectrum">
+    </a>
+
+    <!-- Repeat for all 27 partners -->
+
+    <a href="https://www.stlcc.edu" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/stlcc-logo.png/:/rs=h:175,m" alt="Saint Louis Community College - Florissant Valley">
+    </a>
+
+    <a href="https://www.ulstl.com" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/urban-league-logo.jpg/:/rs=h:175,m" alt="Urban League of Metropolitan Saint Louis, Inc.">
+    </a>
+
+    <a href="https://www.ameren.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/ameren-logo.png/:/rs=h:175,m" alt="Ameren Corporation">
+    </a>
+
+    <a href="https://www.raisingcanes.com/home/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/raising-canes-logo.png/:/rs=h:175,m" alt="Raising Canes">
+    </a>
+
+    <a href="https://www.firstcommunity.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/first-community-credit-logo.png/:/rs=h:175,m" alt="First Community">
+    </a>
+
+    <a href="https://massageluxe.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/massage-luxe-logo.png/:/rs=h:175,m" alt="MassageLuXe">
+    </a>
+
+    <a href="https://mpccstl.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/mount-pigsah-christian-church-logo.png/:/rs=h:175,m" alt="Mount Pisgah Christian Church">
+    </a>
+
+    <a href="https://www.fiveguys.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/five-guys-logo.png/:/rs=h:175,m" alt="Five Guys">
+    </a>
+
+    <a href="https://www.firehousesubs.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/firehouse-subs-logo.jpg/:/rs=h:175,m" alt="Firehouse Subs">
+    </a>
+
+    <a href="https://www.hazelwoodmo.org/154/Fire-Department" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/hazelwood-fire-dept-logo.png/:/rs=h:175,m" alt="Hazelwood Fire Department">
+    </a>
+
+    <a href="https://www.monetagroup.com/moneta-foundation/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/moneta-logo.png/:/rs=h:175,m" alt="Moneta Foundation">
+    </a>
+
+    <a href="https://www.helzberg.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/helzberg-diamonds-logo.png/:/rs=h:175,m" alt="Helzberg">
+    </a>
+
+    <a href="https://www.chilis.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/chilis-restaurant-logo.jpg/:/rs=h:175,m" alt="Chili's Grill & Bar">
+    </a>
+
+    <a href="https://www.walmart.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/walmart-logo.jpg/:/rs=h:175,m" alt="Walmart Inc.">
+    </a>
+
+    <a href="https://www.4imprint.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/4imprint-logo.jpg/:/rs=h:175,m" alt="4imprint">
+    </a>
+
+    <a href="https://bark.co/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/bark-box-logo.png/:/rs=h:175,m" alt="Bark Box">
+    </a>
+
+    <a href="https://www.starbucks.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/starbucks-logo.png/:/rs=h:175,m" alt="Starbucks Coffee Company">
+    </a>
+
+    <a href="https://asfchristianchurch.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/a-sure-foundation-christian-church-logo.png/:/rs=h:175,m" alt="A Sure Foundation Christian Church">
+    </a>
+
+    <a href="https://drakescomeplay.com/locations/drakes-richmond-heights-mo/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/drakes-restaurant-logo.png/:/rs=h:175,m" alt="Drake's Restaurant">
+    </a>
+
+    <a href="https://www.texasroadhouse.com/" target="_blank" class="partner">
+      <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/texas-roadhouse-logo.png/:/rs=h:175,m" alt="Texas Roadhouse">
+    </a>
+
+    <a href="https://www.transformersunitedforchrist.org/" target="_blank" class="partner">
+      <img src="https://static.wixstatic.com/media/a5d94d_7b09cc6fbb6545e6abbbeb3c39193ebf~mv2.png/v1/fill/w_72,h_78,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Transformers%20Official%20Gov%20Logo%20transparent.png" alt="Transformers United For Christ">
+    </a>
+
+  </div>
+</div>
+
+<style>
+.partners-section {
+  background-color: linear-gradient(180deg, #000 0%, #0a2b18 100%);
+  color: #fff;
+  text-align: center;
+  padding: 70px 20px;
+  border-top: 4px solid #32a852; /* brand green */
+  border-bottom: 4px solid #32a852; /* brand green */
+  box-shadow: inset 0 0 40px rgba(50, 168, 82, 0.2);
+}
+
+.partners-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #32a852; /* brand green */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.partners-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #32a852;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.partners-intro {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #ccc;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 35px;
+  align-items: center;
+  justify-items: center;
+}
+
+.partner {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(50, 168, 82, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 220px;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+}
+
+.partner img {
+  max-width: 150px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%); /* classy effect */
+  opacity: 0.85;
+
+  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+}
+
+.partner:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(50,168,82,0.5); /* green glow */
+  border: 1px solid #32a852; /* brand green */
+}
+
+.partner:hover img {
+  filter: grayscale(0%); /* bring logo to color on hover. */
+  opacity: 1;
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+// Staggered fade-in animation.
+document.addEventListener("DOMContentLoaded", () => {
+  const partners = document.querySelectorAll(".partner");
+  partners.forEach((p, i) => {
+    p.style.opacity = "0";
+    p.style.transform = "translateY(30px)";
+    setTimeout(() => {
+      p.style.transition = "all 0.7s ease";
+      p.style.opacity = "1";
+      p.style.transform = "translateY(0)";
+    }, i * 180);
+  });
+});
+</script>

@@ -1,0 +1,242 @@
+<section class="donor-wall">
+  <div class="donor-container">
+    <header class="donor-header">
+      <span class="donor-eyebrow">Highway to Destiny</span>
+      <h1 class="donor-title">Donor Wall</h1>
+      <p class="donor-subtitle">
+        Honoring the individuals and families helping create lasting impact throughout the community.
+      </p>
+    </header>
+
+    <div id="donorGrid" class="donor-grid"></div>
+  </div>
+</section>
+<style>
+.donor-wall
+{
+  --donor-surface: rgba(255, 255, 255, 0.07);
+  --donor-surface-hover: rgba(255, 255, 255, 0.11);
+  --donor-border: rgba(255, 255, 255, 0.12);
+  --donor-text-soft: rgba(255, 255, 255, 0.78);
+
+  position: relative;
+  overflow: hidden;
+
+  padding: clamp(5rem, 8vw, 7rem) 1.5rem;
+
+  /* IMPORTANT:
+     The outer page is already #47ad32.
+     This creates a premium layered panel effect instead
+     of stacking more aggressive greens. */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.donor-wall::before
+{
+  /* Soft Ambient Glow Styles. */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 0.10),
+    transparent 42%
+  );
+  pointer-events: none;
+}
+
+.donor-container
+{
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.donor-header
+{
+  max-width: 700px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+.donor-eyebrow
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5rem 0.9rem;
+  margin-bottom: 1rem;
+
+  border: 1px solid var(--donor-border);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.donor-title
+{
+  margin: 0;
+
+  font-size: clamp(2.8rem, 6vw, 4.75rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+  text-wrap: balance;
+}
+.donor-subtitle
+{
+  margin: 1.25rem auto 0;
+  max-width: 640px;
+
+  font-size: clamp(1rem, 1.3vw, 1.05rem);
+  line-height: 1.8;
+
+  color: var(--donor-text-soft);
+}
+.donor-grid
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+.donor-card
+{
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 1.1rem;
+  min-height: 72px;
+
+  border: 1px solid var(--donor-border);
+  border-radius: 18px;
+
+  background: var(--donor-surface);
+  color: #ffffff;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: center;
+  letter-spacing: 0.01em;
+
+  opacity: 0;
+  transform: translateY(10px);
+
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+
+  animation: donorFade 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--i) * 32ms);
+}
+.donor-card::before
+{
+  /* Glass Highlight Styles. */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 50%
+  );
+  pointer-events: none;
+}
+.donor-card:hover { transform: translateY(-3px); background: var(--donor-surface-hover); border-color: rgba(255, 255, 255, 0.18); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
+
+@keyframes donorFade
+{
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+  .donor-card { opacity: 1; transform: none; animation: none; }
+  .donor-card:hover { transform: none; }
+}
+@media (max-width: 640px)
+{
+  .donor-wall { padding-inline: 1rem; }
+  .donor-grid { grid-template-columns: 1fr; }
+  .donor-card { min-height: 68px; }
+}
+</style>
+<script>
+const donors = [
+  "Susie Nuccio",
+  "Melissa Childers",
+  "Myndi Funes",
+  "Kelly Guerra",
+  "Alex & Nila Paradowski",
+  /* Continue for all 45 donors... */
+  "Jeremy & Erin Lee",
+  "Katy Keller",
+  "Khushboo Matta",
+  "Deepa Barki",
+  "Ankit Saxena",
+  "Abhay Kumar",
+  "Rene Freeman",
+  "Radhika Pidikiti",
+  "Laksmi Adepu",
+  "Melissa Galazka",
+  "Sandy Woodfin",
+  "Joyce Reid",
+  "Gwyneth Scallions",
+  "Ashley Keyser",
+  "Debbie Kipp",
+  "Matt Reid",
+  "Carrie Edmiston",
+  "Christina Churn",
+  "Pat Rosner",
+  "Alex Tripp",
+  "Venkatesh Chellagunga",
+  "Sheila Miller",
+  "Dale Haskins",
+  "Bridget Carroll",
+  "Erin Reid",
+  "Latosha Fowlkes",
+  "Flint Fowler",
+  "Sabrina Cohen",
+  "Shel Jennings",
+  "Shonetta King",
+  "April Griffin",
+  "Kel Ward",
+  "Pamela Johnson",
+  "Yolanda Gant",
+  "Kenneth McClamb",
+  "Minister Tosha French",
+  "Samuel Nixon, Jr",
+  "Ernestine Nixon",
+  "Mary Nixon",
+  "Phyllis Kendrick",
+];
+const donorGrid = document.getElementById("donorGrid");
+
+donors.forEach((name, index) =>
+{
+  const card = document.createElement("article");
+  card.className = "donor-card";
+  card.style.setProperty("--i", index);
+  card.textContent = name;
+
+  donorGrid.appendChild(card);
+});
+</script>
