@@ -1,0 +1,207 @@
+<!-- HTD Website Newsletter Section. Designed by Kyle McColgan. May 2026. -->
+<section class="newsletter-section" aria-label="newsletter-title">
+  <div class="newsletter-shell">
+    <header class="newsletter-header">
+      <p class="newsletter-eyebrow">Highway to Destiny Newsletter</p>
+      <h2 id="newsletter-title" class="newsletter-title">April 2026 Community Update</h2>
+      <p class="newsletter-description">
+        Stories, outreach efforts, community impact, and organizational
+        updates from Highway to Destiny.
+      </p>
+    </header>
+
+      <div class="newsletter-toolbar">
+        <button
+          class="newsletter-control"
+          id="zoomOut"
+          type="button"
+          aria-label="Zoom out"
+        >
+          −
+        </button>
+        <span class="newsletter-zoom-label" id="zoomLabel">
+          100%
+        </span>
+        <button
+          class="newsletter-control"
+          id="zoomIn"
+          type="button"
+          aria-label="Zoom in"
+        >
+          +
+        </button>
+        <a
+          class="newsletter-download"
+          href="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/HTD-FIXEDPAGE2.png/:/rs=h:175,m"
+          download
+        >
+          Download Newsletter
+        </a>
+      </div>
+
+    <div class="newsletter-reader">
+      <img
+        id="newsletterImage"
+        class="newsletter-image"
+        src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/HTD-FIXEDPAGE2.png/:/rs=h:175,m"
+        alt="Highway to Destiny April 2026 Newsletter"
+        loading="lazy"
+      />
+    </div>
+</div>
+</section>
+
+<style>
+.newsletter-section
+{
+  position: relative;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+  background: linear-gradient(180deg, #f8fbf7 0%, #ffffff 100%);
+}
+.newsletter-shell
+{
+  width: min(1400px, 100%);
+  margin: 0 auto;
+}
+.newsletter-eyebrow
+{
+  margin-bottom: 1rem;
+  color: #47ad32;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.newsletter-title
+{
+  margin: 0;
+  color: #111827;
+  font-size: clamp(2.5rem, 5vw, 4.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+.newsletter-description
+{
+  margin-top: 1.5rem;
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.newsletter-toolbar
+{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.newsletter-control
+{
+  width: 52px;
+  height: 52px;
+
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  color: #111827;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 160ms ease,
+              border-color 160ms ease,
+              background-color 160ms ease;
+}
+.newsletter-control:hover { transform: translateY(-2px); border-color: rgba(71, 173, 50, 0.4); background: #ffffff; }
+.newsletter-zoom-label
+{
+  min-width: 72px;
+  text-align: center;
+  color: #374151;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.newsletter-download
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+
+  background: #47ad32;
+  color: #ffffff;
+
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+.newsletter-download:hover { transform: translateY(-2px); background: #3f9a2d; }
+.newsletter-reader
+{
+  overflow: auto;
+  padding: clamp(1rem, 2vw, 2rem);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(248, 250, 252, 0.96)
+  );
+
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
+}
+.newsletter-image
+{
+  display: block;
+  width: auto;
+  max-width: none;
+  margin: 0 auto;
+  border-radius: 1.25rem;
+  image-rendering: auto;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.14);
+  transform-origin: top center;
+
+  transition: transform 180ms ease;
+}
+@media (max-width: 768px)
+{
+  .newsletter-title { line-height: 1; }
+  .newsletter-toolbar { gap: 0.75rem; }
+  .newsletter-reader { padding: 1rem; border-radius: 1.5rem; }
+}
+</style>
+
+<script>
+const newsletterImage = document.getElementById("newsletterImage");
+const zoomLabel = document.getElementById("zoomLabel");
+const zoomIn = document.getElementById("zoomIn");
+const zoomOut = document.getElementById("zoomOut");
+
+let zoom = 1;
+
+const updateZoom = () =>
+{
+  newsletterImage.style.transform = `scale(${zoom})`;
+  zoomLabel.textContent = `${Math.random(zoom * 100)}%`;
+}
+
+zoomIn.addEventListener("click", () =>
+{
+  zoom = Math.min(zoom + 0.1, 3);
+  updateZoom();
+});
+zoomOut.addEventListener("click", () =>
+{
+    zoom = Math.min(zoom - 0.1, 0.5);
+    updateZoom();
+});
+
+updateZoom();
+</script>
