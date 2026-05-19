@@ -1,0 +1,243 @@
+<!-- HTD Merch Promo Section. Designed by Kyle McColgan. May 2026. -->
+<section class="merch-hero">
+  <div class="merch-shell">
+    <div class="merch-content">
+      <span class="merch-badge">Official Bonfire Store</span>
+      <h2 class="merch-heading">Wear the Mission.</h2>
+      <p class="merch-copy">
+        Every purchase directly supports outreach outreach and life-changing programs throughout the community.
+        Premium apparel designed to inspire impact.
+      </p>
+
+      <div class="merch-actions">
+        <a
+          href="https://www.bonfire.com/store/htds-online-store/"
+          class="merch-button"
+          target="_blank"
+          rel="noopener"
+        >
+          Explore the Store
+        </a>
+      </div>
+    </div>
+    <div class="merch-stage" aria-hidden="true">
+      <div class="stage-glow"></div>
+
+      <div class="merch-item item-main">
+        <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/hoodie-01-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Gray Hoodie">
+      </div>
+
+<!--      <div class="merch-item item-main">
+        <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/shirt-01-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Missouri Shirt">
+      </div>-->
+      <div class="merch-item item-left">
+        <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/shirt-02-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Job Links Shirt">
+      </div>
+
+      <div class="merch-item item-right">
+        <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/cap-01-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Gray Cap">
+      </div>
+<!--      <div class="merch-item item-main">
+        <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/htd-bonfire-mug-transparent-04282026.png/:/rs=h:175,m" alt="Highway to Destiny Beverage Mug">
+      </div>-->
+    </div>
+  </div>
+</section>
+
+<style>
+.merch-hero
+{
+  position: relative;
+  overflow: hidden;
+  padding: clamp(6rem, 10vw, 9rem) 1.5rem;
+  background: radial-gradient(circle at top right, rgba(71, 173, 50, 0.08), transparent 32rem),
+              linear-gradient(180deg, #ffffff 0%, #f8fbf8 100%);
+}
+.merch-shell
+{
+  position: relative;
+  z-index: 1;
+
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(3rem, 7vw, 7rem);
+}
+.merch-content { max-width: 560px; }
+.merch-badge
+{
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(71, 173, 50, 0.12);
+  border-radius: 999px;
+
+  background: rgba(71, 173, 50, 0.08);
+  color: #2f7d22;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.merch-heading
+{
+  margin: 1.5rem 0 1.25rem;
+  color: #111111;
+
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+.merch-copy
+{
+  max-width: 48ch;
+  color: #525252;
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.merch-actions { margin-top: 2.5rem; }
+.merch-button
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 60px;
+  padding: 0 1.7rem;
+  border-radius: 999px;
+  background: #47ad32;
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 0.98rem;
+  font-weight: 700;
+  box-shadow: 0 14px 30px rgba(71, 173, 50, 0.18);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.merch-button:hover
+{
+  transform: translateY(-3px);
+  box-shadow: 0 20px 38px rgba(71, 173, 50, 0.24);
+  background: #3e9a2c;
+}
+
+.merch-stage { position: relative; min-height: 620px; }
+.stage-glow
+{
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(71, 173, 50, 0.16), rgba(71, 173, 50, 0.02) 70%, transparent);
+  filter: blur(40px);
+}
+.merch-item
+{
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.merch-item img
+{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.12));
+}
+.item-main
+{
+  /* Main Hoodie Styles. */
+  top: 52%;
+  left: 50%;
+  width: 360px;
+  transform: translate(-50%, -50%);
+}
+.item-left
+{
+  /* Left Shirt Styles. */
+  top: 10%;
+  left: 0;
+  width: 220px;
+  transform: rotate(-12deg);
+}
+.item-right
+{
+  /* Right Cap Styles. */
+  bottom: 8%;
+  right: 1rem;
+  width: 140px;
+  transform: rotate(10deg);
+}
+.merch-item:hover { transform: translateY(-8px); }
+
+.merch-hero {
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.merch-hero.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce)
+{
+  .merch-hero, .merch-item, .merch-buttom { transition: none; }
+}
+
+@media (max-width: 980px)
+{
+  .merch-shell { grid-template-columns: 1fr; text-align: center; }
+  .merch-content { margin: 0 auto; }
+  .merch-copy { margin: 0 auto; }
+  .merch-stage { width: min(100%, 520px); min-height: 500px; margin: 0 auto; }
+  .item-main { width: 300px; }
+  .item-left { width: 170px; }
+}
+@media (max-width: 640px)
+{
+  .merch-hero { padding: 5rem 1.25rem; }
+  .merch-heading { font-size: clamp(2.8rem, 14vw, 4.4rem); }
+  .merch-copy { font-size: 1rem; line-height: 1.8; }
+  .merch-stage { min-height: 360px; }
+  .item-main { width: 220px; }
+  .item-left { width: 120px; top: 18%; }
+  .item-right { width: 90px; }
+}
+</style>
+<script>
+  //Entrance animation when the section scrolls into view.
+  const merchSection = document.querySelector(".merch-hero");
+
+  if (merchSection)
+  {
+    const merchObserver = new IntersectionObserver((entries, observer) =>
+    {
+      entries.forEach((entry) =>
+      {
+        if (entry.isIntersecting)
+        {
+          merchSection.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    });
+
+    merchObserver.observe(merchSection);
+  }
+
+</script>
