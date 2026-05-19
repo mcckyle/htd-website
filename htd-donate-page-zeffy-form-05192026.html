@@ -1,0 +1,155 @@
+<!-- HTD Donation Page. Designed by Kyle McColgan. May 2026. -->
+<section class="donation-page">
+  <div class="donation-container">
+    <header class="donation-header">
+      <span class="donation-eyebrow">Highway to Destiny</span>
+      <h1>Fuel Hope. Empower Communities.</h1>
+      <p>
+        Every donation helps us continue serving the unhoused,
+        and creates meaningful impact throughout the community.
+      </p>
+    </header>
+
+    <div class="donation-card">
+      <div class="donation-glow"></div>
+        <div class="donation-frame">
+          <iframe
+              title='Donation form powered by Zeffy'
+              src='https://www.zeffy.com/en-US/embed/donation-form/3f326bdb-8e31-44af-8e64-d4a5f1c356b4'
+              allowpaymentrequest
+              allowTransparency="true"
+          ></iframe>
+        </div>
+      </div>
+  </div>
+</section>
+
+<style>
+/* Donation Page Foundation Styles. */
+.donation-page {
+  position: relative;
+  overflow: hidden;
+  /* min-height causes shifting and enormous phantom whitespace below iframe. */
+  padding: 72px 20px 32px;
+
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 32%),
+              radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.10), transparent 28%);
+
+  display: flex;
+  align-items: flex-start; /* Keep the form at the top of the viewport. */
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Donation Page Main Layout Container Styles. */
+.donation-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Donation Header Content Styles. */
+.donation-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.donation-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.donation-header h1 {
+  margin: 0 0 20px;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.donation-header p {
+  margin: 0 auto;
+  max-width: 640px;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.donation-card {
+  position: relative;
+  border-radius: 34px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.12));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22), 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+.donation-glow {
+  /* Donation Page Soft Ambient Glow Styles. */
+  position: absolute;
+  inset: auto;
+  width: 320px;
+  height: 320px;
+  right: -80px;
+  top: -80px;
+  background: rgba(255, 255, 255, 0.18);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Donation Page Zeffy Frame Styles. */
+.donation-frame {
+  position: relative;
+  width: 100%;
+  height: 930px;
+  overflow: hidden;
+  border-radius: 34px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98));
+  backdrop-filter: blur(24px);
+}
+
+/* Donation Page Zeffy iframe Styles. */
+.donation-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+}
+
+/* Donation Page Media Query Styles. */
+@media (max-width: 900px) {
+  .donation-page { padding: 72px 18px; }
+  /*.donation-frame { height: 1020px; }*/
+}
+@media (max-width: 768px) {
+  .donation-container { gap: 34px; }
+  .donation-header h1 { line-height: 1.05; }
+  .donation-header p { font-size: 1rem; line-height: 1.75; }
+  .donation-card, .donation-frame { border-radius: 24px; }
+  /*.donation-frame { height: 1100px; }*/
+}
+@media (max-width: 540px) {
+  .donation-page { padding: 56px 14px; }
+  .donation-eyebrow { font-size: 0.74rem; letter-spacing: 0.12em; }
+  /*.donation-frame { height: 1180px; }*/
+}
+</style>
