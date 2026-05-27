@@ -1,60 +1,96 @@
 <!-- HTD Donor Wall. Designed by Kyle McColgan. May 2026. -->
 <section class="donor-wall">
+  <div class="donor-noise"></div>
   <div class="donor-container">
     <header class="donor-header">
-      <span class="donor-eyebrow">Highway to Destiny</span>
+      <span class="donor-eyebrow">Community Impact • Highway to Destiny</span>
       <h1 class="donor-title">Donor Wall</h1>
       <p class="donor-subtitle">
         Honoring the individuals and families helping create lasting impact throughout the community.
       </p>
     </header>
-
-    <div id="donorGrid" class="donor-grid"></div>
+    <div class="donor-divider" aria-hidden="true"></div>
+    <section class="donor-grid-section">
+      <div id="donorGrid" class="donor-grid"></div>
+    </section>
   </div>
 </section>
 
 <style>
 /* ===============================================
-   DONOR WALL STYLES.
+   HIGHWAY TO DESTINY - DONOR WALL STYLES.
    Designed specifically to sit on top of the existing
    solid brand green (#47ad32) outer page background color.
 ================================================== */
 .donor-wall
 {
+  --donor-bg: radial-gradient(circle at top, rgba(255, 255, 255, 0.10), transparent 42%),
+              linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%);
   --donor-surface: rgba(255, 255, 255, 0.08);
   --donor-surface-hover: rgba(255, 255, 255, 0.12);
-  --donor-border: rgba(255, 255, 255, 0.14);
-  --donor-text-soft: rgba(255, 255, 255, 0.78);
+  --donor-border: rgba(255, 255, 255, 0.12);
+  --donor-border-hover: rgba(255, 255, 255, 0.22);
+  --donor-text: rgba(255, 255, 255, 0.96);
+  --donor-text-soft: rgba(255, 255, 255, 0.72);
 
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 
-  padding: clamp(5rem, 8vw, 7rem) 1.5rem;
+  padding: clamp(5rem, 8vw, 8rem) 1.5rem;
 
   /* IMPORTANT:
      The outer page is already #47ad32.
      This creates a premium layered panel effect instead
      of stacking more aggressive greens. */
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.03) 0%,
-    rgba(0, 0, 0, 0.10) 100%
-  );
+  background: var(--donor-bg);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-.donor-wall::before
+.donor-wall::before, .donor-wall::after
 {
   /* Single Ambient Glow Styles. */
   content: "";
   position: absolute;
   inset: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  filter: blur(70px);
+  opacity: 0.55;
   background: radial-gradient(
     circle at top,
     rgba(255, 255, 255, 0.08),
     transparent 40%
   );
+}
+.donor-wall::before
+{
+  /* Single Ambient Glow Styles. */
+  top: -120px;
+  left: -120px;
+  width: 360px;
+  height: 360px;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.donor-wall::after
+{
+  right: -140px;
+  bottom: -180px;
+  width: 420px;
+  height: 420px;
+  background: rgba(0, 0, 0, 0.12);
+}
+.donor-noise
+{
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
   pointer-events: none;
+  background-size: 180px 180px;
+  background-image: radial-gradient(circle at 20% 20%, #ffffff 0.5px, transparent 0.5px),
+                    radial-gradient(circle at 80% 30%, #ffffff 0.5px, transparent 0.5px),
+                    radial-gradient(circle at 40% 70%, #ffffff 0.5px, transparent 0.5px);
 }
 .donor-container
 {
@@ -62,13 +98,13 @@
   z-index: 1;
 
   width: 100%;
-  max-width: 1120px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 .donor-header
 {
-  max-width: 720px;
-  margin: 0 auto 3.75rem;
+  max-width: 760px;
+  margin: 0 auto;
   text-align: center;
 }
 .donor-eyebrow
@@ -77,47 +113,59 @@
   align-items: center;
   justify-content: center;
 
-  padding: 0.5rem 0.9rem;
-  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.35rem;
 
-  border: 1px solid var(--donor-border);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
 
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
 
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 24px rgba(0, 0, 0, 0.10);
 }
 .donor-title
 {
   margin: 0;
   color: #ffffff;
 
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(3.2rem, 7vw, 6rem);
   font-weight: 800;
-  line-height: 0.94;
-  letter-spacing: -0.055em;
+  line-height: 0.92;
+  letter-spacing: -0.07em;
 
   text-wrap: balance;
 }
 .donor-subtitle
 {
-  margin: 1.35rem auto 0;
-  max-width: 640px;
+  margin: 1.5rem auto 0;
+  max-width: 700px;
 
-  font-size: clamp(1rem, 1.3vw, 1.05rem);
-  line-height: 1.8;
+  font-size: clamp(1rem, 1.2vw, 1.08rem);
+  line-height: 1.9;
 
   color: var(--donor-text-soft);
+}
+.donor-divider
+{
+  width: min(100%, 940px);
+  height: 1px;
+  margin: clamp(2.8rem, 5vw, 4rem) auto;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+}
+.donor-grid-section
+{
+  position: relative;
 }
 .donor-grid
 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
 }
 .donor-card
@@ -129,29 +177,29 @@
   align-items: center;
   justify-content: center;
 
-  padding: 1rem 1.15rem;
-  min-height: 74px;
+  padding: 1.15rem 1.2rem;
+  min-height: 84px;
 
   border: 1px solid var(--donor-border);
-  border-radius: 18px;
-  background: var(--donor-surface);
-  backdrop-filter: blur(14px);
-  color: #ffffff;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(16px);
+  color: var(--donor-text);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.5;
   letter-spacing: 0.01em;
   text-align: center;
 
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(12px);
 
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 
-  animation: donorFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(var(--i) * 30ms);
+  animation: donorFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--i) * 34ms);
 }
 .donor-card::before
 {
@@ -161,13 +209,22 @@
   inset: 0;
   border-radius: inherit;
   background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.08),
-    transparent 52%
+    135deg,
+    rgba(255, 255, 255, 0.10),
+    transparent 45%
   );
   pointer-events: none;
 }
-.donor-card:hover { transform: translateY(-2px); background: var(--donor-surface-hover); border-color: rgba(255, 255, 255, 0.18); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
+.donor-card::after
+{
+  content: "";
+  position: absolute;
+  inset-inline: 16px;
+  top: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.20);
+}
+.donor-card:hover { transform: translateY(-4px); background: var(--donor-surface-hover); border-color: var(--donor-border-hover); box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.10); }
 
 @keyframes donorFadeUp
 {
@@ -179,11 +236,12 @@
   .donor-card { opacity: 1; transform: none; animation: none; }
   .donor-card:hover { transform: none; }
 }
-@media (max-width: 640px)
+@media (max-width: 768px)
 {
   .donor-wall { padding-inline: 1rem; }
   .donor-grid { grid-template-columns: 1fr; }
-  .donor-card { min-height: 68px; }
+  .donor-card { min-height: 76px; border-radius: 22px; }
+  .donor-subtitle { line-height: 1.8; }
 }
 </style>
 <script>
