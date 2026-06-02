@@ -1,14 +1,18 @@
-<!-- HTD Merch Promo Section. Designed by Kyle McColgan. May 2026. -->
+<!-- Filename: htd-bonfire-store-promo-section.html. Designed by Kyle McColgan. Updated: June 2026. -->
 <section class="merch-hero">
   <div class="merch-shell">
     <div class="merch-content">
       <span class="merch-badge">Official Bonfire Store</span>
       <h2 class="merch-heading">Wear the Mission.</h2>
       <p class="merch-copy">
-        Every purchase directly supports outreach and
+        Every purchase helps fund outreach and
         life-changing programs throughout the community.
-        Premium apparel designed to inspire impact.
+        Wear your support and help move the mission forward.
       </p>
+      <div class="merch-impact">
+        <strong>100%</strong>
+        <span>of profits support Highway to Destiny programs</span>
+      </div>
 
       <div class="merch-actions">
         <a
@@ -22,25 +26,25 @@
       </div>
     </div>
     <div class="merch-stage" aria-hidden="true">
-      <div class="stage-glow"></div>
+      <div class="merch-pedestal">
 
+      <div class="merch-item item-left">
+        <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/shirt-02-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Job Links Shirt">
+      </div>
       <div class="merch-item item-main">
         <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/hoodie-01-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Gray Hoodie">
       </div>
 
-<!--      <div class="merch-item item-main">
+      <!--<div class="merch-item item-main">
         <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/shirt-01-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Missouri Shirt">
       </div>-->
-      <div class="merch-item item-left">
-        <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/shirt-02-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Job Links Shirt">
-      </div>
-
-      <div class="merch-item item-right">
+<!--      <div class="merch-item item-right">
         <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/cap-01-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Gray Cap">
-      </div>
-<!--      <div class="merch-item item-main">
-        <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/htd-bonfire-mug-transparent-04282026.png/:/rs=h:175,m" alt="Highway to Destiny Beverage Mug">
       </div>-->
+      <div class="merch-item item-right">
+        <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/htd-bonfire-mug-transparent-04282026.png/:/rs=h:175,m" alt="Highway to Destiny Beverage Mug">
+      </div>
+      </div>
     </div>
   </div>
 </section>
@@ -51,8 +55,7 @@
   position: relative;
   overflow: hidden;
   padding: clamp(6rem, 10vw, 9rem) 1.5rem;
-  background: radial-gradient(circle at top right, rgba(71, 173, 50, 0.08), transparent 32rem),
-              linear-gradient(180deg, #ffffff 0%, #f8fbf8 100%);
+  background: #fafcf9;
 }
 .merch-shell
 {
@@ -88,10 +91,10 @@
   margin: 1.5rem 0 1.25rem;
   color: #111111;
 
-  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-size: clamp(4rem, 8vw, 7rem);
   font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: -0.06em;
+  line-height: 0.88;
+  letter-spacing: -0.07em;
 }
 .merch-copy
 {
@@ -100,6 +103,16 @@
   font-size: 1.08rem;
   line-height: 1.9;
 }
+.merch-impact
+{
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  color: #111;
+}
+.merch-impact strong { font-size: 1.8rem; font-weight: 800; }
+.merch-impact span { color: #555; font-size: 0.95rem; }
 
 .merch-actions { margin-top: 2.5rem; }
 .merch-button
@@ -117,7 +130,7 @@
 
   font-size: 0.98rem;
   font-weight: 700;
-  box-shadow: 0 14px 30px rgba(71, 173, 50, 0.18);
+  box-shadow: 0 8px 24px rgba(71, 173, 50, 0.16);
 
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
@@ -129,13 +142,43 @@
 }
 
 .merch-stage { position: relative; min-height: 620px; }
-.stage-glow
+.merch-stage::before
+{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 8%;
+
+  width: 500px;
+  height: 500px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.merch-pedestal
 {
   position: absolute;
-  inset: 12%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(71, 173, 50, 0.16), rgba(71, 173, 50, 0.02) 70%, transparent);
-  filter: blur(40px);
+  left: 50%;
+  bottom: 4rem;
+
+  width: min(680px, 100%);
+  height: 140px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(243, 245, 243, 1));
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.08), 0 2px 0 rgba(255, 255, 255, 0.9) inset;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.merch-pedestal::after
+{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 45%);
+  pointer-events: none;
 }
 .merch-item
 {
@@ -155,34 +198,36 @@
 
   user-select: none;
   -webkit-user-drag: none;
-  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.12))
+          drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
 }
 .item-main
 {
   /* Main Hoodie Styles. */
-  top: 52%;
   left: 50%;
-  width: 360px;
-  transform: translate(-50%, -50%);
+  bottom: 2.25rem;
+  width: 340px;
+  transform: translateX(-50%);
+  z-index: 3;
 }
 .item-left
 {
   /* Left Shirt Styles. */
-  top: 10%;
-  left: 0;
-  width: 220px;
-  transform: rotate(-12deg);
+  left: -1rem;
+  bottom: 2rem;
+  width: 180px;
+  z-index: 2;
 }
 .item-right
 {
   /* Right Cap Styles. */
-  bottom: 8%;
-  right: 1rem;
-  width: 140px;
-  transform: rotate(10deg);
+  position: absolute;
+  right: 0;
+  bottom: 2.5rem;
+  width: 135px;
+  opacity: 0.88;
+  z-index: 2;
 }
-.merch-item:hover { transform: translateY(-8px); }
-
 .merch-hero {
   opacity: 0;
   transform: translateY(30px);
@@ -212,7 +257,7 @@
   .merch-heading { font-size: clamp(2.8rem, 14vw, 4.4rem); }
   .merch-copy { font-size: 1rem; line-height: 1.8; }
   .merch-stage { min-height: 360px; }
-  .item-main { width: 220px; }
+  .item-main { width: 260px; }
   .item-left { width: 120px; top: 18%; }
   .item-right { width: 90px; }
 }
