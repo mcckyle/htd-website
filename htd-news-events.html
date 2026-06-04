@@ -1,4 +1,4 @@
-<!-- HTD News & Events Page. Designed by Kyle McColgan. May 2026. -->
+<!-- HTD News & Events Page. Designed by Kyle McColgan. June 2026. -->
 <section id="newsEventsPage">
   <div class="news-events-shell">
     <div class="news-events-header">
@@ -53,25 +53,13 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding: 140px 24px;
+  padding: 180px 24px;
   background: radial-gradient(circle at top left, rgba(71, 173, 50, 0.12), transparent 34%),
               radial-gradient(circle at bottom right, rgba(71, 173, 50, 0.08), transparent 28%),
               linear-gradient(180deg, #ffffff 0%, #f7faf7 100%);
   box-sizing: border-box;
-}
-#newsEventsPage::before {
-  /* Decorative Background Glow Styles. */
-  content: "";
-  position: absolute;
-  top: -220px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 720px;
-  height: 720px;
-  background: rgba(71, 173, 50, 0.08);
-  filter: blur(120px);
-  border-radius: 50%;
-  pointer-events: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* Content Shell Styles. */
@@ -104,16 +92,16 @@
 /* Main Heading Styles. */
 #newsEventsPage h1 {
   margin: 0 0 20px;
-  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-size: clamp(3.5rem, 7vw, 5rem);
   line-height: 1;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  letter-spacing: -0.055em;
   color: #111111;
 }
 
 /* Intro Paragraph Styles. */
 .events-intro {
-  max-width: 760px;
+  max-width: 620px;
   margin: 0 auto;
   font-size: 1.14rem;
   line-height: 1.9;
@@ -138,10 +126,10 @@
   min-height: 340px;
   padding: 40px;
   border-radius: 32px;
-  background: rgba(255, 255, 255, 0.82);
+  background: #ffffff;
   border: 1px solid rgba(17, 17, 17, 0.06);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05), 0 2px 12px rgba(0, 0, 0, 0.03);
-  backdrop-filter: blur(18px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 30px rgba(0, 0, 0, 0.04);
+  backdrop-filter: none;
 
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
@@ -150,24 +138,9 @@
 .event-card:hover {
   transform: translateY(-8px);
   border-color: rgba(71, 173, 50, 0.22);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08), 0 12px 30px rgba(71, 173, 50, 0.12);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), 0 20px 40px rgba(0, 0, 0, 0.08);
 }
-.featured-card {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(245, 251, 244, 0.92));
-}
-
-/* Decorative Glow Accent. */
-.event-card-glow {
-  position: absolute;
-  top: -80px;
-  right: -80px;
-  width: 220px;
-  height: 220px;
-  background: rgba(71, 173, 50, 0.12);
-  border-radius: 50%;
-  filter: blur(36px);
-  pointer-events: none;
-}
+.featured-card { border-top: 4px solid #47ad32; }
 .event-badge {
   width: fit-content;
   padding: 10px 16px;
@@ -205,16 +178,28 @@
   align-items: center;
   gap: 10px;
   width: fit-content;
-  padding: 14px 22px;
-  border-radius: 14px;
-  background: #111111;
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 600;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 700;
   text-decoration: none;
 
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
+.event-card a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: 4px;
+  background: #47ad32;
+  transform-origin: left;
+
+  transition: transform 0.25s ease;
+}
+.event-card a:hover::after { transform: scaleX(1.15); }
 .event-card a:hover {
   transform: translateY(-2px);
   background: #47ad32; /* Color: Brand Green */
@@ -236,7 +221,7 @@
 
 /* Media Query Styles. */
 @media (max-width: 640px) {
-  #newsEventsPage { padding: 96px 18px; }
+  #newsEventsPage { padding: 120px 20px; }
   #newsEventsPage h1 { font-size: 2.8rem; }
   .events-intro { font-size: 1rem; line-height: 1.8; }
   .event-card { padding: 32px 28px; border-radius: 26px; }
