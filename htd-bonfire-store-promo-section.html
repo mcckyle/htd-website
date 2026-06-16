@@ -5,33 +5,32 @@
       <span class="merch-badge">Official Bonfire Store</span>
       <h2 class="merch-heading">Wear the Mission.</h2>
       <p class="merch-copy">
-        Every purchase helps fund outreach and
+        Every purchase helps fuel outreach and
         life-changing programs throughout the community.
-        Wear your support and help move the mission forward.
+        Wear your support and carry the mission forward.
       </p>
       <div class="merch-impact">
         <strong>100%</strong>
         <span>of profits support Highway to Destiny programs</span>
       </div>
-
-      <div class="merch-actions">
-        <a
-          href="https://www.bonfire.com/store/htds-online-store/"
-          class="merch-button"
-          target="_blank"
-          rel="noopener"
-        >
-          Explore the Store
-        </a>
-      </div>
+      <a
+        href="https://www.bonfire.com/store/htds-online-store/"
+        class="merch-button"
+        target="_blank"
+        rel="noopener"
+      >
+        Explore the Store
+        <span>→</span>
+      </a>
     </div>
-    <div class="merch-stage" aria-hidden="true">
-      <div class="merch-pedestal">
 
-      <div class="merch-item item-left">
+    <div class="merch-stage" aria-hidden="true">
+      <div class="merch-glow"></div>
+
+      <div class="merch-product item-left">
         <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/shirt-02-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Job Links Shirt">
       </div>
-      <div class="merch-item item-main">
+      <div class="merch-product item-main">
         <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/hoodie-01-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Gray Hoodie">
       </div>
 
@@ -41,12 +40,11 @@
 <!--      <div class="merch-item item-right">
         <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/cap-01-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Gray Cap">
       </div>-->
-      <div class="merch-item item-right">
+      <div class="merch-product item-right">
         <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/htd-bonfire-mug-transparent-04282026.png/:/rs=h:175,m" alt="Highway to Destiny Beverage Mug">
       </div>
       </div>
     </div>
-  </div>
 </section>
 
 <style>
@@ -54,211 +52,177 @@
 {
   position: relative;
   overflow: hidden;
-  padding: clamp(6rem, 10vw, 9rem) 1.5rem;
-  background: #fafcf9;
+  padding: clamp(6rem, 12vw, 10rem) 1.5rem;
+  background: radial-gradient(
+    circle at 80% 30%,
+    rgba(71, 173, 50, 0.12),
+    transparent 35%
+  ), #F6F6F6;
 }
 .merch-shell
 {
-  position: relative;
-  z-index: 1;
-
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1320px;
+  margin: auto;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.9fr 1fr;
   align-items: center;
-  gap: clamp(3rem, 7vw, 7rem);
+  gap: clamp(3rem, 8vw, 8rem);
 }
-.merch-content { max-width: 560px; }
+.merch-content { max-width: 600px; }
 .merch-badge
 {
   display: inline-flex;
-  align-items: center;
 
-  padding: 0.6rem 1rem;
-  border: 1px solid rgba(71, 173, 50, 0.12);
+  padding: 0.55rem 1rem;
   border-radius: 999px;
 
-  background: rgba(71, 173, 50, 0.08);
-  color: #2f7d22;
-  font-size: 0.88rem;
+  background: rgba(71, 173, 50, 0.1);
+  color: #2d7c23;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
 }
 .merch-heading
 {
-  margin: 1.5rem 0 1.25rem;
-  color: #111111;
+  margin: 1.4rem 0;
+  color: #101010;
 
-  font-size: clamp(4rem, 8vw, 7rem);
-  font-weight: 800;
+  font-size: clamp(3.5rem, 8vw, 7rem);
   line-height: 0.88;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.075em;
 }
 .merch-copy
 {
   max-width: 48ch;
-  color: #525252;
-  font-size: 1.08rem;
-  line-height: 1.9;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 .merch-impact
 {
   display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  margin-top: 1.75rem;
-  color: #111;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
 }
-.merch-impact strong { font-size: 1.8rem; font-weight: 800; }
-.merch-impact span { color: #555; font-size: 0.95rem; }
-
-.merch-actions { margin-top: 2.5rem; }
+.merch-impact strong { font-size: 3.2rem; line-height: 1; color: #47ad32; }
+.merch-impact span { max-width: 22ch; color: #444; }
 .merch-button
 {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.7rem;
 
-  min-height: 60px;
-  padding: 0 1.7rem;
   border-radius: 999px;
   background: #47ad32;
-  color: #ffffff;
+  color: white;
   text-decoration: none;
+  box-shadow: 0 20px 45px rgba(71, 173, 50, 0.22);
 
-  font-size: 0.98rem;
-  font-weight: 700;
-  box-shadow: 0 8px 24px rgba(71, 173, 50, 0.16);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .merch-button:hover
 {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 38px rgba(71, 173, 50, 0.24);
-  background: #3e9a2c;
+  transform: translateY(-4px);
+  box-shadow: 0 28px 55px rgba(71, 173, 50, 0.32);
 }
 
-.merch-stage { position: relative; min-height: 620px; }
-.merch-stage::before
+/* Product Stage Styles. */
+.merch-stage { position: relative; height: 620px; }
+.merch-stage::after
 {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 8%;
-
-  width: 500px;
-  height: 500px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%);
-  filter: blur(40px);
-  pointer-events: none;
-}
-.merch-pedestal
-{
-  position: absolute;
-  left: 50%;
+  width: 430px;
+  height: 70px;
+  top: 50%;
   bottom: 4rem;
 
-  width: min(680px, 100%);
-  height: 140px;
   transform: translateX(-50%);
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(243, 245, 243, 1));
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.08), 0 2px 0 rgba(255, 255, 255, 0.9) inset;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  filter: blur(35px);
+  opacity: 0.35;
 }
-.merch-pedestal::after
-{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 45%);
-  pointer-events: none;
-}
-.merch-item
+.merch-glow
 {
   position: absolute;
+  width: 520px;
+  height: 520px;
+  top: 50%;
+  left: 50%;
 
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(71, 173, 50, 0.18), transparent 70%);
+  filter: blur(35px);
+}
+.merch-product
+{
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform 0.45s ease, filter 0.45s ease;
 }
-.merch-item img
+.merch-product img
 {
   width: 100%;
   height: auto;
-  object-fit: contain;
-
-  user-select: none;
-  -webkit-user-drag: none;
-  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.12))
-          drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+  filter: drop-shadow(0 45px 55px rgba(0, 0, 0, 0.16));
 }
 .item-main
 {
   /* Main Hoodie Styles. */
   left: 50%;
-  bottom: 2.25rem;
-  width: 340px;
+  bottom: 4rem;
+  width: 300px;
   transform: translateX(-50%);
   z-index: 3;
+
+  animation: merchFloat 6s ease-in-out infinite;
 }
 .item-left
 {
   /* Left Shirt Styles. */
-  left: -1rem;
-  bottom: 2rem;
-  width: 180px;
+  left: 0;
+  bottom: 4.5rem;
+  width: 210px;
+  transform: rotate(-8deg);
   z-index: 2;
 }
 .item-right
 {
   /* Right Cap Styles. */
-  position: absolute;
-  right: 0;
-  bottom: 2.5rem;
-  width: 135px;
-  opacity: 0.88;
+  right: 1rem;
+  bottom: 5rem;
+  width: 165px;
+  transform: rotate(8deg);
+  opacity: 0.95;
   z-index: 2;
 }
-.merch-hero {
-  opacity: 0;
-  transform: translateY(30px);
 
-  transition: opacity 1s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.merch-hero.visible { opacity: 1; transform: translateY(0); }
-
-@media (prefers-reduced-motion: reduce)
+@keyframes merchFloat
 {
-  .merch-hero, .merch-item, .merch-buttom { transition: none; }
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-12px); }
 }
 
 @media (max-width: 980px)
 {
   .merch-shell { grid-template-columns: 1fr; text-align: center; }
-  .merch-content { margin: 0 auto; }
-  .merch-copy { margin: 0 auto; }
-  .merch-stage { width: min(100%, 520px); min-height: 500px; margin: 0 auto; }
-  .item-main { width: 300px; }
-  .item-left { width: 170px; }
+  .merch-content { margin: auto; }
+  .merch-copy { margin: auto; }
+  .merch-impact { justify-content: center; }
+  .merch-stage { height: 480px; }
 }
 @media (max-width: 640px)
 {
-  .merch-hero { padding: 5rem 1.25rem; }
-  .merch-heading { font-size: clamp(2.8rem, 14vw, 4.4rem); }
-  .merch-copy { font-size: 1rem; line-height: 1.8; }
-  .merch-stage { min-height: 360px; }
+  .merch-stage { height: 350px; }
   .item-main { width: 260px; }
-  .item-left { width: 120px; top: 18%; }
+  .item-left { width: 110px; }
   .item-right { width: 90px; }
 }
 </style>

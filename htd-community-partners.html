@@ -1,4 +1,4 @@
-<!-- HTD Community Partners Wall. Designed by Kyle McColgan. May 2026. -->
+<!-- Filename: htd-community-partners.html. Designed by Kyle McColgan. Updated: June 2026. -->
 <div class="partners-section">
   <div class="partners-shell">
     <div class="partners-header">
@@ -137,62 +137,44 @@
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  padding: 128px 24px;
+  padding: clamp(90px, 10vw, 150px);
 
   background: radial-gradient(
-    circle at top,
-    rgba(255, 255, 255, 0.05),
-    transparent 36%
+    circle at 50% 0%,
+    rgba(71, 173, 50, 0.18),
+    transparent 38%
   ),
-  linear-gradient(180deg, #171b17 0%, #1d221d 100%);
+  linear-gradient(180deg, #47ad32 0%, #3d972c 100%);
 }
 .partners-section::before
 {
-  /* Ambient Glow Styles. */
-  content: "";
-
-  position: absolute;
-  left: 50%;
-  top: -320px;
-
-  width: 1100px;
-  height: 1100px;
-  transform: translateX(-50%);
-
-  background: radial-gradient(
-    circle,
-    rgba(71, 173, 50, 0.18),
-    transparent 68%
-  );
-  filter: blur(120px);
-  opacity: 0.85;
-  pointer-events: none;
-  z-index: -2;
-}
-.partners-section::after /* Soft Atmospheric Diffusion Styles. */
-{
+  /* Soft Atmosphere Styles. */
   content: "";
   position: absolute;
   inset: 0;
-
-  background: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-
-  background-size: 32px 32px;
-
-  mask-image: radial-gradient(circle at center, black, transparent 88%);
-  opacity: 0.12;
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(255, 255, 255, 0.12),
+    transparent 30%
+  ),
+  radial-gradient(
+    circle at 80% 70%,
+    rgba(255, 255, 255, 0.08),
+    transparent 28%
+  );
   pointer-events: none;
+  z-index: -1;
 }
-.partners-shell { position: relative; z-index: 2; width: 100%; max-width: 1320px; margin: 0 auto; }
-.partners-header { max-width: 760px; margin: 0 auto 82px; text-align: center; }
+.partners-shell { position: relative; width: min(100%, 1400px); margin: 0 auto; }
+.partners-header { max-width: 760px; margin: 0 auto clamp(50px, 8vw, 90px); text-align: center; }
 .partners-eyebrow
 {
-  margin: 0 0 18px;
-  color: #a7ef99;
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.78);
 
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
@@ -200,12 +182,12 @@
 .partners-title
 {
   margin: 0;
-  color: #ffffff;
+  color: white;
 
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  font-weight: 700;
-  line-height: 0.96;
-  letter-spacing: -0.06em;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.07em;
 }
 
 /* Accent Underline Styles. */
@@ -213,42 +195,40 @@
 {
   content: "";
   display: block;
-  width: 76px;
+  width: 72px;
   height: 4px;
   margin: 26px auto 0;
 
   border-radius: 999px;
-  background: linear-gradient(90deg, #47ad32, #8ef076);
-  box-shadow: 0 0 30px rgba(71, 173, 50, 0.32);
+  background: white;
+  opacity: 0.9;
 }
 
 /* Intro Text Styles. */
 .partners-intro
 {
   margin: 28px auto 0;
-  max-width: 690px;
+  max-width: 680px;
 
   font-size: 1.05rem;
-  line-height: 1.9;
-  color: #cad2c8;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.88);
 }
 
-/* Partners Glass Grid Surface Styles. */
+/* Partners Main Gallery Styles. */
 .partners-grid
 {
-  position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 18px;
-  padding: 24px;
-  border-radius: 34px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: 28px;
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.22);
 }
 
-/* Partner Card Styles. */
+/* Individual Partner Card Styles. */
 .partner
 {
   position: relative;
@@ -257,22 +237,22 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 128px;
-  padding: 26px;
+  min-height: 140px;
+  padding: 30px;
   border-radius: 24px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86) 0%, rgba(248, 250, 248, 0.78) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 
   overflow: hidden;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(20px);
 
-  transition: opacity 0.8s ease, transform 0.8s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease, opacity 0.7s ease;
 }
-.partner::before
+.partner::after
 {
   /* Soft Glow Layer Styles. */
   content: "";
@@ -280,15 +260,15 @@
   inset: 0;
 
   background: radial-gradient(
-    circle at top,
+    circle at center,
     rgba(71, 173, 50, 0.12),
-    transparent 72%
+    transparent 65%
   );
   opacity: 0;
 
-  transition: opacity 0.35s ease;
+  transition: 0.35s ease;
 }
-.partner-visible { opacity: 1; transform: translateY(0); }
+.partner-visible { opacity: 1; transform: none; }
 
 /* Partner Logo Styles. */
 .partner img
@@ -297,45 +277,42 @@
   z-index: 2;
 
   width: 100%;
-  max-width: 142px;
-  max-height: 72px;
+  max-width: 150px;
+  max-height: 74px;
   object-fit: contain;
 
-  filter: grayscale(100%) contrast(0.98);
-  opacity: 0.8;
+  filter: grayscale(100%);
+  opacity: 0.72;
 
   transition: transform 0.35s ease, filter 0.35s ease, opacity 0.35s ease;
 }
 .partner:hover, .partner:focus-visible
 {
-  transform: translateY(-4px);
-  border-color: rgba(71, 173, 50, 0.18);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(250, 252, 250, 0.90) 100%);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16),
-              0 0 0 1px rgba(71, 173, 50, 0.08),
-              0 0 24px rgba(71, 173, 50, 0.10);
+  transform: translateY(-6px);
+  border-color: rgba(71, 173, 50, 0.35);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.14),
+              0 0 0 1px rgba(71, 173, 50, 0.12);
 }
-.partner:hover::before, .partner:focus-visible::before { opacity: 1; }
+.partner:hover::after, .partner:focus-visible::after { opacity: 1; }
 .partner:hover img, .partner:focus-visible img
 {
   opacity: 1;
-  filter: grayscale(0%) contrast(1);
-  transform: scale(1.04);
+  filter: none;
+  transform: scale(1.06);
 }
 
 /* Media Query Styles. */
 @media (max-width: 768px)
 {
-  .partners-section { padding: 96px 18px; }
-  .partners-header { margin-bottom: 56px; }
-  .partners-grid { grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 14px; padding: 16px; border-radius: 26px; }
-  .partner { min-height: 110px; border-radius: 20px; padding: 20px; }
-  .partner img { max-width: 122px; max-height: 58px; }
+  .partners-section { padding: 80px 16px; }
+  .partners-grid { gap: 14px; padding: 16px; border-radius: 26px; }
+  .partner { min-height: 115px; border-radius: 20px; padding: 22px; }
+  .partner img { max-width: 120px; }
 }
 
 @media (prefers-reduced-motion: reduce)
 {
-  .partner, .partner::before, .partner img { transition: none !important; }
+  .partner, .partner::after, .partner img { transition: none !important; }
 }
 </style>
 

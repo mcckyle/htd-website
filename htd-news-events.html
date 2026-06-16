@@ -1,47 +1,43 @@
-<!-- HTD News & Events Page. Designed by Kyle McColgan. June 2026. -->
+<!-- Filename: htd-news-events.html. Designed by Kyle McColgan. Updated: June 2026. -->
 <section id="newsEventsPage">
   <div class="news-events-shell">
-    <div class="news-events-header">
+    <header class="news-events-header">
       <span class="news-events-eyebrow">Highway to Destiny</span>
       <h1>News & Events</h1>
-      <p className="events-intro">
+      <p class="events-intro">
         Stay connected with trusted community partners providing outreach,
         support services, events, and essential resources for unhoused
         neighbors throughout Saint Louis.
       </p>
-    </div>
-    <div className="events-grid">
+    </header>
+    <div class="events-grid">
 
       <!-- Featured Event Card. -->
       <article class="event-card featured-card">
-        <div class="event-card-glow"></div>
         <div class="event-badge">Community Outreach</div>
         <h2>Street Patrol STL</h2>
         <p>
-          Access weekly outreach calendars and direct support initiatives
-          helping individuals across Saint Louis with food and supplies.
+          Weekly outreach calendars and direct support initiatives
+          providing food and supplies across Saint Louis.
         </p>
         <a
           href="https://streetpatrolstl.org/calendar"
           target="_blank"
           rel="noopener"
         >
-          View Event Calendar
-          <span>↗</span>
+          View Calendar →
         </a>
       </article>
 
       <!-- Optional Placeholder Card. -->
-      <article class="event-card secondary-card">
-        <div class="event-badge alt-badge">
-          Coming Soon
-        </div>
+      <article class="event-card">
+        <div class="event-badge alt">Coming Soon</div>
         <h2>More Community Events</h2>
         <p>
-          Additional outreach events, nonprofit collaborations, volunteer
-          opportunities, and local initiatives will be featured here soon.
+          New partnerships, volunteer opportunities, and local initiatives
+          will added as the network expands.
         </p>
-        <div class="coming-soon-pill">Expanding Partnerships</div>
+        <span class="coming-soon">Expanding Partnerships</span>
       </article>
     </div>
   </div>
@@ -50,13 +46,9 @@
 <style>
 /* Main Section Styles. */
 #newsEventsPage {
-  position: relative;
-  overflow: hidden;
   width: 100%;
   padding: 180px 24px;
-  background: radial-gradient(circle at top left, rgba(71, 173, 50, 0.12), transparent 34%),
-              radial-gradient(circle at bottom right, rgba(71, 173, 50, 0.08), transparent 28%),
-              linear-gradient(180deg, #ffffff 0%, #f7faf7 100%);
+  background: #f6f6f6;
   box-sizing: border-box;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -64,169 +56,124 @@
 
 /* Content Shell Styles. */
 .news-events-shell {
-  position: relative;
-  z-index: 2;
-  max-width: 1240px;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
 /* Header Container Styles. */
-.news-events-header { text-align: center; margin-bottom: 72px; }
+.news-events-header { text-align: center; margin-bottom: 80px; }
 .news-events-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  margin-bottom: 24px;
-  border-radius: 999px;
-  background: rgba(71, 173, 50, 0.1);
-  border: 1px solid rgba(71, 173, 50, 0.14);
-  color: #47ad32; /* Color: Brand Green. */
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  backdrop-filter: blur(10px);
+  color: #47ad32; /* Color: Brand Green. */
+  margin-bottom: 20px;
 }
 
 /* Main Heading Styles. */
 #newsEventsPage h1 {
-  margin: 0 0 20px;
-  font-size: clamp(3.5rem, 7vw, 5rem);
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: -0.055em;
-  color: #111111;
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  margin: 0 0 18px;
+  color: #111;
 }
 
 /* Intro Paragraph Styles. */
 .events-intro {
   max-width: 620px;
   margin: 0 auto;
-  font-size: 1.14rem;
-  line-height: 1.9;
-  color: #5b5b5b;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
 }
 
 /* Events Grid Styles. */
 .events-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  align-items: stretch;
+  gap: 28px;
 }
 
 /* Base Event Card Styles. */
 .event-card {
-  position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 340px;
-  padding: 40px;
-  border-radius: 32px;
-  background: #ffffff;
-  border: 1px solid rgba(17, 17, 17, 0.06);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 30px rgba(0, 0, 0, 0.04);
-  backdrop-filter: none;
+  gap: 18px;
+  padding: 38px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* Card Hover Effects Styles. */
 .event-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(71, 173, 50, 0.22);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), 0 20px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
-.featured-card { border-top: 4px solid #47ad32; }
+.featured-card { border-left: 4px solid #47ad32; }
 .event-badge {
-  width: fit-content;
-  padding: 10px 16px;
-  margin-bottom: 28px;
-  border-radius: 999px;
-  background: rgba(71, 173, 50, 0.12);
   color: #47ad32;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-.alt-badge { background: rgba(17, 17, 17, 0.06); color: #444; }
+.alt-badge { color: #555; }
 
 /* Event Card Title Styles. */
 .event-card h2 {
-  margin: 0 0 18px;
-  font-size: 2rem;
-  line-height: 1.15;
-  font-weight: 700;
-  color: #111111;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 650;
+  color: #111;
 }
 
 /* Event Card Paragraph Styles. */
 .event-card p {
-  margin: 0 0 36px;
-  font-size: 1.04rem;
-  line-height: 1.85;
-  color: #555555;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #555;
 }
 
 /* Event Card Links Button Styles. */
 .event-card a {
+  margin-top: auto;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  width: fit-content;
-  padding: 0;
-  border-radius: 0;
-  background: none;
+  gap: 6px;
   color: #111;
-  font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
-
-  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
+.event-card a:hover { color: #47ad32; }
 .event-card a::after {
   content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  margin-top: 4px;
+  width: 0%;
+  height: 1px;
   background: #47ad32;
-  transform-origin: left;
 
-  transition: transform 0.25s ease;
+  transition: width 0.25s ease;
 }
-.event-card a:hover::after { transform: scaleX(1.15); }
-.event-card a:hover {
-  transform: translateY(-2px);
-  background: #47ad32; /* Color: Brand Green */
-  box-shadow: 0 12px 24px rgba(71, 173, 50, 0.28);
-}
+.event-card a:hover::after { width: 100%; }
 
-/* Coming Soon Pill Styles. */
-.coming-soon-pill {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  padding: 14px 20px;
+/* Coming Soon Styles. */
+.coming-soon {
+  display: inline-block;
+  padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(17, 17, 17, 0.05);
-  color: #444444;
-  font-size: 0.9rem;
-  font-weight: 600;
+  background: rgba(0, 0, 0, 0.04);
+  color: #444;
+  font-size: 0.85rem;
 }
 
-/* Media Query Styles. */
+/* News & Events Media Query Styles. */
 @media (max-width: 640px) {
-  #newsEventsPage { padding: 120px 20px; }
-  #newsEventsPage h1 { font-size: 2.8rem; }
-  .events-intro { font-size: 1rem; line-height: 1.8; }
-  .event-card { padding: 32px 28px; border-radius: 26px; }
-  .event-card h2 { font-size: 1.65rem; }
-  .event-card p { font-size: 0.98rem; }
-  .event-card a { width: 100%; justify-content: center; }
+  #newsEventsPage { padding: 120px 18px; }
+  #newsEventsPage h1 { font-size: 2.6rem; }
+  .event-card { padding: 28px; }
 }
 </style>
