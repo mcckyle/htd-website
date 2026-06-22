@@ -1,4 +1,4 @@
-<!-- Filename: htd-bonfire-store-promo-section.html. Designed by Kyle McColgan. Updated: June 2026. -->
+<!-- Filename: htd-bonfire-store-promo-section.html. Designed by Kyle McColgan. Updated: 21 June 2026. -->
 <section class="merch-hero">
   <div class="merch-shell">
     <div class="merch-content">
@@ -25,8 +25,6 @@
     </div>
 
     <div class="merch-stage" aria-hidden="true">
-      <div class="merch-glow"></div>
-
       <div class="merch-product item-left">
         <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/shirt-02-transparent.png/:/rs=h:175,m" alt="Highway to Destiny Job Links Shirt">
       </div>
@@ -43,8 +41,8 @@
       <div class="merch-product item-right">
         <img src="https://img1.wsimg.com/isteam/ip/38135061-0104-48da-961f-1edb89f4655f/htd-bonfire-mug-transparent-04282026.png/:/rs=h:175,m" alt="Highway to Destiny Beverage Mug">
       </div>
-      </div>
     </div>
+  </div>
 </section>
 
 <style>
@@ -52,50 +50,59 @@
 {
   position: relative;
   overflow: hidden;
-  padding: clamp(6rem, 12vw, 10rem) 1.5rem;
-  background: radial-gradient(
-    circle at 80% 30%,
-    rgba(71, 173, 50, 0.12),
-    transparent 35%
-  ), #F6F6F6;
+  padding: clamp(5rem, 10vw, 8rem) 1.5rem;
+  background: #F6F6F6;
+}
+.merch-hero::before
+{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 40%, rgba(71, 173, 50, 0.10), transparent 32%);
+  pointer-events: none;
 }
 .merch-shell
 {
-  max-width: 1320px;
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
   margin: auto;
 
   display: grid;
-  grid-template-columns: 0.9fr 1fr;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(420px, 1fr);
   align-items: center;
-  gap: clamp(3rem, 8vw, 8rem);
+  gap: clamp(3rem, 7vw, 7rem);
 }
-.merch-content { max-width: 600px; }
+.merch-content { max-width: 540px; }
 .merch-badge
 {
   display: inline-flex;
+  align-items: center;
 
   padding: 0.55rem 1rem;
   border-radius: 999px;
 
-  background: rgba(71, 173, 50, 0.1);
-  color: #2d7c23;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #26751e;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 750;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
 }
 .merch-heading
 {
-  margin: 1.4rem 0;
-  color: #101010;
+  margin: 1.25rem 0;
+  color: #111;
 
-  font-size: clamp(3.5rem, 8vw, 7rem);
-  line-height: 0.88;
-  letter-spacing: -0.075em;
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
 }
 .merch-copy
 {
-  max-width: 48ch;
+  max-width: 46ch;
   color: #555;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.8;
 }
 .merch-impact
@@ -105,109 +112,89 @@
   gap: 1rem;
   margin: 2rem 0;
 }
-.merch-impact strong { font-size: 3.2rem; line-height: 1; color: #47ad32; }
-.merch-impact span { max-width: 22ch; color: #444; }
+.merch-impact strong { font-size: 3.8rem; line-height: 0.9; color: #47ad32; }
+.merch-impact span { max-width: 20ch; color: #444; font-size: 0.95rem; }
 .merch-button
 {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.7rem;
+  gap: 0.7rem;
+  padding: 0.95rem 1.6rem;
 
   border-radius: 999px;
   background: #47ad32;
   color: white;
   text-decoration: none;
-  box-shadow: 0 20px 45px rgba(71, 173, 50, 0.22);
+  box-shadow: 0 18px 40px rgba(71, 173, 50, 0.22);
 
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .merch-button:hover
 {
-  transform: translateY(-4px);
-  box-shadow: 0 28px 55px rgba(71, 173, 50, 0.32);
+  transform: translateY(-3px);
+  box-shadow: 0 26px 55px rgba(71, 173, 50, 0.30);
 }
 
-/* Product Stage Styles. */
-.merch-stage { position: relative; height: 620px; }
-.merch-stage::after
+/* Product Gallery Styles. */
+.merch-stage { position: relative; height: 560px; isolation: isolate; }
+.merch-stage::before
 {
   content: "";
   position: absolute;
-  width: 430px;
-  height: 70px;
-  top: 50%;
-  bottom: 4rem;
-
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.12);
-  filter: blur(35px);
-  opacity: 0.35;
-}
-.merch-glow
-{
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(71, 173, 50, 0.18), transparent 70%);
-  filter: blur(35px);
+  inset: 8% 4%;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.07);
+  z-index: -1;
 }
 .merch-product
 {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  transition: transform 0.45s ease, filter 0.45s ease;
+  transition: transform 0.35s ease;
 }
 .merch-product img
 {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 45px 55px rgba(0, 0, 0, 0.16));
+  filter: drop-shadow(0 35px 40px rgba(0, 0, 0, 0.16));
 }
 .item-main
 {
   /* Main Hoodie Styles. */
   left: 50%;
-  bottom: 4rem;
-  width: 300px;
+  bottom: 3.5rem;
+  width: 290px;
   transform: translateX(-50%);
   z-index: 3;
 
-  animation: merchFloat 6s ease-in-out infinite;
+  animation: merchFloat 7s ease-in-out infinite;
 }
 .item-left
 {
   /* Left Shirt Styles. */
-  left: 0;
-  bottom: 4.5rem;
-  width: 210px;
+  left: 3rem;
+  bottom: 4rem;
+  width: 190px;
   transform: rotate(-8deg);
   z-index: 2;
 }
 .item-right
 {
-  /* Right Cap Styles. */
-  right: 1rem;
+  /* Right Mug Styles. */
+  right: 3rem;
   bottom: 5rem;
-  width: 165px;
+  width: 145px;
   transform: rotate(8deg);
-  opacity: 0.95;
   z-index: 2;
 }
 
 @keyframes merchFloat
 {
   0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-12px); }
+  50% { transform: translateX(-50%) translateY(-10px); }
 }
 
 @media (max-width: 980px)
@@ -216,14 +203,14 @@
   .merch-content { margin: auto; }
   .merch-copy { margin: auto; }
   .merch-impact { justify-content: center; }
-  .merch-stage { height: 480px; }
+  .merch-stage { height: 470px; }
 }
 @media (max-width: 640px)
 {
   .merch-stage { height: 350px; }
-  .item-main { width: 260px; }
-  .item-left { width: 110px; }
-  .item-right { width: 90px; }
+  .item-main { width: 230px; }
+  .item-left { width: 120px; left: 0; }
+  .item-right { width: 95px; right: 0; }
 }
 </style>
 <script>
