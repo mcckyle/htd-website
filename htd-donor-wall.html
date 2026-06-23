@@ -1,16 +1,15 @@
 <!-- Filename: htd-donor-wall.html. Designed by Kyle McColgan. Updated: June 2026. -->
 <section class="donor-wall">
-  <div class="donor-atmosphere"></div>
+  <div class="donor-glow"></div>
   <div class="donor-container">
     <header class="donor-header">
-      <span class="donor-eyebrow">Community Supporters</span>
+      <span class="donor-eyebrow">With Gratitude</span>
       <h1 class="donor-title">Donor Wall</h1>
       <p class="donor-subtitle">
-        Honoring the individuals and families whose generosity helps
-        create lasting impact throughout the community.
+        Celebrating the generosity of those who help move the mission
+        forward and create lasting change throughout our community.
       </p>
     </header>
-    <div class="donor-rule"></div>
     <div id="donorGrid" class="donor-grid"></div>
   </div>
 </section>
@@ -27,37 +26,40 @@
   --green-glass-hover: rgba(255, 255, 255, 0.13);
   --border: rgba(255, 255, 255, 0.14);
   --text: rgba(255, 255, 255, 0.96);
-  --soft: rgba(255, 255, 255, 0.72);
+
+  --white: rgba(255, 255, 255, 0.96);
+  --soft: rgba(255, 255, 255, 0.70);
+  --line: rgba(255, 255, 255, 0.14);
 
   position: relative;
-  overflow: hidden;
   isolation: isolate;
-
-  padding: clamp(5rem, 8vw, 8rem) 1.25rem;
+  overflow: hidden;
+  padding: clamp(5rem, 9vw, 9rem) 1.25rem;
 
   /* IMPORTANT:
      The outer page is already #47ad32.
      This creates a premium layered panel effect instead
      of stacking more aggressive greens. */
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.12));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.13));
 }
 
-/* Ambient Background Styles. */
-.donor-atmosphere
+/* Donor Wall Ambient Layer Styles. */
+.donor-glow
 {
   position: absolute;
-  inset: 0;
+  width: 700px;
+  height: 700px;
+  left: 50%;
+  top: -420px;
+  transform: translateX(-50%);
+  border-radius: 50%;
   pointer-events: none;
   background: radial-gradient(
-    circle at 50% -10%,
-    rgba(255, 255, 255, 0.18),
-    transparent 45%
-  ),
-  radial-gradient(
-    circle at 10% 90%,
-    rgba(255, 255, 255, 0.08),
-    transparent 35%
+    circle,
+    rgba(255, 255, 255, 0.16),
+    transparent 65%
   );
+  filter: blur(20px);
   z-index: -1;
 }
 .donor-wall::after
@@ -66,9 +68,9 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.8), transparent 0.6px);
-  background-size: 26px 26px;
+  opacity: 0.025;
+  background-image: radial-gradient(white 0.7px, transparent 0.7px);
+  background-size: 32px 32px;
 }
 .donor-container
 {
@@ -76,12 +78,12 @@
   z-index: 1;
 
   width: 100%;
-  max-width: 1240px;
+  max-width: 1320px;
   margin: auto;
 }
 .donor-header
 {
-  max-width: 760px;
+  max-width: 780px;
   margin: auto;
   text-align: center;
 }
@@ -89,84 +91,76 @@
 {
   display: inline-flex;
 
-  padding: 0.55rem 1rem;
+  padding: 0.55rem 1.1rem;
   margin-bottom: 1.25rem;
 
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
   border-radius: 999px;
 
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
   color: white;
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(16px);
 
   font-size: 0.7rem;
   font-weight: 750;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 .donor-title
 {
   margin: 0;
-  color: white;
+  color: var(--white);
 
-  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-size: clamp(3.75rem, 9vw, 7rem);
   font-weight: 850;
-  line-height: 0.9;
-  letter-spacing: -0.075em;
+  line-height: 0.88;
+  letter-spacing: -0.085em;
 }
 .donor-subtitle
 {
-  margin: 1.5rem auto 0;
-  max-width: 680px;
+  margin: 1.6rem auto 0;
+  max-width: 700px;
 
   font-size: 1.05rem;
-  line-height: 1.85;
+  line-height: 1.9;
   text-wrap: balance;
   color: var(--soft);
 }
-.donor-rule
-{
-  width: min(100%, 960px);
-  height: 1px;
-  margin: clamp(3rem, 6vw, 5rem) auto;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
-}
 .donor-grid
 {
+  margin-top: clamp(3rem, 7vw, 6rem);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 .donor-card
 {
   position: relative;
-  overflow: hidden;
+  min-height: 92px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 1.25rem;
-  min-height: 88px;
 
-  border: 1px solid var(--border);
-  border-radius: 26px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.055));
-  backdrop-filter: blur(20px);
-  color: var(--text);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045));
+  backdrop-filter: blur(18px);
+  color: white;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.12);
 
-  font-size: 0.98rem;
+  font-size: 1rem;
   font-weight: 650;
-  letter-spacing: 0.01em;
   text-align: center;
 
   opacity: 0;
+  transform: translateY(18px);
 
   transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 
-  animation: donorReveal 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  animation-delay: calc(var(--i) * 25ms);
+  animation: donorEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i) * 28ms);
 }
 .donor-card::before
 {
@@ -174,31 +168,31 @@
   content: "";
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0.14),
-    transparent 35%
+    transparent 38%
   );
   pointer-events: none;
 }
-.donor-card:hover { transform: translateY(-4px); background: var(--green-glass-hover); border-color: rgba(255, 255, 255, 0.28); }
+.donor-card:hover { transform: translateY(-6px); border-color: rgba(255, 255, 255, 0.28); background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.07)); }
 
-@keyframes donorReveal
+@keyframes donorEnter
 {
-  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce)
 {
-  .donor-card { opacity: 1; animation: none; }
+  .donor-card { opacity: 1; transform: none; animation: none; }
   .donor-card:hover { transform: none; }
 }
 @media (max-width: 700px)
 {
   .donor-wall { padding-inline: 1rem; }
   .donor-grid { grid-template-columns: 1fr; }
-  .donor-card { min-height: 78px; border-radius: 22px; }
+  .donor-card { min-height: 82px; border-radius: 24px; }
 }
 </style>
 <script>
