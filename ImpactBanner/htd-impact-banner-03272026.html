@@ -1,0 +1,164 @@
+<!-- HTD Impact Banner. Designed by Kyle McColgan. June 2026. -->
+<section class="impact-banner" aria-label="Highway to Destiny impact statistics">
+  <div class="impact-track">
+    <article class="impact-stat">
+      <span class="impact-number">770,000+</span>
+      <span class="impact-text">
+        people experienced homelessness in the U.S. during the 2024 Point-In-Time Count.
+      </span>
+    </article>
+
+    <article class="impact-stat">
+      <span class="impact-number">150,000+</span>
+      <span class="impact-text">
+        children were counted among those experiencing homelessness in 2024.
+      </span>
+    </article>
+
+    <article class="impact-stat">
+      <span class="impact-number">25%</span>
+      <span class="impact-text">
+        increase in the St. Louis unhoused population from 2020 to 2025.
+      </span>
+    </article>
+
+    <article class="impact-stat">
+      <span class="impact-number">1,700+</span>
+      <span class="impact-text">
+        neighbors were counted as experiencing homelessness across the St. Louis region.
+      </span>
+    </article>
+
+    <!-- Seamless loop... -->
+    <article class="impact-stat">
+      <span class="impact-number">770,000+</span>
+      <span class="impact-text">
+        people experienced homelessness in the U.S. during the 2024 Point-In-Time Count.
+      </span>
+    </article>
+
+    <article class="impact-stat">
+      <span class="impact-number">150,000+</span>
+      <span class="impact-text">
+        children were counted among those experiencing homelessness in 2024.
+      </span>
+    </article>
+
+    <article class="impact-stat">
+      <span class="impact-number">25%</span>
+      <span class="impact-text">
+        increase in the St. Louis unhoused population from 2020 to 2025.
+      </span>
+    </article>
+
+    <article class="impact-stat">
+      <span class="impact-number">1,700+</span>
+      <span class="impact-text">
+        neighbors were counted as experiencing homelessness across the St. Louis region.
+      </span>
+    </article>
+  </div>
+</section>
+
+<div class="impact-source">
+  Sources:
+  <a href="https://www.huduser.gov/portal/sites/default/files/pdf/2024-AHAR-Part-1.pdf" target="_blank">
+    HUD 2024 Annual Homeless Assessment Report
+  </a>
+  |
+  <a href="https://www.stlpr.org/news-briefs/2026-05-22/homelessness-continues-to-grow-st-louis-local-leaders-calling-it-crisis" target="_blank">
+    2026 STLPR
+  </a>
+  |
+  <a href="https://icalliances.org/mo-pit-dashboard" target="_blank">
+    Institute for Community Alliances
+  </a>
+</div>
+
+<style>
+/* IMPACT BANNER STYLES. */
+.impact-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: radial-gradient(circle at top, rgba(0, 179, 89, 0.16), transparent 45%), #07110d;
+    border-top: 1px solid rgba(0, 179, 89, 0.35);
+    border-bottom: 1px solid rgba(0, 179, 89, 0.35);
+    padding: 34px 0;
+    isolation: isolate;
+}
+
+/* Subtle Ambient Glow Styles. */
+.impact-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(0, 179, 89, 0.08), transparent);
+  pointer-events: none;
+
+  animation: impactGlow 12s linear infinite;
+}
+
+/* Each stat */
+.impact-track {
+    display: flex;
+    width: max-content;
+
+    animation: impactScroll 55s linear infinite;
+}
+.impact-track:hover { animation-play-state: paused; }
+
+.impact-stat {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 620px;
+  padding: 0 70px;
+}
+.impact-number {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #00d66f;
+  white-space: nowrap;
+}
+.impact-text {
+  max-width: 430px;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: 'Merriweather', serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.impact-source {
+  text-align: center;
+  margin-top: 8px;
+  color: #777;
+  font-size: 0.85rem;
+}
+.impact-source a { color: #00b359; }
+
+/* Scroll animation */
+@keyframes impactScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes impactGlow {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+  .impact-track, .impact-banner::before { animation: none; }
+}
+
+/* Impact Banner Media Query Styles. */
+@media (max-width: 768px)
+{
+  .impact-banner { padding: 24px 0; }
+  .impact-stat { min-width: 90vw; padding: 0 30px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .impact-text { font-size: 0.95rem; }
+}
+</style>
