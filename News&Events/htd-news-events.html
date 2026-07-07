@@ -1,4 +1,4 @@
-<!-- Filename: htd-news-events.html. Designed by Kyle McColgan. Updated: June 2026. -->
+<!-- Filename: htd-news-events.html | Designed by Kyle McColgan | Updated: July 2026 -->
 <section id="newsEventsPage">
   <div class="news-events-shell">
     <header class="news-events-header">
@@ -44,28 +44,51 @@
 </section>
 
 <style>
-/* Main Section Styles. */
+/* Main Section Styles. Outer page color is currently #161616. */
 #newsEventsPage {
-  width: 100%;
-  padding: 180px 24px;
-  background: #f6f6f6;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+
+  padding: 180px 28px;
+  background: radial-gradient(
+    circle at top,
+    rgba(71, 173, 50, 0.10),
+    transparent 45%),
+    linear-gradient(180deg, #191919 0%, #121212 100%);
+}
+#newsEventsPage::before
+{
+  /* Ambient Glow Styles. */
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at 15% 20%,
+    rgba(71, 173, 50, 0.10),
+    transparent 35%
+  ),
+  radial-gradient(
+    circle at 85% 70%,
+    rgba(71, 173, 50, 0.05),
+    transparent 45%
+  );
+  pointer-events: none;
 }
 
 /* Content Shell Styles. */
 .news-events-shell {
-  max-width: 1120px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 /* Header Container Styles. */
-.news-events-header { text-align: center; margin-bottom: 80px; }
+.news-events-header { text-align: center; margin-bottom: 90px; }
 .news-events-eyebrow {
   display: inline-block;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: #47ad32; /* Color: Brand Green. */
   margin-bottom: 20px;
@@ -73,83 +96,115 @@
 
 /* Main Heading Styles. */
 #newsEventsPage h1 {
-  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-size: clamp(3.8rem, 7vw, 6rem);
   font-weight: 650;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
   margin: 0 0 18px;
-  color: #111;
+  color: white;
 }
 
 /* Intro Paragraph Styles. */
 .events-intro {
-  max-width: 620px;
+  max-width: 720px;
   margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #555;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 /* Events Grid Styles. */
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1.6fr 0.9fr;
   gap: 28px;
 }
 
 /* Base Event Card Styles. */
 .event-card {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding: 38px;
-  border-radius: 20px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  padding: 42px;
+  border-radius: 28px;
 
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
 /* Card Hover Effects Styles. */
 .event-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-10px);
+  border-color: rgba(71, 173, 50, 0.35);
+  box-shadow: 0 45px 90px rgba(0, 0, 0, 0.55);
 }
-.featured-card { border-left: 4px solid #47ad32; }
+.featured-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #47ad32, transparent);
+}
+.featured-card::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -90px;
+  top: -90px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(71, 173, 50, 0.18), transparent 70%);
+}
 .event-badge {
-  color: #47ad32;
-  font-size: 0.75rem;
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(71, 173, 50, 0.14);
+  border: 1px solid rgba(71, 173, 50, 0.25);
+  color: #7fdd69;
+  font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 .alt-badge { color: #555; }
 
 /* Event Card Title Styles. */
 .event-card h2 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   font-weight: 650;
-  color: #111;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: white;
 }
 
 /* Event Card Paragraph Styles. */
 .event-card p {
   margin: 0;
   font-size: 1rem;
-  line-height: 1.75;
-  color: #555;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 2rem;
 }
 
 /* Event Card Links Button Styles. */
 .event-card a {
   margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #111;
-  font-weight: 600;
-  text-decoration: none;
+  width: fit-content;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+
+  transition: 0.30s;
 }
-.event-card a:hover { color: #47ad32; }
+.event-card a:hover { background: #47ad32; color: white; transform: translateX(4px); }
 .event-card a::after {
   content: "";
   width: 0%;
@@ -162,15 +217,18 @@
 
 /* Coming Soon Styles. */
 .coming-soon {
-  display: inline-block;
-  padding: 10px 14px;
+  width: fit-content;
+  padding: 10px 18px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.04);
-  color: #444;
-  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* News & Events Media Query Styles. */
+@media (max-width: 900px) {
+  .events-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 640px) {
   #newsEventsPage { padding: 120px 18px; }
   #newsEventsPage h1 { font-size: 2.6rem; }

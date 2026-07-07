@@ -1,4 +1,4 @@
-<!-- Filename: htd-donor-wall.html. Designed by Kyle McColgan. Updated: June 2026. -->
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: July 2026 -->
 <section class="donor-wall">
   <div class="donor-glow"></div>
   <div class="donor-container">
@@ -131,27 +131,32 @@
   margin-top: clamp(3rem, 7vw, 6rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  gap: 1.35rem;
+  opacity: 0;
+
+  animation: donorGridReveal 0.5s ease forwards;
 }
 .donor-card
 {
   position: relative;
-  min-height: 92px;
+  min-height: 104px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem;
+  padding: 1.5rem;
 
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 28px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.05) 100%);
   backdrop-filter: blur(18px);
   color: white;
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.12);
 
-  font-size: 1rem;
-  font-weight: 650;
+  font-size: 1.03rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1.55;
   text-align: center;
 
   opacity: 0;
@@ -160,27 +165,46 @@
   transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 
   animation: donorEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(var(--i) * 28ms);
+  animation-delay: calc(var(--i) * 18ms);
 }
 .donor-card::before
 {
-  /* Soft Glass Sheen Styles. */
+  /* Restrained Brand Accent Styles. */
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  opacity: 0.8;
+  background: linear-gradient(
+    90deg,
+    #6fdb57,
+    #47ad32,
+    #6fdb57
+  );
+}
+.donor-card::after
+{
+  /* Glass Sheen Styles. */
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.14),
-    transparent 38%
-  );
   pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 45%
+  );
 }
-.donor-card:hover { transform: translateY(-6px); border-color: rgba(255, 255, 255, 0.28); background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.07)); }
-
+.donor-card:hover { transform: translateY(-4px) scale(1.015); border-color: rgba(255, 255, 255, 0.30); background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.07)); box-shadow: 0 24px 54px rgba(0, 0, 0, 0.14); }
+.donor-card:hover::after { background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 65%); }
 @keyframes donorEnter
 {
   to { opacity: 1; transform: translateY(0); }
+}
+@keyframes donorGridReveal
+{
+  to { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce)
