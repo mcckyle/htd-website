@@ -10,6 +10,8 @@
         forward and create lasting change throughout our community.
       </p>
     </header>
+    <div class="donor-meta"><span>49 supporters recognized</span></div>
+    <div class="donor-divider"></div>
     <div id="donorGrid" class="donor-grid"></div>
   </div>
 </section>
@@ -34,13 +36,15 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(5rem, 9vw, 9rem) 1.25rem;
+  padding: clamp(6rem, 9vw, 9rem) clamp(1.5rem, 4vw, 2rem);
 
   /* IMPORTANT:
      The outer page is already #47ad32.
      This creates a premium layered panel effect instead
      of stacking more aggressive greens. */
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.13));
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.16), transparent 38%),
+              radial-gradient(circle at bottom, rgba(255, 255, 255, 0.08), transparent 55%),
+              linear-gradient(180deg, #56be42, #47ad32);
 }
 
 /* Donor Wall Ambient Layer Styles. */
@@ -68,8 +72,8 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.025;
-  background-image: radial-gradient(white 0.7px, transparent 0.7px);
+  opacity: 0.035;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 12px);
   background-size: 32px 32px;
 }
 .donor-container
@@ -94,27 +98,30 @@
   padding: 0.55rem 1.1rem;
   margin-bottom: 1.25rem;
 
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
 
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.12);
   color: white;
   backdrop-filter: blur(16px);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.25);
 
   font-size: 0.7rem;
-  font-weight: 750;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 .donor-title
 {
   margin: 0;
+  margin-inline: auto;
+  max-width: 10ch;
   color: var(--white);
 
-  font-size: clamp(3.75rem, 9vw, 7rem);
+  font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 850;
-  line-height: 0.88;
-  letter-spacing: -0.085em;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
 }
 .donor-subtitle
 {
@@ -126,32 +133,22 @@
   text-wrap: balance;
   color: var(--soft);
 }
-.donor-grid
-{
-  margin-top: clamp(3rem, 7vw, 6rem);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.35rem;
-  opacity: 0;
-
-  animation: donorGridReveal 0.5s ease forwards;
-}
 .donor-card
 {
   position: relative;
-  min-height: 104px;
+  min-height: 120px;
 
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.05) 100%);
-  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(10px);
   color: white;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10), inset 0 1px rgba(255, 255, 255, 0.22);
 
   font-size: 1.03rem;
   font-weight: 600;
@@ -162,26 +159,22 @@
   opacity: 0;
   transform: translateY(18px);
 
-  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
 
   animation: donorEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: calc(var(--i) * 18ms);
 }
 .donor-card::before
 {
-  /* Restrained Brand Accent Styles. */
+  /* Subtle Top Highlight Styles. */
   content: "";
   position: absolute;
-  inset: 0 auto auto 0;
-  width: 100%;
-  height: 3px;
-  opacity: 0.8;
-  background: linear-gradient(
-    90deg,
-    #6fdb57,
-    #47ad32,
-    #6fdb57
-  );
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.30), transparent 35%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
 }
 .donor-card::after
 {
@@ -196,11 +189,38 @@
     transparent 45%
   );
 }
-.donor-card:hover { transform: translateY(-4px) scale(1.015); border-color: rgba(255, 255, 255, 0.30); background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.07)); box-shadow: 0 24px 54px rgba(0, 0, 0, 0.14); }
+.donor-card:hover { transform: translateY(-8px); border-color: rgba(255, 255, 255, 0.28); box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18); }
 .donor-card:hover::after { background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 65%); }
+.donor-grid
+{
+  margin-top: clamp(4rem, 8vw, 7rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  opacity: 0;
+
+  animation: donorGridReveal 0.5s ease forwards;
+}
+.donor-meta
+{
+  margin: 3rem auto 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.90rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.donor-divider
+{
+  width: 140px;
+  height: 1px;
+  margin: 3.5rem auto;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+}
 @keyframes donorEnter
 {
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px) scale(0.98); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
 }
 @keyframes donorGridReveal
 {
