@@ -1,18 +1,21 @@
-<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: July 2026 -->
-<section class="donor-wall">
-  <div class="donor-glow"></div>
-  <div class="donor-container">
-    <header class="donor-header">
-      <span class="donor-eyebrow">With Gratitude</span>
-      <h1 class="donor-title">Donor Wall</h1>
-      <p class="donor-subtitle">
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 28 July 2026 -->
+<section class="donor-wall" aria-labelledby="donor-wall-title">
+  <div class="donor-wall-ambient" aria-hidden="true"></div>
+  <div class="donor-wall-container">
+    <header class="donor-wall-header">
+      <span class="donor-wall-eyebrow">With Gratitude</span>
+      <h1 id="donor-wall-title" class="donor-wall-title">Donor Wall</h1>
+      <p class="donor-wall-subtitle">
         Celebrating the generosity of those who help move the mission
         forward and create lasting change throughout our community.
       </p>
     </header>
-    <div class="donor-meta"><span>49 supporters recognized</span></div>
-    <div class="donor-divider"></div>
-    <div id="donorGrid" class="donor-grid"></div>
+    <div class="donor-wall-meta" aria-label="Donor recognition">
+      <span class="donor-wall-count">49</span>
+      <span class="donor-wall-count-label">supporters recognized</span>
+    </div>
+    <div class="donor-wall-rule" aria-hidden="true"></div>
+    <div id="donorGrid" class="donor-grid" aria-label="Recognized donors"></div>
   </div>
 </section>
 
@@ -24,219 +27,248 @@
 ================================================== */
 .donor-wall
 {
-  --green-glass: rgba(255, 255, 255, 0.075);
-  --green-glass-hover: rgba(255, 255, 255, 0.13);
-  --border: rgba(255, 255, 255, 0.14);
-  --text: rgba(255, 255, 255, 0.96);
+  --brand: #47ad32;
+  --brand-deep: #2f7f25;
+  --brand-dark: #173b18;
 
-  --white: rgba(255, 255, 255, 0.96);
-  --soft: rgba(255, 255, 255, 0.70);
-  --line: rgba(255, 255, 255, 0.14);
+  --surface: #fbfaf6;
+  --surface-soft: #f3f5ef;
+
+  --text: #18301a;
+  --text-soft: #58705a;
+
+  --line: rgba(23, 59, 24, 0.11);
+  --line-strong: rgba(23, 59, 24, 0.18);
 
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(6rem, 9vw, 9rem) clamp(1.5rem, 4vw, 2rem);
+  padding: clamp(5.5rem, 9vw, 8.5rem) clamp(1rem, 4vw, 2rem);
 
   /* IMPORTANT:
      The outer page is already #47ad32.
      This creates a premium layered panel effect instead
      of stacking more aggressive greens. */
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.16), transparent 38%),
-              radial-gradient(circle at bottom, rgba(255, 255, 255, 0.08), transparent 55%),
-              linear-gradient(180deg, #56be42, #47ad32);
+  background: inear-gradient(180deg, #47ad32 0%, #43a82f 18%, #47ad32 100%);
 }
 
-/* Donor Wall Ambient Layer Styles. */
-.donor-glow
+/* Donor Wall Ambient Background Styles. */
+.donor-wall-ambient
 {
   position: absolute;
-  width: 700px;
-  height: 700px;
+  z-index: -1;
+
+  width: min(70vw, 760px);
+  aspect-ratio: 1;
+
+  top: -42%;
   left: 50%;
-  top: -420px;
   transform: translateX(-50%);
+
   border-radius: 50%;
   pointer-events: none;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.16),
-    transparent 65%
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.07) 32%,
+    transparent 68%
   );
-  filter: blur(20px);
-  z-index: -1;
 }
 .donor-wall::after
 {
   content: "";
   position: absolute;
+  z-index: -1;
   inset: 0;
   pointer-events: none;
   opacity: 0.035;
-  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 12px);
-  background-size: 32px 32px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.9) 0.5px, transparent 0.5px);
+  background-size: 7px 7px;
 }
-.donor-container
+.donor-wall-container
 {
-  position: relative;
-  z-index: 1;
-
-  width: 100%;
-  max-width: 1320px;
-  margin: auto;
+  width: min(100%, 1280px);
+  margin-inline: auto;
 }
-.donor-header
+.donor-wall-header
 {
-  max-width: 780px;
-  margin: auto;
+  width: min(100%, 760px);
+  margin-inline: auto;
   text-align: center;
 }
-.donor-eyebrow
+.donor-wall-eyebrow
 {
   display: inline-flex;
+  align-items: center;
+  gap: 0.70rem;
 
-  padding: 0.55rem 1.1rem;
-  margin-bottom: 1.25rem;
-
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-  backdrop-filter: blur(16px);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.25);
-
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  margin-bottom: 1.35rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.70rem;
+  font-weight: 750;
+  letter-spacing: 0.20em;
+  line-height: 1;
   text-transform: uppercase;
 }
-.donor-title
+.donor-wall-eyebrow::before,
+.donor-wall-eyebrow::after
+{
+  content: "";
+  width: 1.8rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.42);
+}
+.donor-wall-title
 {
   margin: 0;
-  margin-inline: auto;
-  max-width: 10ch;
-  color: var(--white);
+  color: #ffffff;
 
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 850;
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-}
-.donor-subtitle
-{
-  margin: 1.6rem auto 0;
-  max-width: 700px;
-
-  font-size: 1.05rem;
-  line-height: 1.9;
+  font-size: clamp(3.25rem, 8vw, 6.25rem);
+  font-weight: 800;
+  line-height: 0.90;
+  letter-spacing: -0.065em;
   text-wrap: balance;
-  color: var(--soft);
+}
+.donor-wall-subtitle
+{
+  width: min(100%, 650px);
+  margin: 1.7rem auto 0;
+
+  color: rgba(255, 255, 255, 0.76);
+
+  font-size: clamp(1rem, 1.5vw, 1.08rem);
+  line-height: 1.8;
+  text-wrap: balance;
+}
+.donor-wall-meta
+{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.60rem;
+
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.donor-wall-count
+{
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.donor-wall-count-label { opacity: 0.82; }
+.donor-wall-rule
+{
+  width: min(100%, 920px);
+  height: 1px;
+  margin: 2rem auto;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34) 20%, rgba(255, 255, 255, 0.34) 80%, transparent);
+}
+.donor-grid
+{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: 0 1.5rem 4rem rgba(20, 70, 20, 0.12);
+
+  animation: donorGridReveal 0.70s ease both;
 }
 .donor-card
 {
   position: relative;
-  min-height: 120px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.09);
-  backdrop-filter: blur(10px);
-  color: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10), inset 0 1px rgba(255, 255, 255, 0.22);
+  min-height: 104px;
+  padding: 1.25rem;
 
-  font-size: 1.03rem;
-  font-weight: 600;
-  letter-spacing: 0.015em;
-  line-height: 1.55;
+  border: 1px solid transparent;
+  border-radius: 0.95rem;
+  background: var(--surface);
+  color: var(--text);
+
+  font-size: 0.98rem;
+  font-weight: 650;
+  letter-spacing: -0.012em;
+  line-height: 1.45;
   text-align: center;
 
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.80) inset, 0 5px 18px rgba(22, 66, 22, 0.045);
+
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(10px);
 
-  transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 
-  animation: donorEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(var(--i) * 18ms);
+  animation: donorEnter 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i) * 24ms);
 }
 .donor-card::before
 {
   /* Subtle Top Highlight Styles. */
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.30), transparent 35%);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-}
-.donor-card::after
-{
-  /* Glass Sheen Styles. */
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.08),
-    transparent 45%
-  );
-}
-.donor-card:hover { transform: translateY(-8px); border-color: rgba(255, 255, 255, 0.28); box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18); }
-.donor-card:hover::after { background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 65%); }
-.donor-grid
-{
-  margin-top: clamp(4rem, 8vw, 7rem);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  opacity: 0;
+  top: 0.80rem;
+  left: 50%;
+  width: 1.5rem;
+  height: 2px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: var(--brand);
+  opacity: 0.50;
 
-  animation: donorGridReveal 0.5s ease forwards;
+  transition: width 180ms ease, opacity 180ms ease;
 }
-.donor-meta
-{
-  margin: 3rem auto 0;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.90rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.donor-divider
-{
-  width: 140px;
-  height: 1px;
-  margin: 3.5rem auto;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
-}
+.donor-card:hover { transform: translateY(-3px); border-color: var(--line); background: #ffffff; box-shadow: 0 12px 28px rgba(22, 66, 22, 0.09); }
+.donor-card:hover::before { width: 2.5rem; opacity: 0.90; }
+
 @keyframes donorEnter
 {
-  from { opacity: 0; transform: translateY(24px) scale(0.98); filter: blur(6px); }
-  to { opacity: 1; transform: none; filter: none; }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
 }
 @keyframes donorGridReveal
 {
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce)
 {
-  .donor-card { opacity: 1; transform: none; animation: none; }
-  .donor-card:hover { transform: none; }
+  .donor-grid, .donor-card { opacity: 1; transform: none; animation: none; }
+  .donor-card, .donor-card:hover { transform: none; transition: none; }
 }
-@media (max-width: 700px)
+
+@media (max-width: 1050px)
 {
-  .donor-wall { padding-inline: 1rem; }
-  .donor-grid { grid-template-columns: 1fr; }
-  .donor-card { min-height: 82px; border-radius: 24px; }
+  .donor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 720px)
+{
+  .donor-wall { padding-block: 4.5rem 5.5rem; }
+  .donor-wall-title { font-size: clamp(3rem, 15vw, 4.5rem); }
+  .donor-wall-subtitle { font-size: 0.98rem; line-height: 1.7; }
+  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.60rem; padding: 0.60rem; border-radius: 1.2rem; }
+  .donor-card { min-height: 92px; padding: 1rem 0.75rem; font-size: 0.90rem; }
+}
+@media (max-width: 460px)
+{
+  .donor-wall-eyebrow::before, .donor-wall-eyebrow::after, { width: 1.1rem; }
+  .donor-grid { grid-template-columns: 1fr;  }
+  .donor-card { min-height: 72px; }
 }
 </style>
 <script>
@@ -295,13 +327,22 @@ const donors = [
 ];
 const donorGrid = document.getElementById("donorGrid");
 
-donors.forEach((name, index) =>
+if (donorGrid)
 {
-  const card = document.createElement("article");
-  card.className = "donor-card";
-  card.style.setProperty("--i", index);
-  card.textContent = name;
+  donorGrid.replaceChildren();
 
-  donorGrid.appendChild(card);
-});
+  const fragment = document.createDocumentFragment();
+
+  donors.forEach((name, index) =>
+  {
+    const card = document.createElement("article");
+    card.className = "donor-card";
+    card.style.setProperty("--i", index);
+    card.textContent = name;
+
+    fragment.appendChild(card);
+  });
+
+  donorGrid.appendChild(fragment);
+}
 </script>
