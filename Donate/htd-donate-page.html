@@ -1,4 +1,4 @@
-<!-- HTD Donation Page. Designed by Kyle McColgan. May 2026. -->
+<!-- Filename: htd-donate-page.html. Designed by Kyle McColgan. Updated: 3 August 2026. -->
 <section class="donation-page">
   <div class="donation-container">
     <header class="donation-header">
@@ -32,8 +32,9 @@
   /* min-height causes shifting and enormous phantom whitespace below iframe. */
   padding: 72px 20px 32px;
 
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 32%),
-              radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.10), transparent 28%);
+  background: radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.18), transparent 34%),
+              radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.10), transparent 28%),
+              radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.08), transparent 42%);
 
   display: flex;
   align-items: flex-start; /* Keep the form at the top of the viewport. */
@@ -44,11 +45,12 @@
 
 /* Donation Page Main Layout Container Styles. */
 .donation-container {
-  width: 100%;
+  width: min(100%, 1080px);
+  margin-inline: auto;
   max-width: 900px;
   display: flex;
   flex-direction: column;
-  gap: 42px;
+  gap: 3rem;
   position: relative;
   z-index: 1;
 }
@@ -56,7 +58,7 @@
 /* Donation Header Content Styles. */
 .donation-header {
   text-align: center;
-  max-width: 760px;
+  max-width: 700px;
   margin: 0 auto;
 }
 .donation-eyebrow {
@@ -88,7 +90,7 @@
 
 .donation-header p {
   margin: 0 auto;
-  max-width: 640px;
+  max-width: 520px;
   font-size: 1.08rem;
   line-height: 1.85;
   color: rgba(255, 255, 255, 0.88);
@@ -96,10 +98,20 @@
 
 .donation-card {
   position: relative;
-  border-radius: 34px;
+  overflow: hidden;
+  border-radius: 32px;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.12));
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22), 0 10px 24px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.08));
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18), 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+.donation-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  pointer-events: none;
 }
 .donation-glow {
   /* Donation Page Soft Ambient Glow Styles. */
@@ -120,7 +132,8 @@
   width: 100%;
   height: 930px;
   overflow: hidden;
-  border-radius: 34px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 30px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98));
   backdrop-filter: blur(24px);
 }
@@ -138,18 +151,15 @@
 /* Donation Page Media Query Styles. */
 @media (max-width: 900px) {
   .donation-page { padding: 72px 18px; }
-  /*.donation-frame { height: 1020px; }*/
 }
 @media (max-width: 768px) {
   .donation-container { gap: 34px; }
   .donation-header h1 { line-height: 1.05; }
   .donation-header p { font-size: 1rem; line-height: 1.75; }
-  .donation-card, .donation-frame { border-radius: 24px; }
-  /*.donation-frame { height: 1100px; }*/
+  .donation-card, .donation-frame { border-radius: 22px; }
 }
 @media (max-width: 540px) {
   .donation-page { padding: 56px 14px; }
   .donation-eyebrow { font-size: 0.74rem; letter-spacing: 0.12em; }
-  /*.donation-frame { height: 1180px; }*/
 }
 </style>
