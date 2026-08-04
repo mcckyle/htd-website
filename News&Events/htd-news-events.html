@@ -1,4 +1,4 @@
-<!-- Filename: htd-news-events.html | Designed by Kyle McColgan | Updated: July 2026 -->
+<!-- Filename: htd-news-events.html | Designed by Kyle McColgan | Updated: 3 August 2026 -->
 <section id="newsEventsPage">
   <div class="news-events-shell">
     <header class="news-events-header">
@@ -50,11 +50,12 @@
   overflow: hidden;
 
   padding: 180px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   background: radial-gradient(
     circle at top,
-    rgba(71, 173, 50, 0.10),
-    transparent 45%),
-    linear-gradient(180deg, #191919 0%, #121212 100%);
+    rgba(71, 173, 50, 0.08),
+    transparent 42%),
+    linear-gradient(180deg, #191919, #141414 45%, #101010);
 }
 #newsEventsPage::before
 {
@@ -106,7 +107,7 @@
 
 /* Intro Paragraph Styles. */
 .events-intro {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
   font-size: 1.15rem;
   line-height: 1.9;
@@ -117,14 +118,18 @@
 .events-grid {
   display: grid;
   grid-template-columns: 1.6fr 0.9fr;
-  gap: 28px;
+  gap: 40px;
 }
 
 /* Base Event Card Styles. */
 .event-card {
   position: relative;
   overflow: hidden;
-  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 48px;
   border-radius: 28px;
 
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04));
@@ -134,13 +139,25 @@
 
   transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
+.event-card::before
+{
+  /* Interior Highlight Styles. */
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 35%);
+  pointer-events: none;
+}
 
 /* Card Hover Effects Styles. */
 .event-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px) scale(1.01);
   border-color: rgba(71, 173, 50, 0.35);
   box-shadow: 0 45px 90px rgba(0, 0, 0, 0.55);
 }
+
+.featured-card { background: linear-gradient(135deg, rgba(71, 173, 50, 0.08), rgba(255, 255, 255, 0.05)), rgba(255, 255, 255, 0.04); min-height: 420px; }
 .featured-card::before {
   content: "";
   position: absolute;
@@ -159,8 +176,10 @@
   top: -90px;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(71, 173, 50, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(71, 173, 50, 0.10), transparent 70%);
 }
+.event-card:not(.featured-card) { opacity: 0.88; }
+.event-card:not(.featured-card):hover { opacity: 1; }
 .event-badge {
   width: fit-content;
   padding: 8px 14px;
@@ -168,10 +187,15 @@
   background: rgba(71, 173, 50, 0.14);
   border: 1px solid rgba(71, 173, 50, 0.25);
   color: #7fdd69;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
 }
-.alt-badge { color: #555; }
+.event-badge.alt {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.65);
+}
 
 /* Event Card Title Styles. */
 .event-card h2 {
@@ -189,31 +213,20 @@
   font-size: 1rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.72);
-  margin-bottom: 2rem;
 }
 
 /* Event Card Links Button Styles. */
 .event-card a {
-  margin-top: auto;
-  width: fit-content;
-  padding: 14px 22px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.60rem;
+  text-decoration: none;
+  font-weight: 600;
 
-  transition: 0.30s;
+  transition: background 0.35s, transform 0.35s, border-color 0.35s;
 }
 .event-card a:hover { background: #47ad32; color: white; transform: translateX(4px); }
-.event-card a::after {
-  content: "";
-  width: 0%;
-  height: 1px;
-  background: #47ad32;
-
-  transition: width 0.25s ease;
-}
-.event-card a:hover::after { width: 100%; }
 
 /* Coming Soon Styles. */
 .coming-soon {
@@ -221,7 +234,7 @@
   padding: 10px 18px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
