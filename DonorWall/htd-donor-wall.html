@@ -1,4 +1,4 @@
-<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 28 July 2026 -->
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 3 August 2026 -->
 <section class="donor-wall" aria-labelledby="donor-wall-title">
   <div class="donor-wall-ambient" aria-hidden="true"></div>
   <div class="donor-wall-container">
@@ -49,7 +49,26 @@
      The outer page is already #47ad32.
      This creates a premium layered panel effect instead
      of stacking more aggressive greens. */
-  background: inear-gradient(180deg, #47ad32 0%, #43a82f 18%, #47ad32 100%);
+  background: linear-gradient(180deg, #47ad32 0%, #43a82f 18%, #47ad32 100%);
+}
+.donor-wall::before
+{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 45%);
+}
+.donor-wall::after
+{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.9) 0.5px, transparent 0.5px);
+  background-size: 7px 7px;
 }
 
 /* Donor Wall Ambient Background Styles. */
@@ -73,17 +92,6 @@
     rgba(255, 255, 255, 0.07) 32%,
     transparent 68%
   );
-}
-.donor-wall::after
-{
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.9) 0.5px, transparent 0.5px);
-  background-size: 7px 7px;
 }
 .donor-wall-container
 {
@@ -173,14 +181,15 @@
 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 1rem;
   margin-top: clamp(2.5rem, 5vw, 4.5rem);
-  padding: clamp(0.75rem, 1.5vw, 1rem);
+  padding: 0.90rem;
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.075);
-  box-shadow: 0 1.5rem 4rem rgba(20, 70, 20, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.75rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.10);
 
   animation: donorGridReveal 0.70s ease both;
 }
@@ -192,7 +201,7 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 104px;
+  min-height: 128px;
   padding: 1.25rem;
 
   border: 1px solid transparent;
@@ -200,9 +209,9 @@
   background: var(--surface);
   color: var(--text);
 
-  font-size: 0.98rem;
-  font-weight: 650;
-  letter-spacing: -0.012em;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.45;
   text-align: center;
 
@@ -210,30 +219,15 @@
 
   opacity: 0;
   transform: translateY(10px);
+  contain: layout paint;
 
   transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 
   animation: donorEnter 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(var(--i) * 24ms);
+  animation-delay: calc(var(--i) * 32ms);
 }
-.donor-card::before
-{
-  /* Subtle Top Highlight Styles. */
-  content: "";
-  position: absolute;
-  top: 0.80rem;
-  left: 50%;
-  width: 1.5rem;
-  height: 2px;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: var(--brand);
-  opacity: 0.50;
-
-  transition: width 180ms ease, opacity 180ms ease;
-}
-.donor-card:hover { transform: translateY(-3px); border-color: var(--line); background: #ffffff; box-shadow: 0 12px 28px rgba(22, 66, 22, 0.09); }
-.donor-card:hover::before { width: 2.5rem; opacity: 0.90; }
+.donor-card:hover { transform: translateY(-2px); border-color: var(--line); background: #ffffff; box-shadow: 0 14px 36px rgba(27, 63, 27, 0.08); }
+.donor-card:focus-visible { outline: 3px solid rgba(255, 255, 255, 0.50); outline-offset: 4px; }
 
 @keyframes donorEnter
 {
@@ -266,7 +260,7 @@
 }
 @media (max-width: 460px)
 {
-  .donor-wall-eyebrow::before, .donor-wall-eyebrow::after, { width: 1.1rem; }
+  .donor-wall-eyebrow::before, .donor-wall-eyebrow::after { width: 1.1rem; }
   .donor-grid { grid-template-columns: 1fr;  }
   .donor-card { min-height: 72px; }
 }
