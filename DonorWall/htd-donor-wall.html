@@ -1,20 +1,20 @@
-<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 3 August 2026 -->
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 10 August 2026 -->
 <section class="donor-wall" aria-labelledby="donor-wall-title">
-  <div class="donor-wall-ambient" aria-hidden="true"></div>
+  <div class="donor-wall-glow" aria-hidden="true"></div>
   <div class="donor-wall-container">
     <header class="donor-wall-header">
       <span class="donor-wall-eyebrow">With Gratitude</span>
       <h1 id="donor-wall-title" class="donor-wall-title">Donor Wall</h1>
       <p class="donor-wall-subtitle">
-        Celebrating the generosity of those who help move the mission
-        forward and create lasting change throughout our community.
+        Honoring the generosity of the people who help move our
+        mission forward and create lasting change throughout our community.
       </p>
     </header>
-    <div class="donor-wall-meta" aria-label="Donor recognition">
-      <span class="donor-wall-count">49</span>
-      <span class="donor-wall-count-label">supporters recognized</span>
+    <div class="donor-wall-summary" aria-label="Donor recognition summary">
+      <span class="donor-wall-count" id="donorCount">49</span>
+      <span class="donor-wall-summary-label">supporters recognized</span>
     </div>
-    <div class="donor-wall-rule" aria-hidden="true"></div>
+    <div class="donor-wall-divider" aria-hidden="true"></div>
     <div id="donorGrid" class="donor-grid" aria-label="Recognized donors"></div>
   </div>
 </section>
@@ -28,79 +28,57 @@
 .donor-wall
 {
   --brand: #47ad32;
-  --brand-deep: #2f7f25;
-  --brand-dark: #173b18;
+  --brand-deep: #318c25;
 
-  --surface: #fbfaf6;
-  --surface-soft: #f3f5ef;
+  --paper: #fbfaf7;
+  --paper-bright: #ffffff;
+  --paper-soft: #f3f4ef;
 
-  --text: #18301a;
-  --text-soft: #58705a;
-
-  --line: rgba(23, 59, 24, 0.11);
-  --line-strong: rgba(23, 59, 24, 0.18);
+  --ink: #17351b;
+  --ink-soft: #5a6d5c;
+  --white: #ffffff;
 
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(5.5rem, 9vw, 8.5rem) clamp(1rem, 4vw, 2rem);
+  padding: clamp(5.5rem, 10vw, 8.5rem) clamp(1rem, 4vw, 2rem) clamp(6rem, 10vw, 9rem);
 
   /* IMPORTANT:
      The outer page is already #47ad32.
      This creates a premium layered panel effect instead
      of stacking more aggressive greens. */
-  background: linear-gradient(180deg, #47ad32 0%, #43a82f 18%, #47ad32 100%);
+  background: linear-gradient(180deg, #47ad32 0%, #46aa31 48%, #47ad32 100%);
 }
 .donor-wall::before
 {
+  /* Donor Wall Ambient Light Styles. */
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 45%);
+  background: radial-gradient(circle at 50% -15%, rgba(255, 255, 255, 0.18), transparent 38%);
 }
-.donor-wall::after
-{
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.9) 0.5px, transparent 0.5px);
-  background-size: 7px 7px;
-}
-
-/* Donor Wall Ambient Background Styles. */
-.donor-wall-ambient
+.donor-wall-glow
 {
   position: absolute;
-  z-index: -1;
-
-  width: min(70vw, 760px);
+  width: min(55vw, 760px);
   aspect-ratio: 1;
-
   top: -42%;
   left: 50%;
   transform: translateX(-50%);
-
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.16) 0%,
-    rgba(255, 255, 255, 0.07) 32%,
-    transparent 68%
-  );
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.055) 38%, transparent 70%);
 }
 .donor-wall-container
 {
-  width: min(100%, 1280px);
+  position: relative;
+  width: min(100%, 1240px);
   margin-inline: auto;
 }
 .donor-wall-header
 {
-  width: min(100%, 760px);
+  width: min(100%, 720px);
   margin-inline: auto;
   text-align: center;
 }
@@ -112,9 +90,9 @@
 
   margin-bottom: 1.35rem;
   color: rgba(255, 255, 255, 0.82);
-  font-size: 0.70rem;
-  font-weight: 750;
-  letter-spacing: 0.20em;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -122,16 +100,16 @@
 .donor-wall-eyebrow::after
 {
   content: "";
-  width: 1.8rem;
+  width: 1.7rem;
   height: 1px;
   background: rgba(255, 255, 255, 0.42);
 }
 .donor-wall-title
 {
   margin: 0;
-  color: #ffffff;
+  color: var(--white);
 
-  font-size: clamp(3.25rem, 8vw, 6.25rem);
+  font-size: clamp(3.4rem, 8vw, 6.2rem);
   font-weight: 800;
   line-height: 0.90;
   letter-spacing: -0.065em;
@@ -139,104 +117,102 @@
 }
 .donor-wall-subtitle
 {
-  width: min(100%, 650px);
-  margin: 1.7rem auto 0;
+  width: min(100%, 640px);
+  margin: 1.75rem auto 0;
 
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(255, 255, 255, 0.78);
 
-  font-size: clamp(1rem, 1.5vw, 1.08rem);
+  font-size: clamp(1rem, 1.4vw, 1.08rem);
   line-height: 1.8;
   text-wrap: balance;
 }
-.donor-wall-meta
+.donor-wall-summary
 {
   display: flex;
   align-items: baseline;
   justify-content: center;
   gap: 0.60rem;
 
-  margin-top: clamp(3rem, 5vw, 4.5rem);
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  margin-top: clamp(3.25rem, 5vw, 4.75rem);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  line-height: 1;
   text-transform: uppercase;
 }
 .donor-wall-count
 {
-  color: #ffffff;
-  font-size: 1.1rem;
+  color: var(--white);
+  font-size: 1.15rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
-.donor-wall-count-label { opacity: 0.82; }
-.donor-wall-rule
+.donor-wall-summary-label { opacity: 0.86; }
+.donor-wall-divider
 {
-  width: min(100%, 920px);
+  width: min(100%, 900px);
   height: 1px;
-  margin: 2rem auto;
+  margin: 2rem auto 0;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34) 20%, rgba(255, 255, 255, 0.34) 80%, transparent);
 }
 .donor-grid
 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: clamp(2.5rem, 5vw, 4.5rem);
-  padding: 0.90rem;
+  gap: 0.75rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: 0.80rem;
 
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 1.75rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.05));
-  backdrop-filter: blur(10px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.085);
+  box-shadow: 0 24px 70px rgba(17, 58, 18, 0.12);
 
-  animation: donorGridReveal 0.70s ease both;
+  animation: donor-grid-enter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .donor-card
 {
-  position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-  min-height: 128px;
-  padding: 1.25rem;
+  min-height: 118px;
+  padding: 1.25rem 1rem;
 
-  border: 1px solid transparent;
-  border-radius: 0.95rem;
-  background: var(--surface);
-  color: var(--text);
+  border: 1px solid rgba(23, 53, 27, 0.055);
+  border-radius: 0.85rem;
+  background: var(--paper);
+  color: var(--ink);
 
-  font-size: 1rem;
+  font-size: 0.96rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.45;
+  letter-spacing: -0.018em;
+  line-height: 1.4;
   text-align: center;
 
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.80) inset, 0 5px 18px rgba(22, 66, 22, 0.045);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.90) inset, 0 5px 18px rgba(23, 53, 27, 0.045);
 
   opacity: 0;
   transform: translateY(10px);
   contain: layout paint;
 
-  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 
-  animation: donorEnter 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(var(--i) * 32ms);
+  animation: donor-card-enter 560ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i) * 28ms);
 }
-.donor-card:hover { transform: translateY(-2px); border-color: var(--line); background: #ffffff; box-shadow: 0 14px 36px rgba(27, 63, 27, 0.08); }
-.donor-card:focus-visible { outline: 3px solid rgba(255, 255, 255, 0.50); outline-offset: 4px; }
+.donor-card:hover { transform: translateY(-2px); border-color: rgba(23, 53, 27, 0.09); background: var(--paper-bright); box-shadow: 0 12px 30px rgba(23, 53, 27, 0.075); }
+.donor-card:focus-visible { outline: 3px solid rgba(255, 255, 255, 0.65); outline-offset: 4px; }
 
-@keyframes donorEnter
-{
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: none; }
-}
-@keyframes donorGridReveal
+@keyframes donor-grid-enter
 {
   from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes donor-card-enter
+{
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: none; }
 }
 
@@ -252,27 +228,28 @@
 }
 @media (max-width: 720px)
 {
-  .donor-wall { padding-block: 4.5rem 5.5rem; }
+  .donor-wall { padding-block: 4.75rem 5.5rem; }
   .donor-wall-title { font-size: clamp(3rem, 15vw, 4.5rem); }
-  .donor-wall-subtitle { font-size: 0.98rem; line-height: 1.7; }
-  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.60rem; padding: 0.60rem; border-radius: 1.2rem; }
-  .donor-card { min-height: 92px; padding: 1rem 0.75rem; font-size: 0.90rem; }
+  .donor-wall-subtitle { font-size: 0.96rem; line-height: 1.72; }
+  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; padding: 0.55rem; border-radius: 1.2rem; }
+  .donor-card { min-height: 92px; padding: 1rem 0.70rem; font-size: 0.88rem; }
 }
 @media (max-width: 460px)
 {
   .donor-wall-eyebrow::before, .donor-wall-eyebrow::after { width: 1.1rem; }
-  .donor-grid { grid-template-columns: 1fr;  }
-  .donor-card { min-height: 72px; }
+  .donor-wall-summary { gap: 0.45rem; font-size: 0.62rem; }
+  .donor-grid { grid-template-columns: 1fr; border-radius: 1rem; }
+  .donor-card { min-height: 70px; }
 }
 </style>
 <script>
+/* Donors has 50 donors currently... */
 const donors = [
   "Susie Nuccio",
   "Melissa Childers",
   "Myndi Funes",
   "Kelly Guerra",
   "Alex & Nila Paradowski",
-  /* Continue for all 49 donors... */
   "Jeremy & Erin Lee",
   "Katy Keller",
   "Khushboo Matta",
@@ -320,6 +297,7 @@ const donors = [
   "Kenneth Johnson",
 ];
 const donorGrid = document.getElementById("donorGrid");
+const donorCount = document.getElementById("donorCount");
 
 if (donorGrid)
 {
@@ -338,5 +316,10 @@ if (donorGrid)
   });
 
   donorGrid.appendChild(fragment);
+
+  if (donorCount)
+  {
+    donorCount.textContent = donors.length;
+  }
 }
 </script>
