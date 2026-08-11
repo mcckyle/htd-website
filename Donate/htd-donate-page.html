@@ -1,108 +1,157 @@
-<!-- Filename: htd-donate-page.html. Designed by Kyle McColgan. Updated: 3 August 2026. -->
-<section class="donation-page">
+<!-- Filename: htd-donate-page.html. Designed by Kyle McColgan. Updated: 11 August 2026. -->
+<section class="donation-page" aria-labelledby="donation-title">
   <div class="donation-container">
     <header class="donation-header">
       <span class="donation-eyebrow">Highway to Destiny</span>
-      <h1>Fuel Hope. Empower Communities.</h1>
+      <h1 class="donation-title">
+        Fuel Hope.<br>
+        Empower Communities.
+      </h1>
       <p>
-        Every donation helps us continue serving the unhoused,
-        and creates meaningful impact throughout the community.
+        Every contribution helps us continue serving the unhoused
+        and creates meaningful impact throughout our community.
       </p>
     </header>
 
     <div class="donation-card">
-      <div class="donation-glow"></div>
-        <div class="donation-frame">
-          <iframe
-              title='Donation form powered by Zeffy'
-              src='https://www.zeffy.com/en-US/embed/donation-form/3f326bdb-8e31-44af-8e64-d4a5f1c356b4'
-              allowpaymentrequest
-              allowTransparency="true"
-          ></iframe>
+      <div class="donation-frame">
+        <iframe
+            title='Donation form powered by Zeffy'
+            src='https://www.zeffy.com/en-US/embed/donation-form/3f326bdb-8e31-44af-8e64-d4a5f1c356b4'
+            allowpaymentrequest
+            allowTransparency="true"
+        ></iframe>
         </div>
       </div>
+      <p class="donation-note">
+        Your generosity helps turn compassion into action.
+      </p>
   </div>
 </section>
 
 <style>
 /* Donation Page Foundation Styles. */
 .donation-page {
+  --donation-green: #47ad32;
+  --donation-green-deep: #26751d;
+  --donation-ink: #142015;
+
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  /* min-height causes shifting and enormous phantom whitespace below iframe. */
-  padding: 72px 20px 32px;
-
-  background: radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.18), transparent 34%),
-              radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.10), transparent 28%),
-              radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.08), transparent 42%);
-
-  display: flex;
-  align-items: flex-start; /* Keep the form at the top of the viewport. */
-  justify-content: center;
   box-sizing: border-box;
+  /* min-height causes shifting and enormous phantom whitespace below iframe. */
+  padding: clamp(64px, 8vw, 108px) 20px clamp(48px, 6vw, 80px);
+
+  background: radial-gradient(circle at 50% 0%, rgba(71, 173, 50, 0.16), transparent 38%),
+              linear-gradient(180deg, #47ad32 0%, #3fa42d 42%, #38972a 100%);
+  color: #ffffff;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.donation-page::before {
+  /* Donation Page Ambient Light Styles. */
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: min(700px, 90vw);
+  height: min(700px, 90vw);
+  top: -420px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  filter: blur(20px);
+  pointer-events: none;
+}
+.donation-page::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 520px;
+  height: 520px;
+  right: -300px;
+  bottom: -280px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  filter: blur(40px);
+  pointer-events: none;
 }
 
 /* Donation Page Main Layout Container Styles. */
 .donation-container {
-  width: min(100%, 1080px);
+  width: min(100%, 980px);
   margin-inline: auto;
-  max-width: 900px;
+
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  align-items: stretch;
   position: relative;
-  z-index: 1;
 }
 
 /* Donation Header Content Styles. */
 .donation-header {
+  width: min(100%, 720px);
+  margin: 0 auto clamp(38px, 5vw, 56px);
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
 }
 .donation-eyebrow {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
+
   margin-bottom: 22px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+.donation-eyebrow::before,
+.donation-eyebrow::after
+{
+  content: "";
+  width: 28px;
+  height: 1px;
+  margin-inline: 12px;
+  background: rgba(255, 255, 255, 0.42);
 }
 
 .donation-header h1 {
-  margin: 0 0 20px;
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: -0.05em;
+  margin: 0;
+
   color: #ffffff;
+
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
   text-wrap: balance;
 }
 
 .donation-header p {
-  margin: 0 auto;
-  max-width: 520px;
-  font-size: 1.08rem;
-  line-height: 1.85;
+  width: min(100%, 590px);
+  margin: 26px auto 0;
   color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  line-height: 1.75;
+  text-wrap: balance;
 }
 
 .donation-card {
   position: relative;
-  overflow: hidden;
-  border-radius: 32px;
-  padding: 1px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.08));
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18), 0 8px 24px rgba(0, 0, 0, 0.10);
+  width: 100%;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 32px 80px rgba(17, 55, 14, 0.24), 0 8px 28px rgba(17, 55, 14, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 .donation-card::before {
   content: "";
@@ -113,18 +162,6 @@
   backdrop-filter: blur(18px);
   pointer-events: none;
 }
-.donation-glow {
-  /* Donation Page Soft Ambient Glow Styles. */
-  position: absolute;
-  inset: auto;
-  width: 320px;
-  height: 320px;
-  right: -80px;
-  top: -80px;
-  background: rgba(255, 255, 255, 0.18);
-  filter: blur(80px);
-  pointer-events: none;
-}
 
 /* Donation Page Zeffy Frame Styles. */
 .donation-frame {
@@ -132,34 +169,61 @@
   width: 100%;
   height: 930px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98));
-  backdrop-filter: blur(24px);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* Donation Page Zeffy iframe Styles. */
 .donation-frame iframe {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
-  background: transparent;
+  background: #ffffff;
+}
+
+.donation-note
+{
+  margin: 22px auto 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+  .donation-page::before, .donation-page::after { filter: none; }
 }
 
 /* Donation Page Media Query Styles. */
-@media (max-width: 900px) {
-  .donation-page { padding: 72px 18px; }
+@media (max-width: 900px)
+{
+  .donation-page { padding-inline: 16px; }
+  .donation-card { padding: 5px; border-radius: 24px; }
+  .donation-frame { border-radius: 19px; }
 }
-@media (max-width: 768px) {
-  .donation-container { gap: 34px; }
-  .donation-header h1 { line-height: 1.05; }
-  .donation-header p { font-size: 1rem; line-height: 1.75; }
-  .donation-card, .donation-frame { border-radius: 22px; }
+@media (max-width: 700px)
+{
+  .donation-header { margin-bottom: 34px; }
+  .donation-header h1 { line-height: 1.02; }
+  .donation-header p { margin-top: 22px; line-height: 1.7; }
+  .donation-frame { height: 900px; }
 }
-@media (max-width: 540px) {
-  .donation-page { padding: 56px 14px; }
-  .donation-eyebrow { font-size: 0.74rem; letter-spacing: 0.12em; }
+@media (max-width: 520px)
+{
+  .donation-page { padding: 52px 12px 48px; }
+  .donation-eyebrow { margin-bottom: 18px; font-size: 0.68rem; letter-spacing: 0.14em; }
+  .donation-eyebrow::before, .donation-eyebrow::after { width: 20px; margin-inline: 8px; }
+  .donation-header h1 { font-size: clamp(2.35rem, 12vw, 3.4rem); letter-spacing: -0.05em; }
+  .donation-header p { font-size: 0.96rem; }
+  .donation-card { padding: 4px; border-radius: 20px; }
+  .donation-frame { height: 880px; border-radius: 16px; }
+  .donation-note { font-size: 0.78rem; }
 }
 </style>
