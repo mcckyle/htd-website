@@ -1,0 +1,287 @@
+<!-- Filename: htd-impact-banner.html. Designed by Kyle McColgan. Updated: 11 August 2026. -->
+<section class="impact-ribbon" aria-labelledby="impact-ribbon-title">
+  <div class="impact-ribbon-header">
+    <span class="impact-ribbon-eyebrow" id="impact-ribbon-title">
+      By the numbers
+    </span>
+    <span class="impact-ribbon-rule" aria-hidden="true"></span>
+    <span class="impact-ribbon-context">Unhoused in America</span>
+  </div>
+
+  <div class="impact-ribbon-viewport">
+    <div class="impact-ribbon-track">
+      <article class="impact-item">
+        <strong class="impact-item-number">771,480</strong>
+        <span class="impact-item-copy">
+          people experienced homelessness in the U.S. on a single night in 2024.
+        </span>
+      </article>
+
+      <span class="impact-divider" aria-hidden="true"></span>
+
+      <article class="impact-item">
+        <strong class="impact-item-number">18%</strong>
+        <span class="impact-item-copy">
+          increase in homelessness compared with 2023.
+        </span>
+      </article>
+
+      <span class="impact-divider" aria-hidden="true"></span>
+
+      <article class="impact-item">
+        <strong class="impact-item-number">150,000</strong>
+        <span class="impact-item-copy">
+          children under 18 experienced homelessness on that same night.
+        </span>
+      </article>
+
+      <span class="impact-divider" aria-hidden="true"></span>
+
+      <article class="impact-item">
+        <strong class="impact-item-number">39%</strong>
+        <span class="impact-item-copy">
+          increase in people in families with children experiencing homelessness.
+        </span>
+      </article>
+
+      <!-- Seamless loop... -->
+      <article class="impact-item">
+        <strong class="impact-item-number">771,480</strong>
+        <span class="impact-item-copy">
+          people experienced homelessness in the U.S. on a single night in 2024.
+        </span>
+      </article>
+
+      <span class="impact-divider" aria-hidden="true"></span>
+
+      <article class="impact-item">
+        <strong class="impact-item-number">18%</strong>
+        <span class="impact-item-copy">
+          increase in homelessness compared with 2023.
+        </span>
+      </article>
+
+      <span class="impact-divider" aria-hidden="true"></span>
+
+      <article class="impact-item">
+        <strong class="impact-item-number">150,000</strong>
+        <span class="impact-item-copy">
+          children under 18 experienced homelessness on that same night.
+        </span>
+      </article>
+
+      <span class="impact-divider" aria-hidden="true"></span>
+
+      <article class="impact-item">
+        <strong class="impact-item-number">39%</strong>
+        <span class="impact-item-copy">
+          increase in people in families with children experiencing homelessness.
+        </span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="impact-sources">
+  <span>Data:</span>
+  <a href="https://www.huduser.gov/portal/publications/2024-ahar-part-1-pit-estimates-of-homelessness.html" target="_blank" rel="noopener noreferrer">
+    HUD 2024 Annual Homeless Assessment Report
+  </a>
+  <span aria-hidden="true">·</span>
+  <a href="https://icalliances.org/mo-federal-reports" target="_blank" rel="noopener noreferrer">
+    Institute for Community Alliances
+  </a>
+</div>
+
+<style>
+/* HIGHWAY TO DESTINY IMPACT RIBBON STYLES. */
+.impact-ribbon {
+  --impact-green: #47ad32;
+  --impact-green-bright: #65c94e;
+  --impact-ink: #101512;
+  --impact-muted: rgba(255, 255, 255, 0.66);
+  --impact-line: rgba(255, 255, 255, 0.13);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background: radial-gradient(circle at 50% -100%, rgba(71, 173, 50, 0.24), transparent 58%), var(--impact-ink);
+  color: #ffffff;
+  border-top: 1px solid rgba(71, 173, 50, 0.42);
+  isolation: isolate;
+}
+
+/* Impact Ribbon Ambient Light Styles. */
+.impact-ribbon::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 40rem;
+  height: 40rem;
+  top: -36rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(71, 173, 50, 0.10);
+  filter: blur(80px);
+  pointer-events: none;
+}
+.impact-ribbon-header
+{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(100% - 48px, 1500px);
+  margin: 0 auto;
+  padding: 20px 0 16px;
+  font-family: "Inter", sans-serif;
+}
+.impact-ribbon-eyebrow
+{
+  color: var(--impact-green-bright);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.impact-ribbon-rule
+{
+  width: 34px;
+  height: 2px;
+  background: rgba(71, 173, 50, 0.48);
+  flex: 0 0 auto;
+}
+.impact-ribbon-context
+{
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.impact-ribbon-viewport
+{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 24px 0 34px;
+}
+.impact-ribbon-viewport::before,
+.impact-ribbon-viewport::after
+{
+  /* Impact Ribbon Soft Edge Fades Styles. */
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  pointer-events: none;
+}
+.impact-ribbon-viewport::before
+{
+  left: 0;
+  background: linear-gradient(90deg, var(--impact-ink), transparent);
+}
+.impact-ribbon-viewport::after
+{
+  right: 0;
+  background: linear-gradient(270deg, var(--impact-ink), transparent);
+}
+
+.impact-ribbon-track {
+    display: flex;
+    align-items: stretch;
+    width: max-content;
+    will-change: transform;
+
+    animation: impactRibbonScroll 70s linear infinite;
+}
+.impact-ribbon-track:hover { animation-play-state: paused; }
+
+.impact-item {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 500px;
+  padding: 0 56px;
+  box-sizing: border-box;
+}
+.impact-item-number {
+  flex: 0 0 auto;
+  color: var(--impact-green-bright);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+  white-space: nowrap;
+}
+.impact-item-copy {
+  max-width: 270px;
+  color: var(--impact-muted);
+  font-family: "Merriweather", serif;
+  font-size: 0.90rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.impact-divider
+{
+  width: 1px;
+  height: 42px;
+  align-self: center;
+  background: var(--impact-line);
+  flex: 0 0 auto;
+}
+
+.impact-sources {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 11px 20px 18px;
+  background: #ffffff;
+  color: #777;
+  font-family: "Inter", sans-serif;
+  font-size: 0.70rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+.impact-sources a { color: #5b8f50; text-decoration: none; transition: color 160ms ease, opacity 160ms ease; }
+.impact-sources a:hover, .impact-source a:focus-visible { color: #47ad32; text-decoration: underline; }
+
+/* Scroll animation */
+@keyframes impactRibbonScroll {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+  .impact-ribbon-track { transform: none; animation: none; }
+}
+
+/* Impact Ribbon Media Query Styles. */
+@media (max-width: 900px)
+{
+  .impact-ribbon-header { width: min(100% - 36px, 1500px); }
+  .impact-item { width: 430px; padding: 0 42px; }
+  .impact-item-copy { max-width: 230px; }
+}
+@media (max-width: 640px)
+{
+  .impact-ribbon-header { padding: 17px 0 13px; }
+  .impact-ribbon-context { display: none; }
+  .impact-ribbon-viewport { padding: 21px 0 28px; }
+  .impact-ribbon-viewport::before, .impact-ribbon-viewport::after { width: 42px; }
+  .impact-item { width: 320px; gap: 14px; padding: 0 28px; }
+  .impact-item-number { font-size: 2rem; }
+  .impact-item-copy { max-width: 175px; font-size: 0.76rem; line-height: 1.5; }
+  .impact-divider { height: 32px; }
+  .impact-sources { padding-inline: 16px; }
+}
+</style>
