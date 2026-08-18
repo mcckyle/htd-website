@@ -1,4 +1,4 @@
-<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 10 August 2026 -->
+<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 18 August 2026 -->
 <section class="partners-section" aria-labelledby="partners-title">
   <div class="partners-glow" aria-hidden="true"></div>
   <div class="partners-shell">
@@ -140,11 +140,11 @@
 .partners-section
 {
   --partners-green: #47ad32;
-  --partners-ink: #182019;
-  --partners-muted: #687269;
+  --partners-ink: #172019;
+  --partners-muted: #68736b;
   --partners-background: #f5f7f3;
   --partners-surface: #ffffff;
-  --partners-line: rgba(24, 32, 25, 0.085);
+  --partners-line: rgba(23, 32, 25, 0.075);
 
   position: relative;
   isolation: isolate;
@@ -153,8 +153,8 @@
   padding: clamp(88px, 10vw, 144px) 24px;
 
   background: radial-gradient(
-    circle at 50% 0%,
-    rgba(71, 173, 50, 0.075),
+    circle at 50% -10%,
+    rgba(71, 173, 50, 0.085),
     transparent 38%
   ),
   var(--partners-background);
@@ -162,13 +162,13 @@
 .partners-glow
 {
   position: absolute;
-  top: -260px;
+  top: -340px;
   left: 50%;
   width: min(900px, 90vw);
   aspect-ratio: 1;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(71, 173, 50, 0.07), transparent 68%);
+  background: radial-gradient(circle, rgba(71, 173, 50, 0.075), transparent 68%);
   pointer-events: none;
   z-index: -1;
 }
@@ -182,16 +182,16 @@
   margin: 0 0 18px;
   color: var(--partners-green);
 
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 800;
   line-height: 1.2;
-  letter-spacing: 0.19em;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
 }
 .partners-eyebrow::before
 {
   content: "";
-  width: 24px;
+  width: 22px;
   height: 2px;
   border-radius: 999px;
   background: currentColor;
@@ -203,10 +203,10 @@
   margin: 0;
   color: var(--partners-ink);
 
-  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-size: clamp(2.65rem, 5vw, 4.4rem);
   font-weight: 800;
   line-height: 0.98;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.052em;
   text-wrap: balance;
 }
 
@@ -215,7 +215,7 @@
 {
   content: "";
   display: block;
-  width: 42px;
+  width: 40px;
   height: 3px;
   margin: 24px auto 0;
 
@@ -239,13 +239,13 @@
 .partners-wall
 {
   position: relative;
-  padding: clamp(12px, 1.5vw, 20px);
-  border: 1px solid rgba(24, 32, 25, 0.08);
-  border-radius: clamp(22px, 3vw, 34px);
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 32px 80px rgba(25, 45, 27, 0.08), 0 8px 24px rgba(25, 45, 27, 0.04);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  padding: clamp(10px, 1.4vw, 18px);
+  border: 1px solid rgba(23, 32, 25, 0.075);
+  border-radius: clamp(22px, 3vw, 32px);
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 34px 90px rgba(25, 45, 27, 0.075), 0 8px 26px rgba(25, 45, 27, 0.035);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 /* Partners Grid Styles. */
@@ -255,7 +255,7 @@
   grid-template-columns: repeat(5, minmax(0, 1fr));
   overflow: hidden;
   border: 1px solid var(--partners-line);
-  border-radius: clamp(14px, 2vw, 22px);
+  border-radius: clamp(14px, 2vw, 21px);
   background: var(--partners-surface);
 }
 
@@ -275,18 +275,14 @@
   text-decoration: none;
 
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
 
-  transition: opacity 500ms ease, transform 500ms ease, background-color 180ms ease,;
+  transition: opacity 460ms ease, transform 460ms ease, background-color 180ms ease;
 }
 .partner:not(:nth-child(5n)) { border-right: 1px solid var(--partners-line); }
-.partner::nth-child(n + 6) { border-top: 1px solid var(--partners-line); }
+.partner:nth-child(n + 6) { border-top: 1px solid var(--partners-line); }
 .partner-visible { opacity: 1; transform: none; }
-.partner:hover
-{
-  z-index: 1;
-  background: #fcfdfb;
-}
+.partner:hover { z-index: 1; background: #fcfdfb; }
 .partner:focus-visible
 {
   z-index: 2;
@@ -303,7 +299,8 @@
   height: 72px;
   object-fit: contain;
 
-  filter: grayscale(1) saturate(0) opacity(0.62);
+  filter: grayscale(1) saturate(0) opacity(0.60);
+  transform: scale(1);
 
   transition: filter 220ms ease, transform 220ms ease;
 }
@@ -321,10 +318,10 @@
   gap: 14px;
   margin: 30px 0 0;
   color: var(--partners-muted);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 800;
   line-height: 1.4;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -335,7 +332,7 @@
   content: "";
   width: 24px;
   height: 1px;
-  background: rgba(24, 32, 25, 0.18);
+  background: rgba(23, 32, 25, 0.18);
 }
 
 /* Media Query Styles. */
@@ -367,7 +364,7 @@
   .partners-wall { padding: 6px; border-radius: 17px; }
   .partner { min-height: 112px; padding: 16px 10px; }
   .partner img { width: min(100%, 112px); height: 54px; }
-  .partners-note { gap: 10px; font-size: 0.70rem; }
+  .partners-note { gap: 10px; font-size: 0.68rem; }
 }
 
 @media (prefers-reduced-motion: reduce)
@@ -379,7 +376,8 @@
 
 <script>
 //Animate fade-in for a polished look.
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () =>
+{
   const partners = document.querySelectorAll(".partner");
 
   if (!partners.length)
@@ -392,7 +390,9 @@ document.addEventListener("DOMContentLoaded", () => {
     partner.classList.add("partner-visible");
   };
 
-  if ((window.matchMedia("(prefers-reduced-motion: reduce)").matches) || !("IntersectionObserver" in window))
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if ((reducedMotion) || !("IntersectionObserver" in window))
   {
     partners.forEach(revealPartner);
     return;
@@ -412,8 +412,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
 
-  partners.forEach((partner) =>
+  partners.forEach((partner, index) =>
   {
+    partner.style.transitionDelay = `${Math.min(index * 18, 180)}ms`;
     observer.observe(partner);
   });
 });
