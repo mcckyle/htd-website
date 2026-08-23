@@ -1,36 +1,40 @@
-<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 17 August 2026 -->
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 23 August 2026 -->
 <section class="donor-wall" aria-labelledby="donor-wall-title">
-  <div class="donor-wall-hero">
+  <header class="donor-wall-hero">
     <div class="donor-wall-hero-glow" aria-hidden="true"></div>
     <div class="donor-wall-container">
-      <header class="donor-wall-header">
+      <div class="donor-wall-heading">
         <span class="donor-wall-eyebrow">With Gratitude</span>
         <h1 id="donor-wall-title" class="donor-wall-title">Donor Wall</h1>
         <p class="donor-wall-subtitle">
           Honoring the generosity of the people who help move our
           mission forward and create lasting change throughout our community.
         </p>
-      </header>
+      </div>
 
-      <div class="donor-wall-summary" aria-label="Donor recognition summary">
-        <span class="donor-wall-count" id="donorCount">50</span>
-        <span class="donor-wall-summary-label">supporters recognized</span>
+      <div class="donor-wall-stat" aria-label="Donor recognition summary">
+        <strong id="donorCount">50</strong>
+        <span>supporters recognized</span>
       </div>
     </div>
-  </div>
-  <div class="donor-wall-content">
+  </header>
+  <main class="donor-wall-content">
     <div class="donor-wall-container">
-      <div class="donor-wall-intro">
-      <span class="donor-wall-intro-label">Our supporters</span>
-      <p class="donor-wall-intro-copy">
-        Every contribution helps strengthen our community and move
-        Highway to Destiny forward.
-      </p>
-    </div>
+      <div class="donor-wall-section-heading">
+        <span class="donor-wall-section-label">Our supporters</span>
+        <div class="donor-wall-section-line" aria-hidden="true"></div>
+        <p class="donor-wall-section-copy">
+          Every contribution helps strengthen our community and
+          move Highway to Destiny forward.
+        </p>
+      </div>
     <div id="donorGrid" class="donor-grid" aria-label="Recognized donors"></div>
-    <p class="donor-wall-thanks">Thank you for believing in the mission.</p>
+    <div class="donor-wall-closing">
+      <span class="donor-wall-closing-rule" aria-hidden="true"></span>
+      <p>Thank you for believing in the mission.</p>
     </div>
-  </div>
+    </div>
+  </main>
 </section>
 
 <style>
@@ -41,14 +45,12 @@
 {
   --brand: #47ad32;
   --brand-deep: #328d26;
-  --brand-dark: #173b18;
 
-  --paper: #f7f6f1;
-  --paper-bright: #ffffff;
-  --paper-soft: #eeefe9;
+  --paper: #f7f7f3;
+  --white: #ffffff;
 
-  --ink: #19321b;
-  --ink-soft: #637064;
+  --ink: #18331a;
+  --ink-soft: #647165;
 
   position: relative;
   isolation: isolate;
@@ -60,41 +62,40 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(5.75rem, 10vw, 8.5rem) clamp(1rem, 4vw, 2rem) clamp(7rem, 11vw, 10rem);
-  background: linear-gradient(180deg, #47ad32 0%, #45a931 100%);
-  color: #ffffff;
+  padding: clamp(5.5rem, 10vw, 8rem) clamp(1rem, 4vw, 2rem) clamp(5rem, 8vw, 6.5rem);
+  background: var(--brand);
+  color: var(--white);
 }
 .donor-wall-hero::after
 {
   content: "";
   position: absolute;
   z-index: 0;
-  left: 50%;
-  bottom: -1px;
-  width: min(1200px, 90%);
+  right: 0;
+  bottom: 0;
+  left: 0;
   height: 1px;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.24), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25) 25%, rgba(255, 255, 255, 0.25) 75%, transparent);
 }
 .donor-wall-hero-glow
 {
   position: absolute;
   z-index: -1;
-  width: min(70vw, 850px);
+  width: min(65vw, 820px);
   aspect-ratio: 1;
-  top: -55%;
+  top: -58%;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.17) 0%, rgba(255, 255, 255, 0.055) 38%, transparent 68%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.055) 38%, transparent 68%);
 }
 .donor-wall-container
 {
-  width: min(100%, 1240px);
+  width: min(100%, 1120px);
   margin-inline: auto;
 }
-.donor-wall-header
+.donor-wall-heading
 {
   width: min(100%, 720px);
   margin-inline: auto;
@@ -106,9 +107,9 @@
   align-items: center;
   gap: 0.70rem;
 
-  margin-bottom: 1.40rem;
+  margin-bottom: 1.35rem;
   color: rgba(255, 255, 255, 0.82);
-  font-size: 0.67rem;
+  font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.22em;
   line-height: 1;
@@ -118,16 +119,16 @@
 .donor-wall-eyebrow::after
 {
   content: "";
-  width: 1.65rem;
+  width: 1.55rem;
   height: 1px;
   background: rgba(255, 255, 255, 0.42);
 }
 .donor-wall-title
 {
   margin: 0;
-  color: #ffffff;
+  color: var(--white);
 
-  font-size: clamp(3.5rem, 8vw, 6.35rem);
+  font-size: clamp(3.4rem, 8vw, 6rem);
   font-weight: 800;
   line-height: 0.88;
   letter-spacing: -0.068em;
@@ -136,101 +137,92 @@
 .donor-wall-subtitle
 {
   width: min(100%, 650px);
-  margin: 1.80rem auto 0;
+  margin: 1.70rem auto 0;
 
   color: rgba(255, 255, 255, 0.78);
 
-  font-size: clamp(1rem, 1.4vw, 1.08rem);
-  line-height: 1.8;
+  font-size: clamp(1rem, 1.35vw, 1.07rem);
+  line-height: 1.78;
   text-wrap: balance;
 }
-.donor-wall-summary
+.donor-wall-stat
 {
   display: flex;
   align-items: baseline;
   justify-content: center;
   gap: 0.55rem;
 
-  margin-top: clamp(3rem, 5vw, 4.25rem);
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.66rem;
+  margin-top: clamp(3rem, 5vw, 4rem);
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 0.64rem;
   font-weight: 750;
   letter-spacing: 0.16em;
   line-height: 1;
   text-transform: uppercase;
 }
-.donor-wall-count
+.donor-wall-stat strong
 {
-  color: #ffffff;
-  font-size: 1.20rem;
+  color: var(--white);
+  font-size: 1.15rem;
   font-weight: 850;
   letter-spacing: -0.035em;
 }
-.donor-wall-summary-label { opacity: 0.90; }
 .donor-wall-content
 {
-  position: relative;
-  padding: clamp(0rem, 2vw, 1.5rem) clamp(1rem, 4vw, 2rem) clamp(5.5rem, 9vw, 8rem);
+  padding: clamp(4.5rem, 8vw, 7rem) clamp(1rem, 4vw, 2rem) clamp(5.5rem, 9vw, 8rem);
   background: var(--paper);
 }
-.donor-wall-intro
+.donor-wall-section-heading
 {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: auto minmax(2rem, 1fr) minmax(220px, 430px);
+  align-items: center;
+  gap: 1.25rem;
 
   width: min(100%, 1080px);
-  margin: -3.5rem auto 0;
-  padding: 1.50rem 1.65rem;
-  border: 1px solid rgba(25, 50, 27, 0.07);
-  border-radius: 1.15rem;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 18px 50px rgba(23, 59, 24, 0.09);
-  backdrop-filter: blur(12px);
-  position: relative;
-  z-index: 2;
+  margin-inline: auto;
 }
-.donor-wall-intro-label
+.donor-wall-section-label
 {
-  flex: 0 0 auto;
   color: var(--brand-deep);
-  font-size: 0.66rem;
+  font-size: 0.65rem;
   font-weight: 850;
-  letter-spacing: 0.17em;
+  letter-spacing: 0.18em;
   line-height: 1;
   text-transform: uppercase;
+  white-space: nowrap;
 }
-.donor-wall-intro-copy
+.donor-wall-section-line { height: 1px; background: rgba(24, 51, 26, 0.12); }
+.donor-wall-section-copy
 {
-  max-width: 590px;
   margin: 0;
   color: var(--ink-soft);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   line-height: 1.65;
 }
 .donor-grid
 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 0 1rem;
   width: min(100%, 1080px);
-  margin: 2.5rem auto 0;
+  margin: clamp(2.75rem, 5vw, 4rem) auto 0;
 
-  animation: donor-grid-enter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: donor-grid-enter 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .donor-card
 {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  min-height: 112px;
-  padding: 1.20rem 1rem;
+  min-height: 108px;
+  padding: 1.25rem 1rem;
 
-  border: 1px solid rgba(25, 50, 27, 0.065);
-  border-radius: 0.85rem;
-  background: var(--paper-bright);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--ink);
 
   font-size: 0.94rem;
@@ -239,71 +231,104 @@
   line-height: 1.4;
   text-align: center;
 
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset, 0 4px 16px rgba(23, 59, 24, 0.035);
-
   opacity: 0;
   transform: translateY(10px);
   contain: layout paint;
 
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transition: color 180ms ease, background-color 180ms ease;
 
-  animation: donor-card-enter 560ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(var(--i) * 24ms);
+  animation: donor-card-enter 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i) * 22ms);
 }
-.donor-card:hover { transform: translateY(-3px); border-color: rgba(71, 173, 50, 0.20); box-shadow: 0 14px 32px rgba(23, 59, 24, 0.075); }
-.donor-card:focus-visible { outline: 3px solid rgba(71, 173, 50, 0.35); outline-offset: 3px; }
-
-.donor-wall-thanks
+.donor-card::after
 {
-  margin: clamp(3.5rem, 6vw, 5rem) auto 0;
+  /* Extremely subtle vertical separation.
+   * Keeps the wall structured without making
+   * every donor look like a separate UI card.
+   */
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: -0.5rem;
+  width: 1px;
+  height: 64%;
+  background: rgba(24, 51, 26, 0.08);
+}
+.donor-card:nth-child(4n)::after { display: none; }
+.donor-card:hover { color: var(--brand-deep); background: rgba(71, 173, 50, 0.045); }
+.donor-card:focus-visible { outline: 2px solid rgba(71, 173, 50, 0.45); outline-offset: -2px; }
+.donor-wall-closing
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: clamp(4.5rem, 8vw, 7rem);
+  text-align: center;
+}
+.donor-wall-closing-rule
+{
+  width: 2.5rem;
+  height: 2px;
+  margin-bottom: 1.75rem;
+  background: var(--brand);
+}
+.donor-wall-closing p
+{
+  margin: 0;
   color: var(--ink);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.35rem, 2.3vw, 1.85rem);
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: -0.025em;
-  text-align: center;
 }
 
 @keyframes donor-grid-enter
 {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
 }
 @keyframes donor-card-enter
 {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce)
 {
   .donor-grid, .donor-card { opacity: 1; transform: none; animation: none; }
-  .donor-card, .donor-card:hover { transform: none; transition: none; }
+  .donor-card { transition: none; }
 }
 
 @media (max-width: 1050px)
 {
   .donor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .donor-card:nth-child(4n)::after { display: block; }
+  .donor-card:nth-child(3n)::after { display: none; }
 }
 @media (max-width: 720px)
 {
-  .donor-wall-hero { padding: 4.75rem 1rem 7rem; }
+  .donor-wall-hero { padding: 4.75rem 1rem 5rem; }
   .donor-wall-title { font-size: clamp(3rem, 15vw, 4.5rem); }
-  .donor-wall-subtitle { font-size: 0.96rem; line-height: 1.72; }
-  .donor-wall-intro { display: block; margin-top: -3rem; padding: 1.35rem; }
-  .donor-wall-intro-copy { margin-top: 0.75rem; font-size: 0.88rem; }
-  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; margin-top: 1.5rem; }
-  .donor-card { min-height: 90px; padding: 1rem 0.70rem; font-size: 0.87rem; }
+  .donor-wall-subtitle { font-size: 0.95rem; line-height: 1.72; }
+  .donor-wall-content { padding-top: 4rem; }
+  .donor-wall-section-heading { display: block; }
+  .donor-wall-section-line { margin: 1rem 0; }
+  .donor-wall-section-copy { max-width: 500px; font-size: 0.86rem; }
+  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+  .donor-card { min-height: 90px; padding: 1rem 0.65rem; font-size: 0.86rem; }
+  .donor-card:nth-child(3n)::after { display: block; }
+  .donor-card:nth-child(2n)::after { display: none; }
 }
 @media (max-width: 460px)
 {
-  .donor-wall-eyebrow::before, .donor-wall-eyebrow::after { width: 1.1rem; }
-  .donor-wall-summary { gap: 0.45rem; font-size: 0.61rem; }
-  .donor-wall-content { padding-inline: 0.80rem; }
-  .donor-wall-intro { border-radius: 1rem; }
-  .donor-grid { grid-template-columns: 1fr; gap: 0.50rem; }
+  .donor-wall-eyebrow::before, .donor-wall-eyebrow::after { width: 1.05rem; }
+  .donor-wall-stat { gap: 0.45rem; font-size: 0.60rem; }
+  .donor-grid { grid-template-columns: 1fr; }
   .donor-card { min-height: 68px; }
+  .donor-card::after { top: auto; right: 12%; bottom: 0; left: 12%; width: auto; height: 1px; }
+  .donor-card:nth-child(2n)::after { display: block; }
+  .donor-card:last-child::after { display: none; }
 }
 </style>
 <script>
