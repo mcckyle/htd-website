@@ -1,36 +1,56 @@
-<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 23 August 2026 -->
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 31 August 2026 -->
 <section class="donor-wall" aria-labelledby="donor-wall-title">
   <header class="donor-wall-hero">
-    <div class="donor-wall-hero-glow" aria-hidden="true"></div>
+    <div class="donor-wall-hero-orb" aria-hidden="true"></div>
     <div class="donor-wall-container">
       <div class="donor-wall-heading">
-        <span class="donor-wall-eyebrow">With Gratitude</span>
+        <span class="donor-wall-eyebrow">
+          <span aria-hidden="true"></span>
+          With Gratitude
+          <span aria-hidden="true"></span>
+        </span>
         <h1 id="donor-wall-title" class="donor-wall-title">Donor Wall</h1>
         <p class="donor-wall-subtitle">
-          Honoring the generosity of the people who help move our
-          mission forward and create lasting change throughout our community.
+          Honoring the people whose generosity helps move our mission
+          forward and create lasting change throughout our community.
         </p>
       </div>
 
       <div class="donor-wall-stat" aria-label="Donor recognition summary">
         <strong id="donorCount">50</strong>
-        <span>supporters recognized</span>
+        <span>
+          supporters
+          <span aria-hidden="true">·</span>
+          recognized
+        </span>
       </div>
     </div>
   </header>
   <main class="donor-wall-content">
     <div class="donor-wall-container">
       <div class="donor-wall-section-heading">
+        <div class="donor-wall-section-intro">
         <span class="donor-wall-section-label">Our supporters</span>
-        <div class="donor-wall-section-line" aria-hidden="true"></div>
-        <p class="donor-wall-section-copy">
-          Every contribution helps strengthen our community and
-          move Highway to Destiny forward.
+        <h2>
+          Made possible<br>
+          by you.
+        </h2>
+      </div>
+      <div class="donor-wall-section-detail">
+        <span class="donor-wall-section-line" aria-hidden="true"></span>
+        <p>
+          Every contribution strengthens our community and helps
+          Highway to Destiny continue its work.
         </p>
       </div>
+    </div>
     <div id="donorGrid" class="donor-grid" aria-label="Recognized donors"></div>
     <div class="donor-wall-closing">
-      <span class="donor-wall-closing-rule" aria-hidden="true"></span>
+      <span class="donor-wall-closing-mark" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
       <p>Thank you for believing in the mission.</p>
     </div>
     </div>
@@ -47,48 +67,49 @@
   --brand-deep: #328d26;
 
   --paper: #f7f7f3;
+  --paper-deep: #efefe9;
   --white: #ffffff;
 
   --ink: #18331a;
   --ink-soft: #647165;
+  --line: rgba(24, 51, 26, 0.11);
 
   position: relative;
   isolation: isolate;
   overflow: hidden;
   background: var(--paper);
+  color: var(--ink);
 }
 .donor-wall-hero
 {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(5.5rem, 10vw, 8rem) clamp(1rem, 4vw, 2rem) clamp(5rem, 8vw, 6.5rem);
-  background: var(--brand);
-  color: var(--white);
+  padding: clamp(5.5rem, 11vw, 9rem) clamp(1.25rem, 5vw, 3rem) clamp(4.5rem, 8vw, 7rem);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper) 78%, var(--paper-deep) 100%);
 }
 .donor-wall-hero::after
 {
   content: "";
   position: absolute;
-  z-index: 0;
   right: 0;
   bottom: 0;
   left: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25) 25%, rgba(255, 255, 255, 0.25) 75%, transparent);
+  background: var(--line);
 }
-.donor-wall-hero-glow
+.donor-wall-hero-orb
 {
   position: absolute;
   z-index: -1;
-  width: min(65vw, 820px);
-  aspect-ratio: 1;
-  top: -58%;
+  top: -28rem;
   left: 50%;
+  width: min(70vw, 900px);
+  aspect-ratio: 1;
   transform: translateX(-50%);
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.055) 38%, transparent 68%);
+  background: radial-gradient(circle, rgba(71, 173, 50, 0.15) 0%, rgba(71, 173, 50, 0.055) 35%, transparent 68%);
 }
 .donor-wall-container
 {
@@ -97,7 +118,7 @@
 }
 .donor-wall-heading
 {
-  width: min(100%, 720px);
+  width: min(100%, 760px);
   margin-inline: auto;
   text-align: center;
 }
@@ -107,42 +128,41 @@
   align-items: center;
   gap: 0.70rem;
 
-  margin-bottom: 1.35rem;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.66rem;
-  font-weight: 800;
+  margin-bottom: 1.40rem;
+  color: var(--brand-deep);
+  font-size: 0.65rem;
+  font-weight: 850;
   letter-spacing: 0.22em;
   line-height: 1;
   text-transform: uppercase;
 }
-.donor-wall-eyebrow::before,
-.donor-wall-eyebrow::after
+.donor-wall-eyebrow span
 {
-  content: "";
-  width: 1.55rem;
+  width: 1.4rem;
   height: 1px;
-  background: rgba(255, 255, 255, 0.42);
+  background: currentColor;
+  opacity: 0.45;
 }
 .donor-wall-title
 {
   margin: 0;
-  color: var(--white);
+  color: var(--ink);
 
-  font-size: clamp(3.4rem, 8vw, 6rem);
-  font-weight: 800;
-  line-height: 0.88;
-  letter-spacing: -0.068em;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(4rem, 10vw, 7.5rem);
+  font-weight: 500;
+  line-height: 0.90;
+  letter-spacing: -0.065em;
   text-wrap: balance;
 }
 .donor-wall-subtitle
 {
   width: min(100%, 650px);
-  margin: 1.70rem auto 0;
+  margin: 1.80rem auto 0;
 
-  color: rgba(255, 255, 255, 0.78);
-
-  font-size: clamp(1rem, 1.35vw, 1.07rem);
-  line-height: 1.78;
+  color: var(--ink);
+  font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+  line-height: 1.75;
   text-wrap: balance;
 }
 .donor-wall-stat
@@ -152,63 +172,80 @@
   justify-content: center;
   gap: 0.55rem;
 
-  margin-top: clamp(3rem, 5vw, 4rem);
-  color: rgba(255, 255, 255, 0.70);
-  font-size: 0.64rem;
-  font-weight: 750;
-  letter-spacing: 0.16em;
+  margin-top: clamp(3rem, 5vw, 4.25rem);
+  color: var(--ink-soft);
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
   line-height: 1;
   text-transform: uppercase;
 }
 .donor-wall-stat strong
 {
-  color: var(--white);
-  font-size: 1.15rem;
+  color: var(--brand-deep);
+  font-size: 1.35rem;
   font-weight: 850;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.045em;
 }
+.donor-wall-stat span { margin-inline: 0.20rem; opacity: 0.45; }
 .donor-wall-content
 {
-  padding: clamp(4.5rem, 8vw, 7rem) clamp(1rem, 4vw, 2rem) clamp(5.5rem, 9vw, 8rem);
-  background: var(--paper);
+  padding: clamp(4.5rem, 8vw, 7.5rem) clamp(1.25rem, 5vw, 3rem) clamp(5.5rem, 10vw, 9rem);
 }
 .donor-wall-section-heading
 {
   display: grid;
-  grid-template-columns: auto minmax(2rem, 1fr) minmax(220px, 430px);
-  align-items: center;
-  gap: 1.25rem;
+  grid-template-columns: minmax(220px, 0.75fr) minmax(280px, 1fr);
+  align-items: end;
+  gap: clamp(3rem, 8vw, 8rem);
 
   width: min(100%, 1080px);
   margin-inline: auto;
 }
+.donor-wall-section-intro
+{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .donor-wall-section-label
 {
   color: var(--brand-deep);
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   font-weight: 850;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.20em;
   line-height: 1;
   text-transform: uppercase;
-  white-space: nowrap;
 }
-.donor-wall-section-line { height: 1px; background: rgba(24, 51, 26, 0.12); }
-.donor-wall-section-copy
+.donor-wall-section-intro h2
 {
   margin: 0;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.35rem, 4vw, 3.7rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+.donor-wall-section-detail { display: flex; align-items: center; gap: 1.25rem; padding-bottom: 0.35rem; }
+.donor-wall-section-line { flex: 0 0 3rem; width: 3rem; height: 1px; background: var(--brand); }
+.donor-wall-section-detail p
+{
+  max-width: 390px;
+  margin: 0;
   color: var(--ink-soft);
-  font-size: 0.88rem;
-  line-height: 1.65;
+  font-size: 0.90rem;
+  line-height: 1.7;
 }
 .donor-grid
 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0 1rem;
   width: min(100%, 1080px);
-  margin: clamp(2.75rem, 5vw, 4rem) auto 0;
+  margin: clamp(3.5rem, 6vw, 5rem) auto 0;
+  border-top: 1px solid var(--line);
 
-  animation: donor-grid-enter 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: donor-grid-enter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .donor-card
 {
@@ -217,80 +254,89 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 108px;
-  padding: 1.25rem 1rem;
+  min-height: 104px;
+  padding: 1.35rem 1rem;
 
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  border-bottom: 1px solid var(--line);
   color: var(--ink);
 
-  font-size: 0.94rem;
+  font-size: 0.90rem;
   font-weight: 700;
   letter-spacing: -0.018em;
   line-height: 1.4;
   text-align: center;
 
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
   contain: layout paint;
 
   transition: color 180ms ease, background-color 180ms ease;
 
   animation: donor-card-enter 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(var(--i) * 22ms);
+  animation-delay: calc(var(--i) * 18ms);
 }
-.donor-card::after
+.donor-card::before
 {
-  /* Extremely subtle vertical separation.
-   * Keeps the wall structured without making
-   * every donor look like a separate UI card.
-   */
+  /* Donor Wall Subtle Identity Marker Styles. */
   content: "";
   position: absolute;
-  top: 18%;
-  right: -0.5rem;
-  width: 1px;
-  height: 64%;
-  background: rgba(24, 51, 26, 0.08);
+  top: 50%;
+  left: 0;
+  width: 2px;
+  height: 0;
+  transform: translateY(-50%);
+  background: var(--brand);
+
+  transition: height 180ms ease;
 }
-.donor-card:nth-child(4n)::after { display: none; }
-.donor-card:hover { color: var(--brand-deep); background: rgba(71, 173, 50, 0.045); }
+.donor-card:not:nth-child(4n) { border-right: 1px solid var(--line); }
+.donor-card:hover { color: var(--brand-deep); background: rgba(71, 173, 50, 0.035); }
+.donor-card:hover::before { height: 1.5rem; }
 .donor-card:focus-visible { outline: 2px solid rgba(71, 173, 50, 0.45); outline-offset: -2px; }
 .donor-wall-closing
 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: clamp(4.5rem, 8vw, 7rem);
+  margin-top: clamp(5rem, 9vw, 8rem);
   text-align: center;
 }
-.donor-wall-closing-rule
+.donor-wall-closing-mark
 {
-  width: 2.5rem;
-  height: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   margin-bottom: 1.75rem;
+}
+.donor-wall-closing-mark span
+{
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
   background: var(--brand);
 }
+.donor-wall-closing-mark span:nth-child(2) { width: 5px; height: 5px; }
 .donor-wall-closing p
 {
+  max-width: 600px;
   margin: 0;
   color: var(--ink);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(1.35rem, 2.3vw, 1.85rem);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 500;
   line-height: 1.3;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
 
 @keyframes donor-grid-enter
 {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: none; }
 }
 @keyframes donor-card-enter
 {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
 }
 
@@ -300,35 +346,43 @@
   .donor-card { transition: none; }
 }
 
-@media (max-width: 1050px)
+/* Donor Wall Tablet Media Query Styles. */
+@media (max-width: 900px)
 {
+  .donor-wall-section-heading { grid-template-columns: 1fr; gap: 2rem; }
+  .donor-wall-section-detail { max-width: 600px; }
   .donor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .donor-card:nth-child(4n)::after { display: block; }
-  .donor-card:nth-child(3n)::after { display: none; }
+  .donor-card:not(:nth-child(4n)) { border-right: 0; }
+  .donor-card:not(:nth-child(3n)) { border-right: 1px solid var(--line); }
 }
-@media (max-width: 720px)
+
+/* Donor Wall Mobile Media Query Styles. */
+@media (max-width: 640px)
 {
-  .donor-wall-hero { padding: 4.75rem 1rem 5rem; }
-  .donor-wall-title { font-size: clamp(3rem, 15vw, 4.5rem); }
-  .donor-wall-subtitle { font-size: 0.95rem; line-height: 1.72; }
-  .donor-wall-content { padding-top: 4rem; }
-  .donor-wall-section-heading { display: block; }
-  .donor-wall-section-line { margin: 1rem 0; }
-  .donor-wall-section-copy { max-width: 500px; font-size: 0.86rem; }
-  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
-  .donor-card { min-height: 90px; padding: 1rem 0.65rem; font-size: 0.86rem; }
-  .donor-card:nth-child(3n)::after { display: block; }
-  .donor-card:nth-child(2n)::after { display: none; }
+  .donor-wall-hero { padding: 4.75rem 1.25rem 4.5rem; }
+  .donor-wall-title { font-size: clamp(3.6rem, 17vw, 5.25rem); }
+  .donor-wall-subtitle { font-size: 0.94rem; line-height: 1.7; }
+  .donor-wall-stat { margin-top: 2.75rem; }
+  .donor-wall-content { padding-top: 4.25rem; }
+  .donor-wall-section-intro h2 { font-size: clamp(2.25rem, 11vw, 3.25rem); }
+  .donor-wall-section-detail { align-items: flex-start; }
+  .donor-wall-section-line { flex-basis: 2rem; width: 2rem; margin-top: 0.60rem; }
+  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 3.25rem; }
+  .donor-card { min-height: 88px; padding: 1rem 0.70rem; font-size: 0.84rem; }
+  .donor-card:not(:nth-child(3n)) { border-right: 0; }
+  .donor-card:not(:nth-child(2)) { border-right: 1px solid var(--line); }
 }
-@media (max-width: 460px)
+
+/* Donor Wall Small Mobile Media Query Styles. */
+@media (max-width: 420px)
 {
-  .donor-wall-eyebrow::before, .donor-wall-eyebrow::after { width: 1.05rem; }
-  .donor-wall-stat { gap: 0.45rem; font-size: 0.60rem; }
+  .donor-wall-eyebrow { gap: 0.50rem; }
+  .donor-wall-eyebrow span { width: 1rem; }
+  .donor-wall-stat { flex-direction: column; align-items: center; gap: 0.50rem; font-size: 0.60rem; }
   .donor-grid { grid-template-columns: 1fr; }
   .donor-card { min-height: 68px; }
-  .donor-card::after { top: auto; right: 12%; bottom: 0; left: 12%; width: auto; height: 1px; }
-  .donor-card:nth-child(2n)::after { display: block; }
-  .donor-card:last-child::after { display: none; }
+  .donor-card:not(:nth-child(2)) { border-right: 0; }
+  .donor-card::before { top: 50%; left: 0; }
 }
 </style>
 <script>
