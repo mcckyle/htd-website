@@ -1,4 +1,4 @@
-<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 8 September 2026 -->
+<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 21 September 2026 -->
 <section class="partners-section" aria-labelledby="partners-title">
   <div class="partners-shell">
     <header class="partners-header">
@@ -139,22 +139,19 @@
   --partners-green: #47ad32;
   --partners-ink: #172019;
   --partners-muted: #69736c;
-  --partners-background: #f7f8f6;
+  --partners-background: #f6f8f5;
   --partners-surface: #ffffff;
   --partners-line: rgba(23, 32, 25, 0.075);
 
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
   position: relative;
   isolation: isolate;
   padding: clamp(88px, 9vw, 136px) 24px;
-
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    var(--partners-background) 20%,
-    var(--partners-background) 100%
-  );
+  background: var(--partners-background);
 }
-.partners-shell { width: min(100%, 1320px); margin-inline: auto; }
+.partners-shell { width: min(100%, 1240px); margin-inline: auto; }
 .partners-header { width: min(100%, 720px); margin: 0 auto clamp(48px, 5.5vw, 68px); text-align: center; }
 .partners-eyebrow
 {
@@ -225,9 +222,9 @@
   grid-template-columns: repeat(5, minmax(0, 1fr));
   overflow: hidden;
   border: 1px solid var(--partners-line);
-  border-radius: clamp(20px, 2vw, 26px);
+  border-radius: 24px;
   background: var(--partners-surface);
-  box-shadow: 0 16px 42px rgba(23, 32, 25, 0.045);
+  box-shadow: 0 18px 45px rgba(23, 32, 25, 0.045);
 }
 
 /* Individual Partner Card Styles. */
@@ -239,8 +236,8 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 148px;
-  padding: 24px;
+  min-height: 142px;
+  padding: 22px;
 
   background: var(--partners-surface);
   text-decoration: none;
@@ -270,7 +267,7 @@
   height: 76px;
   object-fit: contain;
 
-  filter: grayscale(1) saturate(0) opacity(0.66);
+  filter: grayscale(1) saturate(0) opacity(0.72);
   transform: scale(1);
 
   transition: filter 240ms ease, transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -348,9 +345,9 @@
 //Animate fade-in for a polished look.
 document.addEventListener("DOMContentLoaded", () =>
 {
-  const section = document.querySelectorAll(".partners-section");
+  const section = document.querySelector(".partners-section");
 
-  if (!section.length)
+  if (!section)
   {
     return;
   }
