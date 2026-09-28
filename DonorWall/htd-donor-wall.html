@@ -1,4 +1,4 @@
-<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 21 September 2026 -->
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 28 September 2026 -->
 <section class="donor-wall" aria-labelledby="donor-wall-title">
   <header class="donor-wall-hero">
     <div class="donor-wall-hero-orb" aria-hidden="true"></div>
@@ -83,8 +83,8 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(5.5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 3rem) clamp(4rem, 6vw, 5.5rem);
-  background: radial-gradient(circle at 50% 0%, rgba(71, 173, 50, 0.085), transparent min(38vw, 520px)), var(--paper);
+  padding: clamp(5rem, 7.5vw, 6.75rem) clamp(1.25rem, 5vw, 3rem) clamp(3.5rem, 5vw, 4.75rem);
+  background: radial-gradient(circle at 50% 0%, rgba(71, 173, 50, 0.075), transparent min(34vw, 500px)), var(--paper);
 }
 .donor-wall-hero::after
 {
@@ -113,7 +113,7 @@
   align-items: center;
   gap: 0.70rem;
 
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.15rem;
   color: var(--brand-deep);
   font-size: 0.64rem;
   font-weight: 800;
@@ -123,7 +123,7 @@
 }
 .donor-wall-eyebrow span
 {
-  width: 1.4rem;
+  width: 1.35rem;
   height: 1px;
   background: currentColor;
   opacity: 0.45;
@@ -134,7 +134,7 @@
   color: var(--ink);
 
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(4rem, 8vw, 7rem);
+  font-size: clamp(4rem, 7.5vw, 6.75rem);
   font-weight: 500;
   line-height: 0.90;
   letter-spacing: -0.065em;
@@ -142,12 +142,12 @@
 }
 .donor-wall-subtitle
 {
-  width: min(100%, 620px);
-  margin: 1.7rem auto 0;
+  width: min(100%, 600px);
+  margin: 1.45rem auto 0;
 
   color: var(--ink-soft);
-  font-size: clamp(0.96rem, 1.2vw, 1.05rem);
-  line-height: 1.75;
+  font-size: clamp(0.95rem, 1.15vw, 1.03rem);
+  line-height: 1.72;
   text-wrap: balance;
 }
 .donor-wall-stat
@@ -157,9 +157,9 @@
   justify-content: center;
   gap: 0.70rem;
 
-  margin-top: clamp(2.75rem, 4vw, 3.75rem);
+  margin-top: clamp(2.5rem, 3.5vw, 3.25rem);
   color: var(--ink-soft);
-  font-size: 0.62rem;
+  font-size: 0.61rem;
   font-weight: 800;
   letter-spacing: 0.18em;
   line-height: 1;
@@ -175,14 +175,14 @@
 .donor-wall-stat span { opacity: 0.65; }
 .donor-wall-content
 {
-  padding: clamp(4.75rem, 7vw, 7rem) clamp(1.25rem, 5vw, 3rem) clamp(5.5rem, 9vw, 8.5rem);
+  padding: clamp(4rem, 6vw, 5.75rem) clamp(1.25rem, 5vw, 3rem) clamp(5rem, 7vw, 7rem);
 }
 .donor-wall-section-heading
 {
   display: grid;
-  grid-template-columns: minmax(240px, 0.80fr) minmax(300px, 1fr);
+  grid-template-columns: minmax(250px, 0.80fr) minmax(320px, 1fr);
   align-items: end;
-  gap: clamp(3rem, 8vw, 8rem);
+  gap: clamp(3rem, 7vw, 7rem);
 
   width: min(100%, 1120px);
   margin-inline: auto;
@@ -191,7 +191,7 @@
 {
   display: flex;
   flex-direction: column;
-  gap: 0.90rem;
+  gap: 0.85rem;
 }
 .donor-wall-section-label
 {
@@ -207,27 +207,27 @@
   margin: 0;
   color: var(--ink);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2.45rem, 4vw, 3.75rem);
+  font-size: clamp(2.4rem, 3.8vw, 3.6rem);
   font-weight: 500;
   letter-spacing: -0.05em;
-  line-height: 0.96;
+  line-height: 0.95;
 }
-.donor-wall-section-detail { display: flex; align-items: center; gap: 1.25rem; padding-bottom: 0.25rem; }
-.donor-wall-section-line { flex: 0 0 3.25rem; width: 3.25rem; height: 1px; background: var(--brand); }
+.donor-wall-section-detail { display: flex; align-items: center; gap: 1.2rem; padding-bottom: 0.20rem; }
+.donor-wall-section-line { flex: 0 0 3rem; width: 3rem; height: 1px; background: var(--brand); }
 .donor-wall-section-detail p
 {
-  max-width: 400px;
+  max-width: 390px;
   margin: 0;
   color: var(--ink-soft);
-  font-size: 0.90rem;
-  line-height: 1.72;
+  font-size: 0.88rem;
+  line-height: 1.7;
 }
 .donor-grid
 {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   width: min(100%, 1120px);
-  margin: clamp(3.5rem, 5vw, 5rem) auto 0;
+  margin: clamp(3rem, 4.5vw, 4.25rem) auto 0;
   overflow: hidden;
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
@@ -243,27 +243,27 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 94px;
-  padding: 1.25rem 1rem;
+  min-height: 92px;
+  padding: 1.15rem 0.90rem;
 
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   color: var(--ink);
 
-  font-size: 0.84rem;
+  font-size: 0.85rem;
   font-weight: 650;
   letter-spacing: -0.012em;
   line-height: 1.4;
   text-align: center;
 
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(7px);
   contain: layout paint;
 
   transition: color 180ms ease, background-color 180ms ease;
 
-  animation: donor-card-enter 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(var(--i) * 16ms);
+  animation: donor-card-enter 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i) * 14ms);
 }
 .donor-card::before
 {
@@ -280,14 +280,14 @@
   transition: width 180ms ease;
 }
 .donor-card:hover { color: var(--brand-deep); background: rgba(71, 173, 50, 0.035); }
-.donor-card:hover::before { width: 1.5rem; }
+.donor-card:hover::before { width: 1.4rem; }
 .donor-card:focus-visible { outline: 2px solid rgba(71, 173, 50, 0.45); outline-offset: -2px; }
 .donor-wall-closing
 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: clamp(5rem, 8vw, 7.5rem);
+  margin-top: clamp(4.5rem, 6vw, 6rem);
   text-align: center;
 }
 .donor-wall-closing-mark
@@ -295,7 +295,7 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.45rem;
 }
 .donor-wall-closing-mark span
 {
@@ -312,7 +312,7 @@
   margin: 0;
   color: var(--ink);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: -0.03em;
@@ -325,7 +325,7 @@
 }
 @keyframes donor-card-enter
 {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(7px); }
   to { opacity: 1; transform: none; }
 }
 
@@ -346,16 +346,16 @@
 /* Donor Wall Mobile Media Query Styles. */
 @media (max-width: 640px)
 {
-  .donor-wall-hero { padding: 4.5rem 1.25rem 4rem; }
+  .donor-wall-hero { padding: 4.5rem 1.25rem 3.75rem; }
   .donor-wall-title { font-size: clamp(3.6rem, 17vw, 5.25rem); }
-  .donor-wall-subtitle { font-size: 0.94rem; line-height: 1.70; }
-  .donor-wall-stat { margin-top: 2.5rem; }
-  .donor-wall-content { padding-top: 4rem; }
+  .donor-wall-subtitle { font-size: 0.93rem; line-height: 1.68; }
+  .donor-wall-stat { margin-top: 2.4rem; }
+  .donor-wall-content { padding-top: 3.75rem; }
   .donor-wall-section-intro h2 { font-size: clamp(2.3rem, 11vw, 3.25rem); }
   .donor-wall-section-detail { align-items: flex-start; }
-  .donor-wall-section-line { flex-basis: 2rem; width: 2rem; margin-top: 0.60rem; }
-  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 3rem; }
-  .donor-card { min-height: 86px; padding: 1rem 0.70rem; font-size: 0.82rem; }
+  .donor-wall-section-line { flex-basis: 2rem; width: 2rem; margin-top: 0.55rem; }
+  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 2.75rem; }
+  .donor-card { min-height: 84px; padding: 1rem 0.70rem; font-size: 0.82rem; }
 }
 
 /* Donor Wall Small Mobile Media Query Styles. */
