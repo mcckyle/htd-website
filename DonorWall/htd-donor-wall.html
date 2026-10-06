@@ -1,4 +1,4 @@
-<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 28 September 2026 -->
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 5 October 2026 -->
 <section class="donor-wall" aria-labelledby="donor-wall-title">
   <header class="donor-wall-hero">
     <div class="donor-wall-hero-orb" aria-hidden="true"></div>
@@ -68,8 +68,8 @@
 
   --ink: #18331a;
   --ink-soft: #657166;
-  --line: rgba(24, 51, 26, 0.105);
-  --line-strong: rgba(24, 51, 26, 0.15);
+  --line: rgba(24, 51, 26, 0.085);
+  --line-strong: rgba(24, 51, 26, 0.14);
 
   position: relative;
   isolation: isolate;
@@ -84,7 +84,7 @@
   isolation: isolate;
   overflow: hidden;
   padding: clamp(5rem, 7.5vw, 6.75rem) clamp(1.25rem, 5vw, 3rem) clamp(3.5rem, 5vw, 4.75rem);
-  background: radial-gradient(circle at 50% 0%, rgba(71, 173, 50, 0.075), transparent min(34vw, 500px)), var(--paper);
+  background: radial-gradient(ellipse at 42% 55%, rgba(71, 173, 50, 0.085), rgba(71, 173, 50, 0.025) 42%, transparent 72%), var(--paper);
 }
 .donor-wall-hero::after
 {
@@ -98,7 +98,7 @@
 }
 .donor-wall-container
 {
-  width: min(100%, 1180px);
+  width: min(100%, 1240px);
   margin-inline: auto;
 }
 .donor-wall-heading
@@ -142,7 +142,7 @@
 }
 .donor-wall-subtitle
 {
-  width: min(100%, 600px);
+  width: min(100%, 610px);
   margin: 1.45rem auto 0;
 
   color: var(--ink-soft);
@@ -175,16 +175,16 @@
 .donor-wall-stat span { opacity: 0.65; }
 .donor-wall-content
 {
-  padding: clamp(4rem, 6vw, 5.75rem) clamp(1.25rem, 5vw, 3rem) clamp(5rem, 7vw, 7rem);
+  padding: clamp(4rem, 6vw, 5.75rem) clamp(1.25rem, 5vw, 3rem) clamp(4.5rem, 6.5vw, 6.5rem);
 }
 .donor-wall-section-heading
 {
   display: grid;
-  grid-template-columns: minmax(250px, 0.80fr) minmax(320px, 1fr);
+  grid-template-columns: minmax(260px, 0.80fr) minmax(320px, 1fr);
   align-items: end;
   gap: clamp(3rem, 7vw, 7rem);
 
-  width: min(100%, 1120px);
+  width: min(100%, 1160px);
   margin-inline: auto;
 }
 .donor-wall-section-intro
@@ -207,16 +207,16 @@
   margin: 0;
   color: var(--ink);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+  font-size: clamp(2.5rem, 3.9vw, 3.7rem);
   font-weight: 500;
   letter-spacing: -0.05em;
-  line-height: 0.95;
+  line-height: 0.94;
 }
 .donor-wall-section-detail { display: flex; align-items: center; gap: 1.2rem; padding-bottom: 0.20rem; }
 .donor-wall-section-line { flex: 0 0 3rem; width: 3rem; height: 1px; background: var(--brand); }
 .donor-wall-section-detail p
 {
-  max-width: 390px;
+  max-width: 400px;
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.88rem;
@@ -226,13 +226,12 @@
 {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  width: min(100%, 1120px);
+  width: min(100%, 1160px);
   margin: clamp(3rem, 4.5vw, 4.25rem) auto 0;
   overflow: hidden;
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
   background: var(--paper-soft);
-  box-shadow: 0 1rem 3rem rgba(24, 51, 26, 0.025);
 
   animation: donor-grid-enter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -243,14 +242,14 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 92px;
+  min-height: 96px;
   padding: 1.15rem 0.90rem;
 
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   color: var(--ink);
 
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   font-weight: 650;
   letter-spacing: -0.012em;
   line-height: 1.4;
@@ -274,12 +273,12 @@
   bottom: 0;
   width: 0;
   height: 2px;
-  transform: translateY(-50%);
+  transform: translateX(-50%);
   background: var(--brand);
 
   transition: width 180ms ease;
 }
-.donor-card:hover { color: var(--brand-deep); background: rgba(71, 173, 50, 0.035); }
+.donor-card:hover { color: var(--brand-deep); background: rgba(71, 173, 50, 0.03); }
 .donor-card:hover::before { width: 1.4rem; }
 .donor-card:focus-visible { outline: 2px solid rgba(71, 173, 50, 0.45); outline-offset: -2px; }
 .donor-wall-closing
@@ -287,7 +286,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: clamp(4.5rem, 6vw, 6rem);
+  margin-top: clamp(4rem, 5.5vw, 5.5rem);
   text-align: center;
 }
 .donor-wall-closing-mark
@@ -295,7 +294,7 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.4rem;
 }
 .donor-wall-closing-mark span
 {
@@ -369,8 +368,8 @@
 }
 </style>
 <script>
-/* Donors has 50 donors currently... */
 const donors = [
+  /* Donors has 50 donors currently... */
   "Susie Nuccio",
   "Melissa Childers",
   "Myndi Funes",
