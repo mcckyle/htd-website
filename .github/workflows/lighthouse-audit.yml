@@ -22,12 +22,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v7
 
-      - name: Install Static Server
-        run: npm install -g http-server
-
-      - name: Run Static Server
-        # Starts a server in the background at root '.' on port 8080.
-        run: http-server . -p 8080 &
+      - name: Install Static Server via NPX
+        run: npx http-server . -p 8080 &
 
       - name: Wait for Server
         # Gives the background server 3 seconds to fully initialize.
