@@ -33,5 +33,5 @@ jobs:
         uses: creyD/prettier_action@v4.6
         with:
           # Automatically commit the clean code back to the repository
-          prettier_options: --write "**/*.html"
+          prettier_options: --write **/*.html
           commit_message: "chore: automated code formatting [skip ci]"
