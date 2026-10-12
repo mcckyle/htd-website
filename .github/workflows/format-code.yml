@@ -30,7 +30,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Run Prettier Auto-Format
-        uses: crey08/prettier-action@v4.3
+        uses: creyD/prettier-action@v4.6
         with:
           # Automatically commit the clean code back to the repository
           prettier_options: --write "**/*.html"
