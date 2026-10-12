@@ -1,0 +1,37 @@
+#File name: code-quality.yml
+#Author: Kyle McColgan
+#Date: 12 October 2026
+#Description: This file contains the workflow for GitHub Actions to run the linter prettier.
+
+name: Auto-Format Code
+
+on:
+  push:
+    branches:
+      - main
+    pull_request: # Added so it formats incoming Pull Requests.
+      branches:
+        - main
+  #Dependabot merges can explicitly trigger the workflow.
+  workflow_dispatch:
+
+permissions:
+  contents: write #Allow GitHub to write the formatted code to the repository.
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+        with:
+          # Check out the actual head branch of the PR, not a temporary merge commit
+          ref: ${{ github.head_ref }}
+
+      - name: Run Prettier Auto-Format
+        uses: crey08/prettier-action@v4.6
+        with:
+          # Automatically commit the clean code back to the repository
+          prettier_options: --write "**/*.html"
+          commit_message: "chore: automated code formatting [skip ci]"
