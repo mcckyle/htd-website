@@ -11,8 +11,8 @@
         </span>
         <h1 id="donor-wall-title" class="donor-wall-title">Donor Wall</h1>
         <p class="donor-wall-subtitle">
-          Honoring the people whose generosity helps move our mission
-          forward and create lasting change throughout our community.
+          Honoring the people whose generosity helps move our mission forward
+          and create lasting change throughout our community.
         </p>
       </div>
 
@@ -26,426 +26,494 @@
     <div class="donor-wall-container">
       <div class="donor-wall-section-heading">
         <div class="donor-wall-section-intro">
-        <span class="donor-wall-section-label">Our supporters</span>
-        <h2>
-          Made possible<br>
-          by you.
-        </h2>
+          <span class="donor-wall-section-label">Our supporters</span>
+          <h2>
+            Made possible<br />
+            by you.
+          </h2>
+        </div>
+        <div class="donor-wall-section-detail">
+          <span class="donor-wall-section-line" aria-hidden="true"></span>
+          <p>
+            Every contribution strengthens our community and helps Highway to
+            Destiny continue its work.
+          </p>
+        </div>
       </div>
-      <div class="donor-wall-section-detail">
-        <span class="donor-wall-section-line" aria-hidden="true"></span>
-        <p>
-          Every contribution strengthens our community and helps
-          Highway to Destiny continue its work.
-        </p>
+      <div
+        id="donorGrid"
+        class="donor-grid"
+        aria-label="Recognized donors"
+      ></div>
+      <div class="donor-wall-closing">
+        <span class="donor-wall-closing-mark" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <p>Thank you for believing in the mission.</p>
       </div>
-    </div>
-    <div id="donorGrid" class="donor-grid" aria-label="Recognized donors"></div>
-    <div class="donor-wall-closing">
-      <span class="donor-wall-closing-mark" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-      <p>Thank you for believing in the mission.</p>
-    </div>
     </div>
   </main>
 </section>
 
 <style>
-/* ===============================================
+  /* ===============================================
    HIGHWAY TO DESTINY - DONOR WALL STYLES.
    Simple. Modern. Human.
 ================================================== */
-.donor-wall
-{
-  --brand: #47ad32;
-  --brand-deep: #318b27;
+  .donor-wall {
+    --brand: #47ad32;
+    --brand-deep: #318b27;
 
-  --paper: #f7f8f4; /* Matches the outer background page GoDaddy canvas color. */
-  --paper-soft: #fbfcf9;
+    --paper: #f7f8f4; /* Matches the outer background page GoDaddy canvas color. */
+    --paper-soft: #fbfcf9;
 
-  --ink: #18331a;
-  --ink-soft: #657166;
-  --line: rgba(24, 51, 26, 0.085);
-  --line-strong: rgba(24, 51, 26, 0.14);
+    --ink: #18331a;
+    --ink-soft: #657166;
+    --line: rgba(24, 51, 26, 0.085);
+    --line-strong: rgba(24, 51, 26, 0.14);
 
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  min-height: 100%;
-  background: var(--paper);
-  color: var(--ink);
-}
-.donor-wall-hero
-{
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: clamp(5rem, 7.5vw, 6.75rem) clamp(1.25rem, 5vw, 3rem) clamp(3.5rem, 5vw, 4.75rem);
-  background: radial-gradient(ellipse at 42% 55%, rgba(71, 173, 50, 0.085), rgba(71, 173, 50, 0.025) 42%, transparent 72%), var(--paper);
-}
-.donor-wall-hero::after
-{
-  content: "";
-  position: absolute;
-  right: clamp(1.25rem, 5vw, 3rem);
-  bottom: 0;
-  left: clamp(1.25rem, 5vw, 3rem);
-  height: 1px;
-  background: var(--line-strong);
-}
-.donor-wall-container
-{
-  width: min(100%, 1240px);
-  margin-inline: auto;
-}
-.donor-wall-heading
-{
-  width: min(100%, 760px);
-  margin-inline: auto;
-  text-align: center;
-}
-.donor-wall-eyebrow
-{
-  display: inline-flex;
-  align-items: center;
-  gap: 0.70rem;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .donor-wall-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(5rem, 7.5vw, 6.75rem) clamp(1.25rem, 5vw, 3rem)
+      clamp(3.5rem, 5vw, 4.75rem);
+    background:
+      radial-gradient(
+        ellipse at 42% 55%,
+        rgba(71, 173, 50, 0.085),
+        rgba(71, 173, 50, 0.025) 42%,
+        transparent 72%
+      ),
+      var(--paper);
+  }
+  .donor-wall-hero::after {
+    content: "";
+    position: absolute;
+    right: clamp(1.25rem, 5vw, 3rem);
+    bottom: 0;
+    left: clamp(1.25rem, 5vw, 3rem);
+    height: 1px;
+    background: var(--line-strong);
+  }
+  .donor-wall-container {
+    width: min(100%, 1240px);
+    margin-inline: auto;
+  }
+  .donor-wall-heading {
+    width: min(100%, 760px);
+    margin-inline: auto;
+    text-align: center;
+  }
+  .donor-wall-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
 
-  margin-bottom: 1.15rem;
-  color: var(--brand-deep);
-  font-size: 0.64rem;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-.donor-wall-eyebrow span
-{
-  width: 1.35rem;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.45;
-}
-.donor-wall-title
-{
-  margin: 0;
-  color: var(--ink);
+    margin-bottom: 1.15rem;
+    color: var(--brand-deep);
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .donor-wall-eyebrow span {
+    width: 1.35rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.45;
+  }
+  .donor-wall-title {
+    margin: 0;
+    color: var(--ink);
 
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(4rem, 7.5vw, 6.75rem);
-  font-weight: 500;
-  line-height: 0.90;
-  letter-spacing: -0.065em;
-  text-wrap: balance;
-}
-.donor-wall-subtitle
-{
-  width: min(100%, 610px);
-  margin: 1.45rem auto 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(4rem, 7.5vw, 6.75rem);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+    text-wrap: balance;
+  }
+  .donor-wall-subtitle {
+    width: min(100%, 610px);
+    margin: 1.45rem auto 0;
 
-  color: var(--ink-soft);
-  font-size: clamp(0.95rem, 1.15vw, 1.03rem);
-  line-height: 1.72;
-  text-wrap: balance;
-}
-.donor-wall-stat
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.70rem;
+    color: var(--ink-soft);
+    font-size: clamp(0.95rem, 1.15vw, 1.03rem);
+    line-height: 1.72;
+    text-wrap: balance;
+  }
+  .donor-wall-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
 
-  margin-top: clamp(2.5rem, 3.5vw, 3.25rem);
-  color: var(--ink-soft);
-  font-size: 0.61rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-.donor-wall-stat strong
-{
-  color: var(--brand-deep);
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.05em;
-}
-.donor-wall-stat span { opacity: 0.65; }
-.donor-wall-content
-{
-  padding: clamp(4rem, 6vw, 5.75rem) clamp(1.25rem, 5vw, 3rem) clamp(4.5rem, 6.5vw, 6.5rem);
-}
-.donor-wall-section-heading
-{
-  display: grid;
-  grid-template-columns: minmax(260px, 0.80fr) minmax(320px, 1fr);
-  align-items: end;
-  gap: clamp(3rem, 7vw, 7rem);
+    margin-top: clamp(2.5rem, 3.5vw, 3.25rem);
+    color: var(--ink-soft);
+    font-size: 0.61rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .donor-wall-stat strong {
+    color: var(--brand-deep);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+  }
+  .donor-wall-stat span {
+    opacity: 0.65;
+  }
+  .donor-wall-content {
+    padding: clamp(4rem, 6vw, 5.75rem) clamp(1.25rem, 5vw, 3rem)
+      clamp(4.5rem, 6.5vw, 6.5rem);
+  }
+  .donor-wall-section-heading {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 1fr);
+    align-items: end;
+    gap: clamp(3rem, 7vw, 7rem);
 
-  width: min(100%, 1160px);
-  margin-inline: auto;
-}
-.donor-wall-section-intro
-{
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-.donor-wall-section-label
-{
-  color: var(--brand-deep);
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.20em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-.donor-wall-section-intro h2
-{
-  margin: 0;
-  color: var(--ink);
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2.5rem, 3.9vw, 3.7rem);
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 0.94;
-}
-.donor-wall-section-detail { display: flex; align-items: center; gap: 1.2rem; padding-bottom: 0.20rem; }
-.donor-wall-section-line { flex: 0 0 3rem; width: 3rem; height: 1px; background: var(--brand); }
-.donor-wall-section-detail p
-{
-  max-width: 400px;
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.88rem;
-  line-height: 1.7;
-}
-.donor-grid
-{
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  width: min(100%, 1160px);
-  margin: clamp(3rem, 4.5vw, 4.25rem) auto 0;
-  overflow: hidden;
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-  background: var(--paper-soft);
+    width: min(100%, 1160px);
+    margin-inline: auto;
+  }
+  .donor-wall-section-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .donor-wall-section-label {
+    color: var(--brand-deep);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .donor-wall-section-intro h2 {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.5rem, 3.9vw, 3.7rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 0.94;
+  }
+  .donor-wall-section-detail {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding-bottom: 0.2rem;
+  }
+  .donor-wall-section-line {
+    flex: 0 0 3rem;
+    width: 3rem;
+    height: 1px;
+    background: var(--brand);
+  }
+  .donor-wall-section-detail p {
+    max-width: 400px;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  .donor-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    width: min(100%, 1160px);
+    margin: clamp(3rem, 4.5vw, 4.25rem) auto 0;
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    background: var(--paper-soft);
 
-  animation: donor-grid-enter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.donor-card
-{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    animation: donor-grid-enter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .donor-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  min-height: 96px;
-  padding: 1.15rem 0.90rem;
+    min-height: 96px;
+    padding: 1.15rem 0.9rem;
 
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  color: var(--ink);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
 
-  font-size: 0.86rem;
-  font-weight: 650;
-  letter-spacing: -0.012em;
-  line-height: 1.4;
-  text-align: center;
+    font-size: 0.86rem;
+    font-weight: 650;
+    letter-spacing: -0.012em;
+    line-height: 1.4;
+    text-align: center;
 
-  opacity: 0;
-  transform: translateY(7px);
-  contain: layout paint;
+    opacity: 0;
+    transform: translateY(7px);
+    contain: layout paint;
 
-  transition: color 180ms ease, background-color 180ms ease;
+    transition:
+      color 180ms ease,
+      background-color 180ms ease;
 
-  animation: donor-card-enter 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(var(--i) * 14ms);
-}
-.donor-card::before
-{
-  /* Donor Wall Small Identity Marker Styles. */
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  transform: translateX(-50%);
-  background: var(--brand);
+    animation: donor-card-enter 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--i) * 14ms);
+  }
+  .donor-card::before {
+    /* Donor Wall Small Identity Marker Styles. */
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transform: translateX(-50%);
+    background: var(--brand);
 
-  transition: width 180ms ease;
-}
-.donor-card:hover { color: var(--brand-deep); background: rgba(71, 173, 50, 0.03); }
-.donor-card:hover::before { width: 1.4rem; }
-.donor-card:focus-visible { outline: 2px solid rgba(71, 173, 50, 0.45); outline-offset: -2px; }
-.donor-wall-closing
-{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: clamp(4rem, 5.5vw, 5.5rem);
-  text-align: center;
-}
-.donor-wall-closing-mark
-{
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  margin-bottom: 1.4rem;
-}
-.donor-wall-closing-mark span
-{
-  display: block;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--brand);
-}
-.donor-wall-closing-mark span:nth-child(2) { width: 5px; height: 5px; }
-.donor-wall-closing p
-{
-  max-width: 600px;
-  margin: 0;
-  color: var(--ink);
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.03em;
-}
+    transition: width 180ms ease;
+  }
+  .donor-card:hover {
+    color: var(--brand-deep);
+    background: rgba(71, 173, 50, 0.03);
+  }
+  .donor-card:hover::before {
+    width: 1.4rem;
+  }
+  .donor-card:focus-visible {
+    outline: 2px solid rgba(71, 173, 50, 0.45);
+    outline-offset: -2px;
+  }
+  .donor-wall-closing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: clamp(4rem, 5.5vw, 5.5rem);
+    text-align: center;
+  }
+  .donor-wall-closing-mark {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 1.4rem;
+  }
+  .donor-wall-closing-mark span {
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--brand);
+  }
+  .donor-wall-closing-mark span:nth-child(2) {
+    width: 5px;
+    height: 5px;
+  }
+  .donor-wall-closing p {
+    max-width: 600px;
+    margin: 0;
+    color: var(--ink);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
 
-@keyframes donor-grid-enter
-{
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
-}
-@keyframes donor-card-enter
-{
-  from { opacity: 0; transform: translateY(7px); }
-  to { opacity: 1; transform: none; }
-}
+  @keyframes donor-grid-enter {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes donor-card-enter {
+    from {
+      opacity: 0;
+      transform: translateY(7px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 
-@media (prefers-reduced-motion: reduce)
-{
-  .donor-grid, .donor-card { opacity: 1; transform: none; animation: none; }
-  .donor-card { transition: none; }
-}
+  @media (prefers-reduced-motion: reduce) {
+    .donor-grid,
+    .donor-card {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+    .donor-card {
+      transition: none;
+    }
+  }
 
-/* Donor Wall Tablet Media Query Styles. */
-@media (max-width: 900px)
-{
-  .donor-wall-section-heading { grid-template-columns: 1fr; gap: 2rem; }
-  .donor-wall-section-detail { max-width: 600px; }
-  .donor-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
+  /* Donor Wall Tablet Media Query Styles. */
+  @media (max-width: 900px) {
+    .donor-wall-section-heading {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .donor-wall-section-detail {
+      max-width: 600px;
+    }
+    .donor-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
 
-/* Donor Wall Mobile Media Query Styles. */
-@media (max-width: 640px)
-{
-  .donor-wall-hero { padding: 4.5rem 1.25rem 3.75rem; }
-  .donor-wall-title { font-size: clamp(3.6rem, 17vw, 5.25rem); }
-  .donor-wall-subtitle { font-size: 0.93rem; line-height: 1.68; }
-  .donor-wall-stat { margin-top: 2.4rem; }
-  .donor-wall-content { padding-top: 3.75rem; }
-  .donor-wall-section-intro h2 { font-size: clamp(2.3rem, 11vw, 3.25rem); }
-  .donor-wall-section-detail { align-items: flex-start; }
-  .donor-wall-section-line { flex-basis: 2rem; width: 2rem; margin-top: 0.55rem; }
-  .donor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 2.75rem; }
-  .donor-card { min-height: 84px; padding: 1rem 0.70rem; font-size: 0.82rem; }
-}
+  /* Donor Wall Mobile Media Query Styles. */
+  @media (max-width: 640px) {
+    .donor-wall-hero {
+      padding: 4.5rem 1.25rem 3.75rem;
+    }
+    .donor-wall-title {
+      font-size: clamp(3.6rem, 17vw, 5.25rem);
+    }
+    .donor-wall-subtitle {
+      font-size: 0.93rem;
+      line-height: 1.68;
+    }
+    .donor-wall-stat {
+      margin-top: 2.4rem;
+    }
+    .donor-wall-content {
+      padding-top: 3.75rem;
+    }
+    .donor-wall-section-intro h2 {
+      font-size: clamp(2.3rem, 11vw, 3.25rem);
+    }
+    .donor-wall-section-detail {
+      align-items: flex-start;
+    }
+    .donor-wall-section-line {
+      flex-basis: 2rem;
+      width: 2rem;
+      margin-top: 0.55rem;
+    }
+    .donor-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 2.75rem;
+    }
+    .donor-card {
+      min-height: 84px;
+      padding: 1rem 0.7rem;
+      font-size: 0.82rem;
+    }
+  }
 
-/* Donor Wall Small Mobile Media Query Styles. */
-@media (max-width: 420px)
-{
-  .donor-wall-eyebrow { gap: 0.50rem; }
-  .donor-wall-eyebrow span { width: 1rem; }
-  .donor-wall-stat { flex-direction: column; gap: 0.50rem; }
-  .donor-grid { grid-template-columns: 1fr; }
-  .donor-card { min-height: 68px; }
-}
+  /* Donor Wall Small Mobile Media Query Styles. */
+  @media (max-width: 420px) {
+    .donor-wall-eyebrow {
+      gap: 0.5rem;
+    }
+    .donor-wall-eyebrow span {
+      width: 1rem;
+    }
+    .donor-wall-stat {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .donor-grid {
+      grid-template-columns: 1fr;
+    }
+    .donor-card {
+      min-height: 68px;
+    }
+  }
 </style>
 <script>
-const donors = [
-  /* Donors has 50 donors currently... */
-  "Susie Nuccio",
-  "Melissa Childers",
-  "Myndi Funes",
-  "Kelly Guerra",
-  "Alex & Nila Paradowski",
-  "Jeremy & Erin Lee",
-  "Katy Keller",
-  "Khushboo Matta",
-  "Deepa Barki",
-  "Ankit Saxena",
-  "Abhay Kumar",
-  "Rene Freeman",
-  "Radhika Pidikiti",
-  "Laksmi Adepu",
-  "Melissa Galazka",
-  "Sandy Woodfin",
-  "Joyce Reid",
-  "Gwyneth Scallions",
-  "Ashley Keyser",
-  "Debbie Kipp",
-  "Matt Reid",
-  "Carrie Edmiston",
-  "Christina Churn",
-  "Pat Rosner",
-  "Alex Tripp",
-  "Venkatesh Chellagunga",
-  "Sheila Miller",
-  "Dale Haskins",
-  "Bridget Carroll",
-  "Erin Reid",
-  "Latosha Fowlkes",
-  "Flint Fowler",
-  "Sabrina Cohen",
-  "Shel Jennings",
-  "Shonetta King",
-  "April Griffin",
-  "Kel Ward",
-  "Pamela Johnson",
-  "Yolanda Gant",
-  "Kenneth McClamb",
-  "Minister Tosha French",
-  "Samuel Nixon, Jr",
-  "Ernestine Nixon",
-  "Mary Nixon",
-  "Phyllis Kendrick",
-  "Brett Malone",
-  "Linda Burch",
-  "Dominick Tice",
-  "Mae Caldwell",
-  "Kenneth Johnson",
-];
-const donorGrid = document.getElementById("donorGrid");
-const donorCount = document.getElementById("donorCount");
+  const donors = [
+    /* Donors has 50 donors currently... */
+    "Susie Nuccio",
+    "Melissa Childers",
+    "Myndi Funes",
+    "Kelly Guerra",
+    "Alex & Nila Paradowski",
+    "Jeremy & Erin Lee",
+    "Katy Keller",
+    "Khushboo Matta",
+    "Deepa Barki",
+    "Ankit Saxena",
+    "Abhay Kumar",
+    "Rene Freeman",
+    "Radhika Pidikiti",
+    "Laksmi Adepu",
+    "Melissa Galazka",
+    "Sandy Woodfin",
+    "Joyce Reid",
+    "Gwyneth Scallions",
+    "Ashley Keyser",
+    "Debbie Kipp",
+    "Matt Reid",
+    "Carrie Edmiston",
+    "Christina Churn",
+    "Pat Rosner",
+    "Alex Tripp",
+    "Venkatesh Chellagunga",
+    "Sheila Miller",
+    "Dale Haskins",
+    "Bridget Carroll",
+    "Erin Reid",
+    "Latosha Fowlkes",
+    "Flint Fowler",
+    "Sabrina Cohen",
+    "Shel Jennings",
+    "Shonetta King",
+    "April Griffin",
+    "Kel Ward",
+    "Pamela Johnson",
+    "Yolanda Gant",
+    "Kenneth McClamb",
+    "Minister Tosha French",
+    "Samuel Nixon, Jr",
+    "Ernestine Nixon",
+    "Mary Nixon",
+    "Phyllis Kendrick",
+    "Brett Malone",
+    "Linda Burch",
+    "Dominick Tice",
+    "Mae Caldwell",
+    "Kenneth Johnson",
+  ];
+  const donorGrid = document.getElementById("donorGrid");
+  const donorCount = document.getElementById("donorCount");
 
-if (donorGrid)
-{
-  donorGrid.replaceChildren();
+  if (donorGrid) {
+    donorGrid.replaceChildren();
 
-  const fragment = document.createDocumentFragment();
+    const fragment = document.createDocumentFragment();
 
-  donors.forEach((name, index) =>
-  {
-    const card = document.createElement("article");
+    donors.forEach((name, index) => {
+      const card = document.createElement("article");
 
-    card.className = "donor-card";
-    card.style.setProperty("--i", index);
-    card.textContent = name;
+      card.className = "donor-card";
+      card.style.setProperty("--i", index);
+      card.textContent = name;
 
-    fragment.appendChild(card);
-  });
+      fragment.appendChild(card);
+    });
 
-  donorGrid.appendChild(fragment);
+    donorGrid.appendChild(fragment);
 
-  if (donorCount)
-  {
-    donorCount.textContent = donors.length;
+    if (donorCount) {
+      donorCount.textContent = donors.length;
+    }
   }
-}
 </script>

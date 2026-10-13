@@ -5,218 +5,275 @@
     <header class="donation-header">
       <span class="donation-eyebrow">Highway to Destiny</span>
       <h1 id="donation-title">
-        Fuel Hope.<br>
+        Fuel Hope.<br />
         Empower Communities.
       </h1>
       <p>
-        Every contribution helps us continue serving the unhoused
-        and creating meaningful impact throughout our community.
+        Every contribution helps us continue serving the unhoused and creating
+        meaningful impact throughout our community.
       </p>
     </header>
 
     <div class="donation-card">
       <div class="donation-frame">
         <iframe
-            title='Donation form powered by Zeffy'
-            src='https://www.zeffy.com/en-US/embed/donation-form/3f326bdb-8e31-44af-8e64-d4a5f1c356b4'
-            allowpaymentrequest
-            allowTransparency="true"
+          title="Donation form powered by Zeffy"
+          src="https://www.zeffy.com/en-US/embed/donation-form/3f326bdb-8e31-44af-8e64-d4a5f1c356b4"
+          allowpaymentrequest
+          allowTransparency="true"
         ></iframe>
-        </div>
       </div>
-      <p class="donation-note">
-        Your generosity helps turn compassion into action.
-      </p>
+    </div>
+    <p class="donation-note">
+      Your generosity helps turn compassion into action.
+    </p>
   </div>
 </section>
 
 <style>
-/* Donation Page Foundation Styles. */
-.donation-page {
-  --donation-brand: #47ad32;
-  --donation-brand-light: #72d65d;
-  --donation-brand-soft: rgba(71, 173, 50, 0.18);
+  /* Donation Page Foundation Styles. */
+  .donation-page {
+    --donation-brand: #47ad32;
+    --donation-brand-light: #72d65d;
+    --donation-brand-soft: rgba(71, 173, 50, 0.18);
 
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  box-sizing: border-box;
-  /* min-height causes shifting and enormous phantom whitespace below iframe. */
-  padding: clamp(62px, 7vw, 92px) 20px clamp(52px, 6vw, 76px);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* min-height causes shifting and enormous phantom whitespace below iframe. */
+    padding: clamp(62px, 7vw, 92px) 20px clamp(52px, 6vw, 76px);
 
-  background: var(--donation-brand);
-  color: #ffffff;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-.donation-page-ambient {
-  /* Donation Page Ambient Light Styles. */
-  position: absolute;
-  z-index: -1;
+    background: var(--donation-brand);
+    color: #ffffff;
+    font-family:
+      Inter,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+  .donation-page-ambient {
+    /* Donation Page Ambient Light Styles. */
+    position: absolute;
+    z-index: -1;
 
-  top: 24%;
-  left: 50%;
+    top: 24%;
+    left: 50%;
 
-  width: min(900px, 90vw);
-  aspect-ratio: 1;
+    width: min(900px, 90vw);
+    aspect-ratio: 1;
 
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(71, 173, 50, 0.12) 0%, rgba(71, 173, 50, 0.045) 38%, transparent 70%);
-  filter: blur(24px);
-  pointer-events: none;
-}
-/* Donation Page Main Layout Container Styles. */
-.donation-container {
-  position: relative;
-  width: min(100%, 1120px);
-  margin-inline: auto;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(71, 173, 50, 0.12) 0%,
+      rgba(71, 173, 50, 0.045) 38%,
+      transparent 70%
+    );
+    filter: blur(24px);
+    pointer-events: none;
+  }
+  /* Donation Page Main Layout Container Styles. */
+  .donation-container {
+    position: relative;
+    width: min(100%, 1120px);
+    margin-inline: auto;
 
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-/* Donation Header Content Styles. */
-.donation-header {
-  width: min(100%, 700px);
-  margin-inline: auto;
-  margin-bottom: clamp(36px, 4.5vw, 50px);
-  text-align: center;
-}
-.donation-eyebrow {
-  display: inline-flex;
-  align-items: center;
+  /* Donation Header Content Styles. */
+  .donation-header {
+    width: min(100%, 700px);
+    margin-inline: auto;
+    margin-bottom: clamp(36px, 4.5vw, 50px);
+    text-align: center;
+  }
+  .donation-eyebrow {
+    display: inline-flex;
+    align-items: center;
 
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 
-  color: rgba(255, 255, 255, 0.62);
+    color: rgba(255, 255, 255, 0.62);
 
-  font-size: 0.68rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.19em;
-  text-transform: uppercase;
-}
-.donation-eyebrow::before,
-.donation-eyebrow::after
-{
-  content: "";
-  width: 26px;
-  height: 1px;
-  margin-inline: 11px;
-  background: rgba(255, 255, 255, 0.26);
-}
-.donation-header h1 {
-  margin: 0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+  }
+  .donation-eyebrow::before,
+  .donation-eyebrow::after {
+    content: "";
+    width: 26px;
+    height: 1px;
+    margin-inline: 11px;
+    background: rgba(255, 255, 255, 0.26);
+  }
+  .donation-header h1 {
+    margin: 0;
 
-  color: #ffffff;
-  font-size: clamp(2.65rem, 5vw, 4.65rem);
-  font-weight: 800;
-  line-height: 0.99;
-  letter-spacing: -0.058em;
-  text-wrap: balance;
-}
+    color: #ffffff;
+    font-size: clamp(2.65rem, 5vw, 4.65rem);
+    font-weight: 800;
+    line-height: 0.99;
+    letter-spacing: -0.058em;
+    text-wrap: balance;
+  }
 
-.donation-header p {
-  width: min(100%, 570px);
-  margin: 22px auto 0;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: clamp(0.96rem, 1.35vw, 1.06rem);
-  line-height: 1.72;
-  text-wrap: balance;
-}
+  .donation-header p {
+    width: min(100%, 570px);
+    margin: 22px auto 0;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: clamp(0.96rem, 1.35vw, 1.06rem);
+    line-height: 1.72;
+    text-wrap: balance;
+  }
 
-.donation-card {
-  position: relative;
-  width: 100%;
-  padding: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.055);
-  box-shadow: 0 36px 100px rgba(0, 0, 0, 0.42), 0 0 70px rgba(71, 173, 50, 0.07);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-.donation-card::after {
-  /* Soft green illumination around the form.
+  .donation-card {
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow:
+      0 36px 100px rgba(0, 0, 0, 0.42),
+      0 0 70px rgba(71, 173, 50, 0.07);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .donation-card::after {
+    /* Soft green illumination around the form.
    * Kept intentionally subtle so Zeffy's own particles
    * remain the dominant visual effect.
    */
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 10% 8%;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(71, 173, 50, 0.16), transparent 68%);
-  filter: blur(55px);
-  pointer-events: none;
-}
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 10% 8%;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse,
+      rgba(71, 173, 50, 0.16),
+      transparent 68%
+    );
+    filter: blur(55px);
+    pointer-events: none;
+  }
 
-/* Donation Page Zeffy Frame Styles. */
-.donation-frame {
-  position: relative;
-  width: 100%;
-  height: 860px;
-  overflow: hidden;
-  border-radius: 23px;
-  background: #0e6600;
-  /* This shadow is intentionally subtle.
+  /* Donation Page Zeffy Frame Styles. */
+  .donation-frame {
+    position: relative;
+    width: 100%;
+    height: 860px;
+    overflow: hidden;
+    border-radius: 23px;
+    background: #0e6600;
+    /* This shadow is intentionally subtle.
    * Zeffy's own luminous particles provide the atmosphere.
   */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18), 0 14px 36px rgba(0, 0, 0, 0.22);
-}
+    box-shadow:
+      0 2px 5px rgba(0, 0, 0, 0.18),
+      0 14px 36px rgba(0, 0, 0, 0.22);
+  }
 
-/* Donation Page Zeffy iframe Styles. */
-.donation-frame iframe {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: #0e6600;
-}
+  /* Donation Page Zeffy iframe Styles. */
+  .donation-frame iframe {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #0e6600;
+  }
 
-.donation-note
-{
-  margin: 20px auto 0;
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 0.78rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  letter-spacing: 0.012em;
-}
+  .donation-note {
+    margin: 20px auto 0;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.012em;
+  }
 
-@media (prefers-reduced-motion: reduce)
-{
-  .donation-page-ambient, .donation-card::after { filter: none; }
-}
+  @media (prefers-reduced-motion: reduce) {
+    .donation-page-ambient,
+    .donation-card::after {
+      filter: none;
+    }
+  }
 
-/* Donation Page Media Query Styles. */
-@media (max-width: 900px)
-{
-  .donation-page { padding-inline: 16px; }
-  .donation-card { padding: 4px; border-radius: 24px; }
-  .donation-frame { border-radius: 20px; }
-}
-@media (max-width: 700px)
-{
-  .donation-page { padding-top: 54px; }
-  .donation-header { margin-bottom: 34px; }
-  .donation-header h1 { line-height: 1.02; }
-  .donation-header p { margin-top: 20px; line-height: 1.68; }
-  .donation-frame { height: 840px; }
-}
-@media (max-width: 520px)
-{
-  .donation-page { padding: 48px 12px 44px; }
-  .donation-eyebrow { margin-bottom: 17px; font-size: 0.64rem; letter-spacing: 0.15em; }
-  .donation-eyebrow::before, .donation-eyebrow::after { width: 18px; margin-inline: 8px; }
-  .donation-header h1 { font-size: clamp(2.25rem, 11.5vw, 3.25rem); letter-spacing: -0.052em; }
-  .donation-header p { font-size: 0.93rem; }
-  .donation-card { padding: 3px; border-radius: 20px; }
-  .donation-frame { height: 820px; border-radius: 17px; }
-  .donation-note { font-size: 0.74rem; }
-}
+  /* Donation Page Media Query Styles. */
+  @media (max-width: 900px) {
+    .donation-page {
+      padding-inline: 16px;
+    }
+    .donation-card {
+      padding: 4px;
+      border-radius: 24px;
+    }
+    .donation-frame {
+      border-radius: 20px;
+    }
+  }
+  @media (max-width: 700px) {
+    .donation-page {
+      padding-top: 54px;
+    }
+    .donation-header {
+      margin-bottom: 34px;
+    }
+    .donation-header h1 {
+      line-height: 1.02;
+    }
+    .donation-header p {
+      margin-top: 20px;
+      line-height: 1.68;
+    }
+    .donation-frame {
+      height: 840px;
+    }
+  }
+  @media (max-width: 520px) {
+    .donation-page {
+      padding: 48px 12px 44px;
+    }
+    .donation-eyebrow {
+      margin-bottom: 17px;
+      font-size: 0.64rem;
+      letter-spacing: 0.15em;
+    }
+    .donation-eyebrow::before,
+    .donation-eyebrow::after {
+      width: 18px;
+      margin-inline: 8px;
+    }
+    .donation-header h1 {
+      font-size: clamp(2.25rem, 11.5vw, 3.25rem);
+      letter-spacing: -0.052em;
+    }
+    .donation-header p {
+      font-size: 0.93rem;
+    }
+    .donation-card {
+      padding: 3px;
+      border-radius: 20px;
+    }
+    .donation-frame {
+      height: 820px;
+      border-radius: 17px;
+    }
+    .donation-note {
+      font-size: 0.74rem;
+    }
+  }
 </style>
