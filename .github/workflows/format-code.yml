@@ -24,12 +24,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v7
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-          cache: 'npm'
-
       - name: Run Native Prettier
         # Installs prettier locally on the fly and formats files without committing.
         run: npx prettier --write "**/*.html"
