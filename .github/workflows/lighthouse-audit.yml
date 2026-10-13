@@ -23,16 +23,30 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Install Static Server via NPX
-        run: npx http-server . -p 8080 &
+        #Spins up the server at the root directory.
+        run: npx http-server . -p 8080 --cors &
 
       - name: Wait for Server
-        # Gives the background server 3 seconds to fully initialize.
-        run: sleep 3
+        # Gives the background server 5 seconds to fully initialize.
+        run: sleep 5
 
-      - name: Audit HTML files with Lighthouse
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          urls: |
-            http://localhost:8080/index.html
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+      - name: Dynamically Discover HTML Files & Run Audit
+        run: |
+          # 1. Find all .html files, excluding hidden files or node_modules.
+          HTML_FILES=$(find . -name "*.html" ! -path "*/.*" | sed 's|^\./||')
+
+          # 2. Convert the list of files into a comma-separated list of localhost URLs.
+          URLS=""
+          for file in $HTML_FILES; do
+            URLS="${URLS}http://localhost:8080/${file},"
+          done
+
+          # 3. Strip the trailing comma.
+          URLS_CLEAN=$(echo "$URLS" | sed 's/,$//')
+
+          echo "Discovered section files to audit: $URLS_CLEAN"
+
+          # 4. Invoke the Lighthouse CLI directly using the discovered URLs.
+          npx @lhci/cli@0.12.x collect \
+            --url="$URLS_CLEAN" \
+            --settings.chromeFlags="--no-sandbox --headless --disable-gpu"
