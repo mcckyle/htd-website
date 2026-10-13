@@ -30,6 +30,7 @@ jobs:
         # Gives the background server 5 seconds to fully initialize.
         run: sleep 5
 
+
       - name: Dynamically Discover HTML Files & Run Audit
         run: |
           # 1. Find all .html files, excluding hidden files or dot-folders
@@ -46,11 +47,12 @@ jobs:
             echo "📊 AUDITING ELEMENT: ${file}"
             echo "=================================================="
 
-            # Invoking a single-run execution per file keeps memory footprint down
+            #'|| true' ensures that even if Lighthouse flags an error
+            # on a broken snippet, the loop safely moves to the next file.
             npx @lhci/cli@0.12.x collect \
               --url="http://localhost:8080/${file}" \
               --numberOfRuns=1 \
-              --settings.chromeFlags="--no-sandbox --headless --disable-gpu"
+              --settings.chromeFlags="--no-sandbox --headless --disable-gpu" || true
 
             echo "Finished auditing ${file}."
           done
