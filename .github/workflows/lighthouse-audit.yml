@@ -32,21 +32,24 @@ jobs:
 
       - name: Dynamically Discover HTML Files & Run Audit
         run: |
-          # 1. Find all .html files, excluding hidden files or node_modules.
+          # 1. Find all .html files, excluding hidden files or dot-folders.
           HTML_FILES=$(find . -name "*.html" ! -path "*/.*" | sed 's|^\./||')
 
-          # 2. Convert the list of files into a comma-separated list of localhost URLs.
-          URLS=""
+          # If no files are discovered, prevent an empty loop error
+          if [ -z "$HTML_FILES" ]; then
+            echo "No HTML section files found to audit."
+            exit 0
+          fi
+
+          # 2. Build the exact collection format required by the CLI.
+          URL_FLAGS=""
           for file in $HTML_FILES; do
-            URLS="${URLS}http://localhost:8080/${file},"
+            URL_FLAGS="${URL_FLAGS} --url=http://localhost:8080/${file}"
           done
 
-          # 3. Strip the trailing comma.
-          URLS_CLEAN=$(echo "$URLS" | sed 's/,$//')
+          echo "Auditing discovered GoDaddy component layouts..."
 
-          echo "Discovered section files to audit: $URLS_CLEAN"
-
-          # 4. Invoke the Lighthouse CLI directly using the discovered URLs.
+          # 3. Invoke Lighthouse directly using explicit target parameters and sandbox bypasses.
           npx @lhci/cli@0.12.x collect \
-            --url="$URLS_CLEAN" \
+            $URL_FLAGS \
             --settings.chromeFlags="--no-sandbox --headless --disable-gpu"
