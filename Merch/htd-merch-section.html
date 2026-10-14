@@ -1,4 +1,4 @@
-<!-- Filename: htd-merch-section.html | Designed by Kyle McColgan | Updated: 12 October 2026 -->
+<!-- Filename: htd-merch-section.html | Designed by Kyle McColgan | Updated: 13 October 2026 -->
 <section class="merch-section" aria-labelledby="merch-title">
   <div class="merch-container">
     <div class="merch-copy">
@@ -69,23 +69,23 @@
     isolation: isolate;
     overflow: hidden;
 
-    padding: clamp(4rem, 6vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+    padding: 2.5rem clamp(1.25rem, 4vw, 3rem);
     background: #f6f6f6;
   }
   .merch-container {
-    width: min(100%, 1200px);
+    width: min(100%, 1160px);
     margin-inline: auto;
 
     display: grid;
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
     align-items: center;
-    gap: clamp(2.5rem, 6vw, 6rem);
+    gap: clamp(2rem, 4vw, 4rem);
   }
   .merch-copy {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.25rem;
+    gap: 1rem;
     max-width: 34rem;
   }
   .merch-label {
@@ -194,11 +194,12 @@
     isolation: isolate;
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.55fr) minmax(0, 0.65fr);
-    gap: clamp(0.5rem, 1.5vw, 1.25rem);
     align-items: end;
+    gap: clamp(0.4rem, 1.2vw, 1rem);
     width: 100%;
-    min-height: 350px;
-    padding: 1rem 0 1.25rem;
+    min-width: 0;
+    min-height: 285px;
+    padding: 0.5rem 0 0.75rem;
   }
   .merch-display::before {
     /* Merch Quiet Atmospheric Background Styles. */
@@ -251,40 +252,43 @@
     height: auto;
     max-width: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.055));
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.05));
   }
   .merch-shirt {
     grid-column: 1;
     width: 100%;
-    max-width: 175px;
+    max-width: 155px;
     justify-self: center;
     transform: rotate(-4deg);
   }
   .merch-hoodie {
     /* Merch Hoodie Styles - central visual anchor. */
     grid-column: 2;
+    align-self: end;
     width: 100%;
-    max-width: 325px;
+    max-width: 290px;
     justify-self: center;
+    margin-bottom: -5.5rem;
+    transform: none;
   }
 
   .merch-mug {
     grid-column: 3;
     width: 100%;
-    max-width: 100px;
+    max-width: 88px;
     justify-self: center;
     transform: rotate(4deg);
   }
 
   @media (hover: hover) and (pointer: fine) {
     .merch-shirt:hover {
-      transform: translateY(-5px) rotate(-2deg);
+      transform: translateY(-4px) rotate(-2deg);
     }
     .merch-hoodie:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
     }
     .merch-mug:hover {
-      transform: translateY(-5px) rotate(2deg);
+      transform: translateY(-4px) rotate(2deg);
     }
   }
 
@@ -298,9 +302,12 @@
 
   /* Tablet. */
   @media (max-width: 1000px) {
+    .merch-section {
+      padding-block: 2.5rem;
+    }
     .merch-container {
       grid-template-columns: minmax(0, 1fr);
-      gap: 2.5rem;
+      gap: 1.5rem;
     }
     .merch-copy {
       align-items: center;
@@ -310,7 +317,7 @@
       text-align: center;
     }
     .merch-heading {
-      font-size: clamp(3.5rem, 8vw, 5rem);
+      font-size: clamp(3.25rem, 7vw, 4.5rem);
     }
     .merch-description {
       max-width: 48ch;
@@ -320,69 +327,68 @@
       text-align: left;
     }
     .merch-display {
-      width: min(100%, 660px);
-      min-height: 330px;
+      width: min(100%, 600px);
+      min-height: 250px;
       margin-inline: auto;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr) minmax(
-          0,
-          0.65fr
-        );
-      gap: 1rem;
+      gap: 0.75rem;
     }
     .merch-shirt {
-      max-width: 155px;
+      max-width: 135px;
     }
     .merch-hoodie {
-      max-width: 290px;
+      max-width: 255px;
+      margin-bottom: -3.5rem;
+      transform: none;
     }
     .merch-mug {
-      max-width: 90px;
+      max-width: 78px;
     }
   }
 
   /* Mobile. */
   @media (max-width: 620px) {
     .merch-section {
-      padding: 3.75rem 1.25rem;
+      padding: 2.5rem 1.25rem;
     }
     .merch-container {
-      gap: 2rem;
+      gap: 1rem;
     }
     .merch-copy {
-      gap: 1.1rem;
+      gap: 0.9rem;
     }
     .merch-heading {
-      font-size: clamp(3rem, 13vw, 4.25rem);
+      font-size: clamp(2.8rem, 12vw, 3.7rem);
     }
     .merch-description {
-      font-size: 0.94rem;
-      line-height: 1.7;
+      font-size: 0.93rem;
+      line-height: 1.65;
     }
     .merch-stat {
-      gap: 0.6rem;
       align-items: flex-start;
       justify-content: flex-start;
     }
     .merch-display {
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr) minmax(
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.45fr) minmax(
           0,
           0.65fr
         );
-      gap: 0.45rem;
-      min-height: 235px;
-      padding: 0.5rem 0 0.75rem;
+      gap: 0.35rem;
+      min-height: 195px;
+      padding-bottom: 0.5rem;
     }
     .merch-display::before {
       inset: 0 -6%;
     }
     .merch-shirt {
-      max-width: 120px;
+      max-width: 105px;
     }
     .merch-hoodie {
-      max-width: 205px;
+      max-width: 175px;
+      margin-bottom: -2rem;
+      transform: none;
     }
     .merch-mug {
-      max-width: 72px;
+      max-width: 62px;
     }
   }
   @media (max-width: 380px) {
@@ -393,17 +399,19 @@
       font-size: clamp(2.75rem, 12.5vw, 3.25rem);
     }
     .merch-display {
-      gap: 0.3rem;
-      min-height: 195px;
+      gap: 0.2rem;
+      min-height: 170px;
     }
     .merch-shirt {
-      max-width: 100px;
+      max-width: 88px;
     }
     .merch-hoodie {
-      max-width: 165px;
+      max-width: 150px;
+      margin-bottom: -1.5rem;
+      transform: none;
     }
     .merch-mug {
-      max-width: 60px;
+      max-width: 54px;
     }
   }
 </style>
