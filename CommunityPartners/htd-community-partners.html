@@ -1,4 +1,4 @@
-<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 6 October 2026 -->
+<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 14 October 2026 -->
 <section class="partners-section" aria-labelledby="partners-title">
   <div class="partners-shell">
     <header class="partners-header">
@@ -457,46 +457,43 @@
     --partners-green: #47ad32;
     --partners-ink: #172019;
     --partners-muted: #68736b;
-    --partners-background: #f7f9f6;
+    --partners-background: #f7f8f4;
     --partners-surface: #ffffff;
-    --partners-line: rgba(23, 32, 25, 0.055);
+    --partners-line: rgba(23, 32, 25, 0.075);
 
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
     position: relative;
     isolation: isolate;
-    padding: clamp(96px, 9vw, 144px) 24px;
+    width: 100%;
+    padding: clamp(76px, 8vw, 116px) 24px;
     background: var(--partners-background);
   }
   .partners-shell {
-    width: min(100%, 1360px);
+    width: min(100%, 1280px);
     margin-inline: auto;
   }
   .partners-header {
-    width: min(100%, 720px);
-    margin: 0 auto clamp(50px, 5.5vw, 68px);
+    width: min(100%, 680px);
+    margin: 0 auto clamp(40px, 4.5vw, 56px);
     text-align: center;
   }
   .partners-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 11px;
-    margin: 0 0 19px;
+    gap: 10px;
+    margin: 0 0 18px;
     color: var(--partners-green);
 
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: 0.21em;
+    line-height: 1.4;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
   }
   .partners-eyebrow::before,
   .partners-eyebrow::after {
     content: "";
-    width: 22px;
+    width: 20px;
     height: 1px;
-    border-radius: 999px;
     background: currentColor;
   }
 
@@ -505,20 +502,20 @@
     margin: 0;
     color: var(--partners-ink);
 
-    font-size: clamp(2.7rem, 5vw, 4.3rem);
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
     font-weight: 800;
-    line-height: 0.98;
-    letter-spacing: -0.055em;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
     text-wrap: balance;
   }
 
   /* Intro Text Styles. */
   .partners-intro {
-    width: min(100%, 610px);
-    margin: 25px auto 0;
+    width: min(100%, 580px);
+    margin: 22px auto 0;
     color: var(--partners-muted);
 
-    font-size: clamp(1rem, 1.45vw, 1.08rem);
+    font-size: clamp(0.98rem, 1.35vw, 1.08rem);
     line-height: 1.8;
     text-wrap: balance;
   }
@@ -529,9 +526,9 @@
     grid-template-columns: repeat(5, minmax(0, 1fr));
     overflow: hidden;
     border: 1px solid var(--partners-line);
-    border-radius: 22px;
+    border-radius: 20px;
     background: var(--partners-surface);
-    box-shadow: 0 18px 44px rgba(23, 32, 25, 0.035);
+    box-shadow: 0 12px 32px rgba(23, 32, 25, 0.045);
   }
 
   /* Individual Partner Card Styles. */
@@ -542,19 +539,15 @@
     align-items: center;
     justify-content: center;
 
-    min-height: 148px;
+    min-width: 0;
+    min-height: 144px;
     padding: 22px;
 
     background: var(--partners-surface);
     text-decoration: none;
+    opacity: 1;
 
-    opacity: 0;
-    transform: translateY(4px);
-
-    transition:
-      opacity 500ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
-      background-color 180ms ease;
+    transition: background-color 180ms ease;
   }
   .partner:not(:nth-child(5n)) {
     border-right: 1px solid var(--partners-line);
@@ -562,52 +555,44 @@
   .partner:nth-child(n + 6) {
     border-top: 1px solid var(--partners-line);
   }
-  .partner-visible {
-    opacity: 1;
-    transform: none;
-  }
-  .partner:hover {
-    z-index: 1;
-    background: #fbfcfa;
-  }
-  .partner:focus-visible {
-    z-index: 2;
-    outline: 2px solid rgba(71, 173, 50, 0.45);
-    outline-offset: -2px;
-    background: #fbfcfa;
-  }
-
   /* Partner Logo Styles. */
   .partner img {
     display: block;
-    width: min(100%, 175px);
-    height: 74px;
+    width: min(100%, 170px);
+    height: 72px;
     object-fit: contain;
 
-    filter: grayscale(1) saturate(0) opacity(0.68);
-    transform: scale(1);
-
+    filter: grayscale(1) opacity(0.76);
     transition:
-      filter 240ms ease,
-      transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+      filter 220ms ease,
+      transform 220ms ease;
+  }
+  .partner:hover,
+  .partner:focus-visible {
+    z-index: 1;
+    background: #fafbf8;
   }
   .partner:hover img,
   .partner:focus-visible img {
-    filter: grayscale(0) saturate(1) opacity(1);
-    transform: scale(1.035);
+    filter: grayscale(0) opacity(1);
+    transform: scale(1.025);
   }
-
+  .partner:focus-visible {
+    z-index: 2;
+    outline: 2px solid var(--partners-green);
+    outline-offset: -3px;
+  }
   .partners-note {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 13px;
-    margin: 27px 0 0;
+    gap: 12px;
+    margin: 26px 0 0;
     color: var(--partners-muted);
-    font-size: 0.67rem;
-    font-weight: 800;
-    line-height: 1.4;
-    letter-spacing: 0.15em;
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.13em;
     text-align: center;
     text-transform: uppercase;
   }
@@ -615,9 +600,9 @@
   .partners-note::after {
     /* Tiny divider. */
     content: "";
-    width: 27px;
+    width: 24px;
     height: 1px;
-    background: rgba(23, 32, 25, 0.13);
+    background: rgba(23, 32, 25, 0.16);
   }
 
   /* Media Query Styles. */
@@ -640,18 +625,18 @@
   }
   @media (max-width: 760px) {
     .partners-section {
-      padding: 76px 16px;
+      padding: 64px 16px;
     }
     .partners-header {
-      margin-bottom: 40px;
+      margin-bottom: 34px;
     }
     .partners-gallery {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-radius: 18px;
+      border-radius: 16px;
     }
     .partner {
-      min-height: 122px;
-      padding: 18px 14px;
+      min-height: 116px;
+      padding: 16px 12px;
     }
     .partner:not(:nth-child(4n)) {
       border-right: 0;
@@ -667,7 +652,7 @@
     }
     .partner img {
       width: min(100%, 140px);
-      height: 62px;
+      height: 60px;
     }
   }
   @media (max-width: 420px) {
@@ -675,22 +660,20 @@
       padding-inline: 12px;
     }
     .partners-title {
-      font-size: clamp(2.35rem, 12vw, 3.15rem);
-    }
-    .partners-gallery {
-      border-radius: 16px;
+      font-size: clamp(2.2rem, 10vw, 2.8rem);
     }
     .partner {
-      min-height: 108px;
-      padding: 14px 10px;
+      min-height: 104px;
+      padding: 14px 9px;
     }
     .partner img {
       width: min(100%, 120px);
-      height: 54px;
+      height: 52px;
     }
     .partners-note {
-      gap: 10px;
-      font-size: 0.65rem;
+      gap: 9px;
+      font-size: 0.63rem;
+      letter-spacing: 0.1em;
     }
   }
 
@@ -699,58 +682,9 @@
     .partner img {
       transition: none;
     }
-    .partner {
-      opacity: 1;
+    .partner:hover img,
+    .partner:focus-visible img {
       transform: none;
     }
   }
 </style>
-
-<script>
-  //Reveal partner logos as the gallery enters the viewport.
-  document.addEventListener("DOMContentLoaded", () => {
-    const section = document.querySelector(".partners-section");
-
-    if (!section) {
-      return;
-    }
-
-    const partners = section.querySelectorAll(".partner");
-
-    if (!partners.length) {
-      return;
-    }
-
-    const revealPartner = (partner) => {
-      partner.classList.add("partner-visible");
-    };
-
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (reducedMotion || !("IntersectionObserver" in window)) {
-      partners.forEach(revealPartner);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          revealPartner(entry.target);
-          observer.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.08, rootMargin: "0px 0px -48px" },
-    );
-
-    partners.forEach((partner, index) => {
-      partner.style.transitionDelay = `${Math.min(index * 18, 180)}ms`;
-      observer.observe(partner);
-    });
-  });
-</script>
