@@ -468,7 +468,11 @@
     padding: clamp(64px, 7vw, 104px) 24px;
     background: var(--partners-background);
   }
-  .partners-section *, .partners-section *::before, .partners-section *::after { box-sizing: border-box; }
+  .partners-section *,
+  .partners-section *::before,
+  .partners-section *::after {
+    box-sizing: border-box;
+  }
   .partners-shell {
     width: min(100%, 1120px);
     margin-inline: auto;
