@@ -375,91 +375,90 @@
 </style>
 <script>
   (() => {
-  const section = document.querySelector(".donor-wall");
+    const section = document.querySelector(".donor-wall");
 
-  if ((!section) || (section.dataset.initialized === "true"))
-  {
-    return;
-  }
+    if (!section || section.dataset.initialized === "true") {
+      return;
+    }
 
-  section.dataset.initialized = "true";
+    section.dataset.initialized = "true";
 
-  const donors = [
-    /* Donors has 50 donors currently... */
-    "Susie Nuccio",
-    "Melissa Childers",
-    "Myndi Funes",
-    "Kelly Guerra",
-    "Alex & Nila Paradowski",
-    "Jeremy & Erin Lee",
-    "Katy Keller",
-    "Khushboo Matta",
-    "Deepa Barki",
-    "Ankit Saxena",
-    "Abhay Kumar",
-    "Rene Freeman",
-    "Radhika Pidikiti",
-    "Laksmi Adepu",
-    "Melissa Galazka",
-    "Sandy Woodfin",
-    "Joyce Reid",
-    "Gwyneth Scallions",
-    "Ashley Keyser",
-    "Debbie Kipp",
-    "Matt Reid",
-    "Carrie Edmiston",
-    "Christina Churn",
-    "Pat Rosner",
-    "Alex Tripp",
-    "Venkatesh Chellagunga",
-    "Sheila Miller",
-    "Dale Haskins",
-    "Bridget Carroll",
-    "Erin Reid",
-    "Latosha Fowlkes",
-    "Flint Fowler",
-    "Sabrina Cohen",
-    "Shel Jennings",
-    "Shonetta King",
-    "April Griffin",
-    "Kel Ward",
-    "Pamela Johnson",
-    "Yolanda Gant",
-    "Kenneth McClamb",
-    "Minister Tosha French",
-    "Samuel Nixon, Jr",
-    "Ernestine Nixon",
-    "Mary Nixon",
-    "Phyllis Kendrick",
-    "Brett Malone",
-    "Linda Burch",
-    "Dominick Tice",
-    "Mae Caldwell",
-    "Kenneth Johnson",
-  ];
-  const donorGrid = section.querySelector("#donorGrid");
-  const donorCount = section.querySelector("#donorCount");
+    const donors = [
+      /* Donors has 50 donors currently... */
+      "Susie Nuccio",
+      "Melissa Childers",
+      "Myndi Funes",
+      "Kelly Guerra",
+      "Alex & Nila Paradowski",
+      "Jeremy & Erin Lee",
+      "Katy Keller",
+      "Khushboo Matta",
+      "Deepa Barki",
+      "Ankit Saxena",
+      "Abhay Kumar",
+      "Rene Freeman",
+      "Radhika Pidikiti",
+      "Laksmi Adepu",
+      "Melissa Galazka",
+      "Sandy Woodfin",
+      "Joyce Reid",
+      "Gwyneth Scallions",
+      "Ashley Keyser",
+      "Debbie Kipp",
+      "Matt Reid",
+      "Carrie Edmiston",
+      "Christina Churn",
+      "Pat Rosner",
+      "Alex Tripp",
+      "Venkatesh Chellagunga",
+      "Sheila Miller",
+      "Dale Haskins",
+      "Bridget Carroll",
+      "Erin Reid",
+      "Latosha Fowlkes",
+      "Flint Fowler",
+      "Sabrina Cohen",
+      "Shel Jennings",
+      "Shonetta King",
+      "April Griffin",
+      "Kel Ward",
+      "Pamela Johnson",
+      "Yolanda Gant",
+      "Kenneth McClamb",
+      "Minister Tosha French",
+      "Samuel Nixon, Jr",
+      "Ernestine Nixon",
+      "Mary Nixon",
+      "Phyllis Kendrick",
+      "Brett Malone",
+      "Linda Burch",
+      "Dominick Tice",
+      "Mae Caldwell",
+      "Kenneth Johnson",
+    ];
+    const donorGrid = section.querySelector("#donorGrid");
+    const donorCount = section.querySelector("#donorCount");
 
-  if (!donorGrid) {
-    return;
-  }
+    if (!donorGrid) {
+      return;
+    }
 
-  const fragment = document.createDocumentFragment();
+    const fragment = document.createDocumentFragment();
 
-  donors.forEach((name, index) => {
-    const card = document.createElement("article");
+    donors.forEach((name, index) => {
+      const card = document.createElement("article");
 
-    card.className = "donor-card";
-    card.style.setProperty("--i", index);
-    card.textContent = name;
+      card.className = "donor-card";
+      card.style.setProperty("--i", index);
+      card.textContent = name;
 
-    fragment.appendChild(card);
-  });
+      fragment.appendChild(card);
+    });
 
-  donorGrid.replaceChildren(fragment);
+    donorGrid.replaceChildren(fragment);
 
-  if (donorCount) {
-    donorCount.textContent = donors.length;
-  }
- })();
+    if (donorCount) {
+      donorCount.textContent = donors.length;
+    }
+  })();
 </script>
