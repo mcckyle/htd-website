@@ -1,4 +1,4 @@
-<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 25 October 2026 -->
+<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 26 October 2026 -->
 <section class="partners-section" aria-labelledby="partners-title">
   <div class="partners-shell">
     <header class="partners-header">
@@ -454,19 +454,17 @@
 <style>
   /* Partners Section Wrapper Styles. */
   .partners-section {
-    --partners-green: #47ad32;
-    --partners-ink: #202820;
-    --partners-muted: #687269;
-    --partners-background: #f7f8f4;
+    --partners-green: #387c28;
+    --partners-ink: #222a22;
+    --partners-muted: #687268;
+    --partners-background: #f7f8f5;
     --partners-surface: #ffffff;
-    --partners-line: #e9ece6;
+    --partners-line: #e7ebe4;
 
-    position: relative;
-    isolation: isolate;
     width: 100%;
-    box-sizing: border-box;
-    padding: clamp(64px, 7vw, 104px) 24px;
+    padding: clamp(56px, 7vw, 88px) 24px;
     background: var(--partners-background);
+    box-sizing: border-box;
   }
   .partners-section *,
   .partners-section *::before,
@@ -478,20 +476,21 @@
     margin-inline: auto;
   }
   .partners-header {
-    width: min(100%, 660px);
-    margin: 0 auto clamp(36px, 4vw, 48px);
+    width: min(100%, 640px);
+    margin: 0 auto clamp(32px, 4vw, 44px);
     text-align: center;
   }
   .partners-eyebrow {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    margin: 0 0 16px;
-    color: #378c28;
+    margin: 0 0 14px;
+    color: var(--partners-green);
 
     font-size: 0.7rem;
     font-weight: 750;
-    line-height: 1.4;
+    line-height: 1.5;
     letter-spacing: 0.16em;
     text-transform: uppercase;
   }
@@ -508,109 +507,101 @@
     margin: 0;
     color: var(--partners-ink);
 
-    font-size: clamp(2.35rem, 4.3vw, 3.65rem);
+    font-size: clamp(2rem, 4vw, 3.25rem);
     font-weight: 750;
-    line-height: 1.04;
-    letter-spacing: -0.045em;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
     text-wrap: balance;
   }
   .partners-title::after {
     content: "";
     display: block;
-    width: 34px;
+    width: 32px;
     height: 3px;
-    margin: 20px auto 0;
+    margin: 18px auto 0;
     border-radius: 3px;
     background: var(--partners-green);
   }
 
   /* Intro Text Styles. */
   .partners-intro {
-    width: min(100%, 570px);
-    margin: 20px auto 0;
+    width: min(100%, 540px);
+    margin: 18px auto 0;
     color: var(--partners-muted);
 
-    font-size: clamp(0.96rem, 1.2vw, 1.04rem);
+    font-size: clamp(0.94rem, 1.2vw, 1.02rem);
     line-height: 1.8;
-    text-wrap: balance;
+    text-wrap: pretty;
   }
 
   /* Partners Gallery Styles. */
   .partners-gallery {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1px;
     overflow: hidden;
     border: 1px solid var(--partners-line);
-    border-radius: 16px;
-    background: var(--partners-surface);
-    box-shadow: 0 10px 30px rgb(32 40 32 / 4%);
+    border-radius: 12px;
+    background: var(--partners-line);
+    box-shadow: 0 8px 28px rgb(34 42 34 / 4%);
   }
 
   /* Individual Partner Card Styles. */
-  .partner {
+  .partners-gallery .partner {
     display: flex;
     align-items: center;
     justify-content: center;
 
     min-width: 0;
-    min-height: 136px;
-    padding: 22px;
-    border: 0;
-    border-right: 1px solid var(--partners-line);
-    border-bottom: 1px solid var(--partners-line);
-
+    min-height: 112px;
+    padding: 20px;
     background: var(--partners-surface);
     text-decoration: none;
 
     transition: background-color 180ms ease;
   }
-  .partner::nth-child(5n) {
-    border-right: 0;
-  }
-  .partner:nth-last-child(-n + 5) {
-    border-bottom: 0;
-  }
   /* Partner Logo Styles. */
-  .partner img {
+  .partners-gallery .partner img {
     display: block;
-    width: min(100%, 160px);
-    height: 68px;
+    width: 100%;
+    max-width: 156px;
+    height: 56px;
     object-fit: contain;
 
     filter: grayscale(1);
-    opacity: 0.72;
+    opacity: 0.7;
     transition:
       filter 200ms ease,
       opacity 200ms ease,
       transform 200ms ease;
   }
-  .partner:hover,
-  .partner:focus-visible {
+  .partners-gallery .partner:hover,
+  .partners-gallery .partner:focus-visible {
     background: #fbfcf9;
   }
-  .partner:hover img,
-  .partner:focus-visible img {
+  .partners-gallery .partner:hover img,
+  .partners-gallery .partner:focus-visible img {
     filter: grayscale(0);
     opacity: 1;
     transform: scale(1.035);
   }
-  .partner:focus-visible {
+  .partners-gallery .partner:focus-visible {
     position: relative;
     z-index: 1;
     outline: 2px solid var(--partners-green);
-    outline-offset: -3px;
+    outline-offset: -4px;
   }
   .partners-note {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin: 24px 0 0;
+    margin: 20px 0 0;
     color: var(--partners-muted);
-    font-size: 0.67rem;
+    font-size: 0.66rem;
     font-weight: 700;
-    line-height: 1.5;
-    letter-spacing: 0.14em;
+    line-height: 1.6;
+    letter-spacing: 0.13em;
     text-align: center;
     text-transform: uppercase;
   }
@@ -618,9 +609,10 @@
   .partners-note::after {
     /* Tiny divider. */
     content: "";
-    width: 22px;
+    width: 20px;
     height: 1px;
-    background: #cbd1c8;
+    flex: 0 0 auto;
+    background: #cbd2c7;
   }
 
   /* Media Query Styles. */
@@ -628,82 +620,70 @@
     .partners-gallery {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
-    .partner:nth-child(5n) {
-      border-right: 1px solid var(--partners-line);
-    }
-    .partner:nth-child(4n) {
-      border-right: 0;
-    }
-    .partner:nth-last-child(-n + 5) {
-      border-bottom: 1px solid var(--partners-line);
-    }
-    .partner:nth-last-child(-n + $) {
-      border-bottom: 0;
+    .partners-gallery  .partner {
+      min-height: 108px;
+      padding: 18px 14px;
     }
   }
   @media (max-width: 640px) {
     .partners-section {
-      padding: 56px 16px;
+      padding: 52px 16px;
     }
     .partners-header {
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
     .partners-title {
-      font-size: clamp(2.15rem, 7.5rem, 3rem);
+      font-size: clamp(1.9rem, 7vw, 2.5rem);
+      letter-spacing: -0.035em;
     }
     .partners-intro {
-      line-height: 1.7;
+      margin-top: 16px;
+      line-height: 1.75;
     }
     .partners-gallery {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-radius: 14px;
+      border-radius: 10px;
     }
-    .partner {
-      min-height: 112px;
+    .partners-gallery .partner {
+      min-height: 100px;
       padding: 16px 12px;
     }
-    .partner:nth-child(4n) {
-      border-right: 1px solid var(--partners-line);
+    .partners-gallery .partner img {
+      max-width: 136px;
+      height: 50px;
     }
-    .partner:nth-child(2n) {
-      border-right: 0;
-    }
-    .partner:nth-last-child(-n + 4) {
-      border-bottom: 1px solid var(--partners-line);
-    }
-    .partner:nth-last-child(-n + 2) {
-      border-bottom: 0;
-    }
-    .partner img {
-      width: min(100%, 136px);
-      height: 58px;
+    .partners-note {
+      gap: 9px;
+      margin-top: 18px;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
     }
   }
   @media (max-width: 360px) {
     .partners-section {
       padding-inline: 12px;
     }
-    .partner {
-      min-height: 100px;
+    .partners-gallery .partner {
+      min-height: 88px;
       padding: 12px 8px;
     }
-    .partner img {
-      height: 52px;
+    .partners-gallery .partner img {
+      height: 44px;
     }
     .partners-note {
-      gap: 8px;
-      font-size: 0.61rem;
-      letter-spacing: 0.1em;
+      gap: 7px;
+      font-size: 0.58rem;
+      letter-spacing: 0.07em;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .partner,
-    .partner img {
+    .partners-gallery .partner,
+    .partners-gallery .partner img {
       transition: none;
     }
-    .partner:hover img,
-    .partner:focus-visible img {
+    .partners-gallery .partner:hover img,
+    .partners-gallery .partner:focus-visible img {
       transform: none;
     }
   }
