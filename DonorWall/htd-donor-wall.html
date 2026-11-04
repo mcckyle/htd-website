@@ -9,11 +9,7 @@
           Honoring the people whose generosity helps move our mission forward
           and create lasting change throughout our community.
         </p>
-        <div
-          class="donor-wall-stat"
-          aria-live="polite"
-          aria-atomic="true"
-        >
+        <div class="donor-wall-stat" aria-live="polite" aria-atomic="true">
           <strong id="donorCount">50</strong>
           <span>Supporters recognized</span>
         </div>
@@ -33,8 +29,8 @@
         <div class="donor-wall-section-detail">
           <span class="donor-wall-section-line" aria-hidden="true"></span>
           <p>
-            Every contribution strengthens our community and helps
-            Highway to Destiny continue its work.
+            Every contribution strengthens our community and helps Highway to
+            Destiny continue its work.
           </p>
         </div>
       </div>
@@ -368,7 +364,7 @@
   (() => {
     const section = document.querySelector(".donor-wall");
 
-    if ((!section) || (section.dataset.initialized === "true")) {
+    if (!section || section.dataset.initialized === "true") {
       return;
     }
 
