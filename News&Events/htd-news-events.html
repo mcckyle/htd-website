@@ -1,4 +1,4 @@
-<!-- Filename: htd-news-events.html | Designed by Kyle McColgan | Updated: 8 September 2026 -->
+<!-- Filename: htd-news-events.html | Designed by Kyle McColgan | Updated: 4 November 2026 -->
 <section id="newsEventsPage" aria-labelledby="news-events-title">
   <div class="news-events-shell">
     <header class="news-events-header">
@@ -19,7 +19,7 @@
         </div>
 
         <div class="event-card-content">
-          <p class="event-kicker">Street outreach · Saint Louis</p>
+          <p class="event-kicker">Street Outreach · Saint Louis</p>
           <h2>Street Patrol STL</h2>
           <p class="event-description">
             Weekly outreach calendars and direct support initiatives providing
@@ -27,37 +27,37 @@
           </p>
         </div>
 
-        <div class="event-card-footer">
+        <footer class="event-card-footer">
           <a
             class="event-link"
             href="https://streetpatrolstl.org/calendar"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="View the Street Patrol STL outreach calendar"
+            aria-label="View the Street Patrol STL outreach calendar (opens in a new tab)"
           >
             <span>View Calendar</span>
             <span class="event-link-icon" aria-hidden="true">↗</span>
           </a>
           <span class="event-partner">Community Partner</span>
-        </div>
+        </footer>
       </article>
 
-      <!-- Future Events. -->
+      <!-- Upcoming Community Events. -->
       <article class="event-card upcoming-card">
         <div class="event-card-top">
           <span class="event-badge alt">Coming Soon</span>
         </div>
         <div class="event-card-content">
-          <p class="event-kicker">Growing the network</p>
+          <p class="event-kicker">Growing the Network</p>
           <h2>More Community Events</h2>
           <p class="event-description">
             New partnerships and volunteer opportunities will be added as the
             network expands.
           </p>
         </div>
-        <div class="event-card-footer">
-          <span class="coming-soon">Expanding partnerships</span>
-        </div>
+        <footer class="event-card-footer">
+          <span class="coming-soon">Expanding Partnerships</span>
+        </footer>
       </article>
     </div>
   </div>
@@ -67,167 +67,165 @@
   /* Main Section Styles. Outer page color is currently #161616. */
   #newsEventsPage {
     --news-green: #47ad32;
-    --news-green-bright: #72d85c;
+    --news-green-light: #72d85c;
+
+    --news-text: #f5f5f2;
+    --news-muted: rgba(245, 245, 242, 0.58);
+    --news-subtle: rgba(245, 245, 242, 0.34);
+
+    --news-border: rgba(255, 255, 255, 0.075);
+    --news-surface: rgba(255, 255, 255, 0.025);
 
     position: relative;
     isolation: isolate;
+
+    box-sizing: border-box;
     overflow: hidden;
 
-    padding: clamp(92px, 9vw, 136px) 28px;
-    color: #fff;
+    padding: clamp(76px, 8vw, 112px) 24px;
+    color: var(--news-text);
     background:
       radial-gradient(
-        700px 240px at 15% 0%,
-        rgba(71, 173, 50, 0.055),
-        transparent 70%
+        ellipse at 16% 0%,
+        rgba(71, 173, 50, 0.065),
+        transparent 48%
       ),
       radial-gradient(
-        600px 420px at 90% 100%,
+        ellipse at 100% 100%,
         rgba(71, 173, 50, 0.035),
-        transparent 72%
+        transparent 48%
       ),
       #161616;
     border-top: 1px solid rgba(255, 255, 255, 0.045);
   }
+  #newsEventsPage *, #newsEventsPage *::before, #newsEventsPage *::after { box-sizing: border-box; }
+
   #newsEventsPage::before {
     /* Ambient Background Styles. */
     content: "";
     position: absolute;
     inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background: linear-gradient(
       115deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.012) 48%,
-      transparent 100%
+      transparent 20%,
+      rgba(255, 255, 255, 0.012) 50%,
+      transparent 80%
     );
-    pointer-events: none;
   }
   #newsEventsPage::after {
     content: "";
     position: absolute;
     top: 0;
     left: 50%;
-    width: min(520px, 45vw);
+    width: min(440px, 65%);
     height: 1px;
     transform: translateX(-50%);
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(71, 173, 50, 0.28),
+      rgba(71, 173, 50, 0.42),
       transparent
     );
     pointer-events: none;
   }
 
-  .news-events-shell {
+  #newsEventsPage .news-events-shell {
     position: relative;
     z-index: 1;
-    width: min(1260px, 100%);
+    width: min(1120px, 100%);
     margin-inline: auto;
   }
-  .news-events-header {
-    width: min(720px, 100%);
-    margin: 0 auto clamp(52px, 6vw, 72px);
+  #newsEventsPage .news-events-header {
+    width: min(680px, 100%);
+    margin: 0 auto clamp(42px, 5vw, 58px);
     text-align: center;
   }
-  .news-events-eyebrow {
+  #newsEventsPage .news-events-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    margin: 0 0 18px;
+    gap: 11px;
+    margin-bottom: 17px;
 
-    color: var(--news-green-bright);
+    color: var(--news-green-light);
 
-    font-size: 0.62rem;
+    font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.26em;
-    line-height: 1;
+    letter-spacing: 0.24em;
+    line-height: 1.4;
     text-transform: uppercase;
   }
-  .news-events-eyebrow::before,
-  .news-events-eyebrow::after {
+  #newsEventsPage .news-events-eyebrow::before,
+  #newsEventsPage .news-events-eyebrow::after {
     content: "";
-    width: 18px;
+    width: 17px;
     height: 1px;
-    background: rgba(114, 216, 92, 0.38);
+    background: rgba(114, 216, 92, 0.48);
   }
 
   /* Main Heading Styles. */
   #newsEventsPage h1 {
     margin: 0;
 
-    color: #f7f7f5;
+    color: var(--news-text);
 
-    font-size: clamp(3.4rem, 6vw, 5.6rem);
+    font-size: clamp(3.1rem, 6vw, 5rem);
     font-weight: 600;
     letter-spacing: -0.065em;
-    line-height: 0.94;
+    line-height: 1;
   }
 
   /* Intro Paragraph Styles. */
-  .events-intro {
-    width: min(620px, 100%);
-    margin: 24px auto 0;
+  #newsEventsPage .events-intro {
+    max-width: 590px;
+    margin: 20px auto 0;
 
-    color: rgba(255, 255, 255, 0.57);
+    color: var(--news-muted);
 
-    font-size: clamp(0.95rem, 1.25vw, 1.05rem);
-    line-height: 1.75;
+    font-size: clamp(0.94rem, 1.2vw, 1.02rem);
+    font-weight: 400;
+    line-height: 1.8;
   }
 
   /* Events Grid Styles. */
-  .events-grid {
+  #newsEventsPage .events-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.85fr);
-    gap: 18px;
+    grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.8fr);
+    gap: 16px;
     align-items: stretch;
   }
 
   /* Base Event Card Styles. */
-  .event-card {
+  #newsEventsPage .event-card {
     position: relative;
-    overflow: hidden;
-    min-width: 0;
-    min-height: 400px;
 
     display: flex;
     flex-direction: column;
-    padding: clamp(28px, 3vw, 38px);
 
-    border: 1px solid rgba(255, 255, 255, 0.075);
-    border-radius: 22px;
+    min-width: 0;
+    min-height: 350px;
+    overflow: hidden;
+    padding: clamp(26px, 3vw, 34px);
 
-    background: linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.045),
-      rgba(255, 255, 255, 0.018)
-    );
-    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--news-border);
+    border-radius: 19px;
+
+    background: var(--news-surface);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.17);
 
     transition:
-      transform 300ms ease,
-      border-color 300ms ease,
-      background 300ms ease,
-      box-shadow 300ms ease;
+      transform 240ms ease,
+      border-color 240ms ease,
+      background-color 240ms ease,
+      box-shadow 240ms ease;
   }
-  /* Card Hover Effects Styles. */
-  .event-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.12);
-    background: linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.055),
-      rgba(255, 255, 255, 0.022)
-    );
-    box-shadow: 0 28px 65px rgba(0, 0, 0, 0.27);
-  }
-
-  .featured-card {
+  #newsEventsPage .featured-card {
     background:
       radial-gradient(
-        520px 280px at 100% 0%,
-        rgba(71, 173, 50, 0.075),
-        transparent 72%
+        ellipse at 100% 0%,
+        rgba(71, 173, 50, 0.09),
+        transparent 57%
       ),
       linear-gradient(
         145deg,
@@ -236,259 +234,296 @@
         rgba(255, 255, 255, 0.015)
       );
   }
-  .featured-card::before {
+  #newsEventsPage .featured-card::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 38px;
-    right: 38px;
+    left: 30px;
+    right: 30px;
     height: 1px;
     background: linear-gradient(90deg, var(--news-green), rgba(71, 173, 50, 0));
-    opacity: 0.8;
+    opacity: 0.85;
     pointer-events: none;
   }
-
-  .event-card-top {
-    position: relative;
-    z-index: 1;
-
+  #newsEventsPage .upcoming-card {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.035),
+        rgba(255, 255, 255, 0.015)
+      );
+  }
+  #newsEventsPage .event-card-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 14px;
   }
-  .event-badge {
+  #newsEventsPage .event-badge {
     display: inline-flex;
     align-items: center;
 
     width: fit-content;
     padding: 7px 11px;
 
-    border: 1px solid rgba(71, 173, 50, 0.22);
+    border: 1px solid rgba(71, 173, 50, 0.24);
     border-radius: 999px;
-    background: rgba(71, 173, 50, 0.075);
-    color: var(--news-green-bright);
-
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.13em;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-  .event-badge.alt {
-    border-color: rgba(255, 255, 255, 0.075);
-    background: rgba(255, 255, 255, 0.035);
-    color: rgba(255, 255, 255, 0.43);
-  }
-  .event-status {
-    color: rgba(255, 255, 255, 0.3);
+    background: rgba(71, 173, 50, 0.08);
+    color: var(--news-green-light);
 
     font-size: 0.61rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
     text-transform: uppercase;
   }
-
-  .event-card-content {
-    position: relative;
-    z-index: 1;
-    margin-block: auto;
-    padding-block: 54px 42px;
+  #newsEventsPage .event-badge.alt {
+    border-color: rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.035);
+    color: rgba(255, 255, 255, 0.48);
   }
-  .event-kicker {
-    margin: 0 0 13px;
-
-    color: rgba(255, 255, 255, 0.34);
+  #newsEventsPage .event-status {
+    flex-shrink: 0;
+    color: var(--news-subtle);
 
     font-size: 0.61rem;
     font-weight: 650;
-    letter-spacing: 0.16em;
-    line-height: 1.4;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  #newsEventsPage .event-card-content {
+    margin-block: auto;
+    padding-block: 48px 38px;
+  }
+  #newsEventsPage .event-kicker {
+    margin: 0 0 12px;
+
+    color: var(--news-subtle);
+
+    font-size: 0.65rem;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+    line-height: 1.5;
     text-transform: uppercase;
   }
   /* Event Card Title Styles. */
-  .event-card h2 {
-    max-width: 720px;
+  #newsEventsPage .event-card h2 {
+    max-width: 650px;
     margin: 0;
 
-    color: #f5f5f3;
+    color: var(--news-text);
 
-    font-size: clamp(2.15rem, 4vw, 3.5rem);
+    font-size: clamp(2.2rem, 3.6vw, 3.15rem);
     font-weight: 600;
-    letter-spacing: -0.052em;
-    line-height: 0.98;
+    letter-spacing: -0.055em;
+    line-height: 1.04;
   }
-  .upcoming-card h2 {
-    max-width: 320px;
-    font-size: clamp(1.9rem, 3vw, 2.65rem);
+  #newsEventsPage .upcoming-card h2 {
+    max-width: 310px;
+    font-size: clamp(1.85rem, 2.7vw, 2.35rem);
+    line-height: 1.04;
   }
 
   /* Event Card Paragraph Styles. */
-  .event-description {
-    max-width: 610px;
-    margin: 20px 0 0;
+  #newsEventsPage .event-description {
+    max-width: 570px;
+    margin: 17px 0 0;
 
-    color: rgba(255, 255, 255, 0.56);
+    color: var(--news-muted);
 
-    font-size: 0.94rem;
-    line-height: 1.78;
+    font-size: 0.93rem;
+    font-weight: 400;
+    line-height: 1.75;
   }
 
-  .event-card-footer {
-    position: relative;
-    z-index: 1;
-
+  #newsEventsPage .event-card-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 16px;
 
-    padding-top: 18px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 17px;
+    border-top: 1px solid rgba(255, 255, 255, 0.075);
   }
   /* Event Card Links Button Styles. */
-  .event-link {
+  #newsEventsPage .event-link {
     display: inline-flex;
     align-items: center;
     gap: 9px;
+    width: fit-content;
 
-    color: #f5f5f3;
+    color: var(--news-text);
 
-    font-size: 0.84rem;
+    font-size: 0.85rem;
     font-weight: 700;
+    line-height: 1.4;
     text-decoration: none;
 
     transition:
-      color 200ms ease,
-      gap 200ms ease;
+      color 180ms ease,
+      gap 180ms ease;
   }
-  .event-link:hover {
-    gap: 13px;
-    color: var(--news-green-bright);
+  #newsEventsPage .event-link:hover {
+    gap: 12px;
+    color: var(--news-green-light);
   }
-  .event-link:focus-visible {
-    outline: 2px solid var(--news-green-bright);
+  #newsEventsPage .event-link:focus-visible {
+    outline: 2px solid var(--news-green-light);
     outline-offset: 6px;
     border-radius: 4px;
   }
-  .event-link-icon {
+  #newsEventsPage .event-link-icon {
     display: inline-grid;
     place-items: center;
+    flex-shrink: 0;
 
     width: 27px;
     height: 27px;
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
 
     background: rgba(255, 255, 255, 0.035);
-    font-size: 0.82rem;
+    font-size: 0.85rem;
+    line-height: 1;
 
     transition:
-      background 200ms ease,
-      border-color 200ms ease;
+      background-color 180ms ease,
+      border-color 180ms ease;
   }
-  .event-link:hover .event-link-icon {
-    border-color: rgba(71, 173, 50, 0.28);
-    background: rgba(71, 173, 50, 0.09);
+  #newsEventsPage .event-link:hover .event-link-icon {
+    border-color: rgba(71, 173, 50, 0.35);
+    background: rgba(71, 173, 50, 0.1);
   }
 
-  .event-partner {
-    color: rgba(255, 255, 255, 0.25);
+  #newsEventsPage .event-partner {
+    color: var(--news-subtle);
 
     font-size: 0.59rem;
-    font-weight: 600;
+    font-weight: 650;
     letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-align: right;
     text-transform: uppercase;
   }
-  /* Coming Soon Styles. */
-  .coming-soon {
+  /* News&Events Coming Soon Styles. */
+  #newsEventsPage .coming-soon {
     display: inline-flex;
     align-items: center;
 
     width: fit-content;
-    padding: 8px 11px;
+    max-width: 100%;
+    padding: 7px 10px;
 
-    border: 1px solid rgba(255, 255, 255, 0.065);
+    border: 1px solid rgba(255, 255, 255, 0.085);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.022);
-    color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.025);
+    color: rgba(255, 255, 255, 0.45);
 
-    font-size: 0.6rem;
+    font-size: 0.59rem;
     font-weight: 650;
     letter-spacing: 0.09em;
+    line-height: 1.4;
     text-transform: uppercase;
   }
 
+  @media (hover: hover) {
+      /* Card Hover Effects Styles. */
+    #newsEventsPage .event-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.13);
+      background-color: rgba(255, 255, 255, 0.035);
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.24);
+    }
+    #newsEventsPage .featured-card:hover {
+      border-color: rgba(71, 173, 50, 0.24);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .event-card,
-    .event-link,
-    .event-link-icon {
+    #newsEventsPage .event-card,
+    #newsEventsPage .event-link,
+    #newsEventsPage .event-link-icon {
       transition: none;
     }
-    .event-card:hover {
+    #newsEventsPage .event-card:hover {
       transform: none;
     }
-    .event-link:hover {
+    #newsEventsPage .event-link:hover {
       gap: 9px;
     }
   }
 
   /* News & Events Media Query Styles. */
-  @media (max-width: 900px) {
+  @media (max-width: 760px) {
     #newsEventsPage {
-      padding-inline: 22px;
+      padding: 76px 22px;
     }
-    .events-grid {
-      grid-template-columns: 1fr;
+    #newsEventsPage .events-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
     }
-    .upcoming-card {
-      min-height: 340px;
+    #newsEventsPage .event-card {
+      min-height: 330px;
+    }
+    #newsEventsPage .upcoming-card h2 {
+      max-width: 480px;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 480px) {
     #newsEventsPage {
-      padding: 82px 18px;
+      padding: 66px 17px;
     }
-    .news-events-header {
-      margin-bottom: 46px;
+    #newsEventsPage .news-events-header {
+      margin-bottom: 36px;
     }
-    .news-events-eyebrow {
-      font-size: 0.58rem;
+    #newsEventsPage .news-events-eyebrow {
+      gap: 9px;
+      font-size: 0.59rem;
       letter-spacing: 0.19em;
     }
-    #newsEventsPage h1 {
-      font-size: clamp(2.8rem, 15vw, 4rem);
+    #newsEventsPage .news-events-eyebrow::before,
+    #newsEventsPage .news-events-eyebrow::after {
+      width: 13px;
     }
-    .events-intro {
-      margin-top: 20px;
-      font-size: 0.92rem;
+    #newsEventsPage h1 {
+      font-size: clamp(2.65rem, 12vw, 3.5rem);
+      letter-spacing: -0.06em;
+    }
+    #newsEventsPage .events-intro {
+      margin-top: 17px;
+      font-size: 0.91rem;
       line-height: 1.72;
     }
-    .event-card,
-    .featured-card,
-    .upcoming-card {
-      min-height: 360px;
-      padding: 25px;
-      border-radius: 19px;
+    #newsEventsPage .event-card {
+      min-height: 320px;
+      padding: 24px 22px;
+      border-radius: 16px;
     }
-    .featured-card::before {
-      left: 25px;
-      right: 25px;
+    #newsEventsPage .featured-card::before {
+      left: 22px;
+      right: 22px;
     }
-    .event-card-content {
-      padding-block: 42px 32px;
+    #newsEventsPage .event-card-content {
+      padding-block: 40px 30px;
     }
-    .event-card h2,
-    .upcoming-card h2 {
+    #newsEventsPage .event-card h2 {
+      font-size: clamp(2rem, 9vw, 2.5rem);
+    }
+    #newsEventsPage .upcoming-card h2 {
       font-size: 2rem;
     }
-    .event-card-footer {
-      align-items: flex-start;
-      flex-direction: column;
+    #newsEventsPage .event-description {
+      margin-top: 14px;
+      font-size: 0.9rem;
+      line-height: 1.7;
     }
-    .event-partner {
+    #newsEventsPage .event-card-footer {
+      gap: 12px;
+    }
+    #newsEventsPage .event-partner {
       display: none;
     }
   }
