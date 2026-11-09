@@ -1,4 +1,4 @@
-<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 3 November 2026 -->
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 9 November 2026 -->
 <section class="donor-wall" aria-labelledby="donor-wall-title">
   <header class="donor-wall-hero">
     <div class="donor-wall-container">
@@ -9,7 +9,7 @@
           Honoring the people whose generosity helps move our mission forward
           and create lasting change throughout our community.
         </p>
-        <div class="donor-wall-stat" aria-live="polite" aria-atomic="true">
+        <div class="donor-wall-stat" aria-label="Donor recognition summary">
           <strong id="donorCount">50</strong>
           <span>Supporters recognized</span>
         </div>
@@ -81,11 +81,11 @@
     margin-inline: auto;
   }
   .donor-wall-hero {
-    padding: clamp(4.5rem, 8vw, 6.5rem) 1.5rem clamp(3.5rem, 6vw, 4.75rem);
+    padding: clamp(4.5rem, 8vw, 6.5rem) 1.5rem clamp(3.5rem, 6vw, 4.5rem);
     background: radial-gradient(
       ellipse at 50% 35%,
-      rgba(71, 173, 50, 0.09) 0%,
-      rgba(71, 173, 50, 0.035) 38%,
+      rgba(71, 173, 50, 0.085) 0%,
+      rgba(71, 173, 50, 0.03) 40%,
       transparent 72%
     );
   }
@@ -226,7 +226,8 @@
     font-weight: 600;
     line-height: 1.55;
     text-align: center;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     hyphens: auto;
 
     transition:
