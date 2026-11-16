@@ -1,4 +1,4 @@
-<!-- Filename: htd-merch-section.html | Designed by Kyle McColgan | Updated: 9 November 2026 -->
+<!-- Filename: htd-merch-section.html | Designed by Kyle McColgan | Updated: 16 November 2026 -->
 <section class="merch-section" aria-labelledby="merch-title">
   <div class="merch-container">
     <div class="merch-copy">
@@ -77,7 +77,7 @@
 
     position: relative;
     isolation: isolate;
-    padding: clamp(3.25rem, 5vw, 4.75rem) clamp(1.25rem, 4vw, 3rem);
+    padding: clamp(3rem, 4.5vw, 4.25rem) clamp(1.25rem, 4vw, 3rem);
     background: #f6f6f6;
     color: var(--merch-ink);
     font-family: inherit;
@@ -89,19 +89,19 @@
   }
   .merch-container {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
     align-items: center;
-    gap: clamp(2rem, 4.5vw, 4.5rem);
+    gap: clamp(2.5rem, 5vw, 4.5rem);
 
     width: 100%;
-    max-width: 1140px;
+    max-width: 1120px;
     margin-inline: auto;
   }
   .merch-copy {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.05rem;
+    gap: 0.95rem;
     min-width: 0;
   }
   .merch-label {
@@ -111,10 +111,10 @@
     max-width: 100%;
     padding: 0.4rem 0.7rem;
 
-    border: 1px solid rgba(71, 173, 50, 0.28);
+    border: 1px solid rgba(71, 173, 50, 0.25);
     border-radius: 999px;
 
-    background: #fff;
+    background: rgba(255, 255, 255, 0.85);
     color: var(--merch-green-dark);
 
     font-size: 0.67rem;
@@ -128,9 +128,9 @@
     margin: 0;
 
     color: var(--merch-ink);
-    font-size: clamp(3rem, 4vw, 4rem);
+    font-size: clamp(3rem, 4vw, 3.85rem);
     font-weight: 800;
-    line-height: 0.96;
+    line-height: 0.97;
     letter-spacing: -0.065em;
     text-wrap: balance;
   }
@@ -149,7 +149,7 @@
     justify-content: center;
     gap: 0.8rem;
 
-    min-height: 3.3rem;
+    min-height: 3.25rem;
     padding: 0.9rem 1.2rem;
 
     border-radius: 0.6rem;
@@ -160,7 +160,7 @@
     font-weight: 750;
     line-height: 1.2;
     text-decoration: none;
-    box-shadow: 0 4px 14px rgba(40, 122, 32, 0.11);
+    box-shadow: 0 4px 12px rgba(40, 122, 32, 0.1);
 
     transition:
       background-color 180ms ease,
@@ -185,8 +185,8 @@
 
     width: 100%;
     max-width: 27rem;
-    margin-top: 0.15rem;
-    padding-top: 0.85rem;
+    margin-top: 0.05rem;
+    padding-top: 0.8rem;
     border-top: 1px solid var(--merch-line);
   }
   .merch-impact strong {
@@ -214,23 +214,23 @@
     gap: clamp(0.35rem, 1vw, 0.85rem);
     width: 100%;
     min-width: 0;
-    min-height: 330px;
-    padding: 0.75rem 0 1rem;
+    min-height: 310px;
+    padding: 0.5rem 0 0.85rem;
   }
   .merch-display::before {
     /* Merch Quiet Atmospheric Background Styles. */
     content: "";
     position: absolute;
     z-index: -1;
-    inset: 7% -3% 9%;
+    inset: 8% -3% 10%;
     border-radius: 50%;
     pointer-events: none;
     background: radial-gradient(
       ellipse at 50% 46%,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(255, 255, 255, 0.82) 40%,
-      rgba(71, 173, 50, 0.035) 67%,
-      transparent 79%
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.48) 43%,
+      rgba(71, 173, 50, 0.025) 69%,
+      transparent 82%
     );
   }
   .merch-display::after {
@@ -239,12 +239,12 @@
     position: absolute;
     z-index: -1;
     right: 13%;
-    bottom: 0.4rem;
+    bottom: 0.25rem;
     left: 13%;
-    height: 0.6rem;
+    height: 0.55rem;
 
     border-radius: 50%;
-    background: rgba(25, 29, 25, 0.09);
+    background: rgba(25, 29, 25, 0.075);
     filter: blur(16px);
     pointer-events: none;
   }
@@ -255,9 +255,6 @@
     align-self: end;
     min-width: 0;
     margin: 0;
-    transform-origin: center bottom;
-
-    transition: transform 200ms ease;
   }
   .merch-product img {
     display: block;
@@ -301,21 +298,11 @@
     .merch-link:hover .merch-link-arrow {
       transform: translateX(3px);
     }
-    .merch-shirt:hover {
-      transform: translateY(-4px) rotate(-1deg);
-    }
-    .merch-hoodie:hover {
-      transform: translateY(-4px);
-    }
-    .merch-mug:hover {
-      transform: translateY(-4px) rotate(1deg);
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .merch-link,
-    .merch-link-arrow,
-    .merch-product {
+    .merch-link-arrow {
       transition: none;
     }
   }
