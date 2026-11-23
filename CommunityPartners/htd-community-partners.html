@@ -1,4 +1,4 @@
-<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 16 November 2026 -->
+<!-- Filename: htd-community-partners.html | Designed by Kyle McColgan | Updated: 23 November 2026 -->
 <section class="partners-section" aria-labelledby="partners-title">
   <div class="partners-shell">
     <header class="partners-header">
@@ -456,13 +456,13 @@
   .partners-section {
     --partners-green: #387c28;
     --partners-ink: #222a22;
-    --partners-muted: #687268;
+    --partners-muted: #697369;
     --partners-background: #f7f8f5;
     --partners-surface: #ffffff;
-    --partners-line: #e7ebe4;
+    --partners-line: #e8ece5;
 
     width: 100%;
-    padding: clamp(56px, 6.5vw, 88px) 24px;
+    padding: clamp(64px, 7vw, 100px) 24px;
     background: var(--partners-background);
     box-sizing: border-box;
   }
@@ -472,20 +472,20 @@
     box-sizing: border-box;
   }
   .partners-shell {
-    width: min(100%, 1120px);
+    width: min(100%, 1080px);
     margin-inline: auto;
   }
   .partners-header {
-    width: min(100%, 640px);
-    margin: 0 auto clamp(32px, 3.5vw, 42px);
+    width: min(100%, 660px);
+    margin: 0 auto clamp(36px, 4vw, 48px);
     text-align: center;
   }
   .partners-eyebrow {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin: 0 0 14px;
+    gap: 12px;
+    margin: 0 0 16px;
     color: var(--partners-green);
 
     font-size: 0.7rem;
@@ -497,9 +497,8 @@
   .partners-eyebrow::before,
   .partners-eyebrow::after {
     content: "";
-    width: 18px;
+    width: 20px;
     height: 1px;
-    flex: 0 0 auto;
     background: currentColor;
   }
 
@@ -508,10 +507,10 @@
     margin: 0;
     color: var(--partners-ink);
 
-    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
     font-weight: 750;
-    line-height: 1.12;
-    letter-spacing: -0.04em;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
     text-wrap: balance;
   }
   .partners-title::after {
@@ -519,18 +518,18 @@
     display: block;
     width: 32px;
     height: 3px;
-    margin: 18px auto 0;
-    border-radius: 3px;
+    margin: 20px auto 0;
+    border-radius: 99px;
     background: var(--partners-green);
   }
 
   /* Intro Text Styles. */
   .partners-intro {
     width: min(100%, 540px);
-    margin: 18px auto 0;
+    margin: 20px auto 0;
     color: var(--partners-muted);
 
-    font-size: clamp(0.94rem, 1.2vw, 1.02rem);
+    font-size: clamp(0.94rem, 1.2vw, 1.04rem);
     line-height: 1.8;
     text-wrap: pretty;
   }
@@ -539,11 +538,13 @@
   .partners-gallery {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1px;
+
     overflow: hidden;
     border: 1px solid var(--partners-line);
-    border-radius: 12px;
-    background: var(--partners-surface);
-    box-shadow: 0 8px 28px rgb(34 42 34 / 4%);
+    border-radius: 16px;
+    background: var(--partners-line);
+    box-shadow: 0 2px 4px rgb(34 42 34 / 2%), 0 16px 40px rgb(34 42 34 / 4%);
   }
 
   /* Individual Partner Card Styles. */
@@ -553,12 +554,9 @@
     justify-content: center;
 
     min-width: 0;
-    min-height: 112px;
-    padding: 20px;
+    min-height: 124px;
+    padding: 24px;
     background: var(--partners-surface);
-    box-shadow:
-      inset -1px 0 0 var(--partners-line),
-      inset 0 -1px 0 var(--partners-line);
     text-decoration: none;
 
     transition: background-color 180ms ease;
@@ -567,8 +565,8 @@
   .partners-gallery .partner img {
     display: block;
     width: 100%;
-    max-width: 156px;
-    height: 56px;
+    max-width: 164px;
+    height: 60px;
     object-fit: contain;
 
     filter: grayscale(1);
@@ -586,7 +584,7 @@
   .partners-gallery .partner:focus-visible img {
     filter: grayscale(0);
     opacity: 1;
-    transform: scale(1.035);
+    transform: scale(1.04);
   }
   .partners-gallery .partner:focus-visible {
     position: relative;
@@ -599,12 +597,12 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin: 20px 0 0;
+    margin: 24px 0 0;
     color: var(--partners-muted);
     font-size: 0.66rem;
     font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.14em;
     text-align: center;
     text-transform: uppercase;
   }
@@ -612,9 +610,8 @@
   .partners-note::after {
     /* Tiny divider. */
     content: "";
-    width: 20px;
+    flex: 0 0 22px;
     height: 1px;
-    flex: 0 0 auto;
     background: #cbd2c7;
   }
 
@@ -624,42 +621,46 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
     .partners-gallery .partner {
-      min-height: 108px;
-      padding: 18px 14px;
+      min-height: 116px;
+      padding: 20px 16px;
     }
   }
   @media (max-width: 640px) {
     .partners-section {
-      padding: 52px 16px;
+      padding: 56px 16px;
     }
     .partners-header {
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
     .partners-title {
-      font-size: clamp(1.9rem, 7vw, 2.5rem);
-      letter-spacing: -0.035em;
+      font-size: clamp(2rem, 7.5vw, 2.7rem);
+      letter-spacing: -0.04em;
     }
     .partners-intro {
-      margin-top: 16px;
+      margin-top: 18px;
       line-height: 1.75;
     }
     .partners-gallery {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-radius: 10px;
+      border-radius: 12px;
     }
     .partners-gallery .partner {
-      min-height: 100px;
+      min-height: 104px;
       padding: 16px 12px;
     }
     .partners-gallery .partner img {
-      max-width: 136px;
-      height: 50px;
+      max-width: 140px;
+      height: 52px;
     }
     .partners-note {
       gap: 9px;
-      margin-top: 18px;
+      margin-top: 20px;
       font-size: 0.62rem;
       letter-spacing: 0.1em;
+    }
+    .partners-note::before,
+    .partners-note::after {
+      flex-basis: 18px;
     }
   }
   @media (max-width: 360px) {
@@ -667,16 +668,16 @@
       padding-inline: 12px;
     }
     .partners-gallery .partner {
-      min-height: 88px;
+      min-height: 92px;
       padding: 12px 8px;
     }
     .partners-gallery .partner img {
-      height: 44px;
+      height: 46px;
     }
     .partners-note {
       gap: 7px;
       font-size: 0.58rem;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.08em;
     }
   }
 
