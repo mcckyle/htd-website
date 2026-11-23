@@ -1,4 +1,4 @@
-<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 16 November 2026 -->
+<!-- Filename: htd-donor-wall.html | Designed by Kyle McColgan | Updated: 23 November 2026 -->
 <section class="donor-wall" aria-labelledby="donor-wall-title">
   <header class="donor-wall-hero">
     <div class="donor-wall-container">
@@ -59,15 +59,13 @@
 
     --dw-paper: #f7f8f4; /* Matches the outer background page GoDaddy canvas color. */
     --dw-surface: #ffffff;
-    --dw-surface-hover: #f5faf3;
+    --dw-surface-hover: #f1f7ee;
 
-    --dw-ink: #18331a;
-    --dw-muted: #657165;
-    --dw-line: rgba(24, 51, 26, 0.09);
-    --dw-line-strong: rgba(24, 51, 26, 0.16);
+    --dw-ink: #19351b;
+    --dw-muted: #657568;
+    --dw-line: rgba(25, 53, 27, 0.1);
+    --dw-line-strong: rgba(25, 53, 27, 0.16);
 
-    position: relative;
-    isolation: isolate;
     background: var(--dw-paper);
     color: var(--dw-ink);
     font-family: inherit;
@@ -77,26 +75,26 @@
     box-sizing: border-box;
   }
   .donor-wall-container {
-    width: min(100%, 1080px);
+    width: min(100%, 1440px);
     margin-inline: auto;
   }
   .donor-wall-hero {
-    padding: clamp(4.25rem, 7.5vw, 6.25rem) 1.5rem clamp(3.25rem, 5.5vw, 4.5rem);
+    padding: clamp(4rem, 7vw, 6rem) 1.5rem clamp(3rem, 5vw, 4.25rem);
     background: radial-gradient(
-      ellipse at 50% 35%,
+      ellipse at 50% 45%,
       rgba(71, 173, 50, 0.085) 0%,
-      rgba(71, 173, 50, 0.03) 40%,
-      transparent 72%
+      rgba(71, 173, 50, 0.025) 45%,
+      transparent 75%
     );
   }
   .donor-wall-heading {
-    width: min(100%, 620px);
+    width: min(100%, 680px);
     margin-inline: auto;
     text-align: center;
   }
   .donor-wall-eyebrow {
     display: block;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.85rem;
     color: var(--dw-brand-deep);
     font-size: 0.7rem;
     font-weight: 750;
@@ -106,18 +104,18 @@
   }
   .donor-wall-title {
     margin: 0;
-    color: var(--dw-ink);
 
+    color: var(--dw-ink);
     font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(3.25rem, 6vw, 5rem);
+    font-size: clamp(3.25rem, 6vw, 5.25rem);
     font-weight: 500;
-    line-height: 1.05;
+    line-height: 1.04;
     letter-spacing: -0.055em;
     text-wrap: balance;
   }
   .donor-wall-subtitle {
-    max-width: 540px;
-    margin: 1.15rem auto 0;
+    max-width: 560px;
+    margin: 1.25rem auto 0;
 
     color: var(--dw-muted);
     font-size: clamp(0.95rem, 1.2vw, 1.05rem);
@@ -128,14 +126,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
-    margin-top: 1.65rem;
+    gap: 0.7rem;
+    margin-top: 1.75rem;
   }
   .donor-wall-stat strong {
     color: var(--dw-brand-deep);
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 750;
-    letter-spacing: -0.055em;
+    letter-spacing: -0.06em;
     line-height: 1;
     font-variant-numeric: tabular-nums;
   }
@@ -148,19 +146,19 @@
     text-transform: uppercase;
   }
   .donor-wall-content {
-    padding: 0 clamp(1.25rem, 4vw, 2.5rem) clamp(4.25rem, 7vw, 5.75rem);
+    padding: 0 clamp(1.25rem, 4vw, 2.75rem) clamp(4rem, 7vw, 5.75rem);
   }
   .donor-wall-section-heading {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
     align-items: end;
-    gap: 2.5rem;
-    padding-top: 2.2rem;
+    gap: 3rem;
+    padding-top: 2.25rem;
     border-top: 1px solid var(--dw-line-strong);
   }
   .donor-wall-section-label {
     display: block;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.8rem;
     color: var(--dw-brand-deep);
     font-size: 0.68rem;
     font-weight: 750;
@@ -172,7 +170,7 @@
     margin: 0;
     color: var(--dw-ink);
     font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(2.45rem, 4.2vw, 3.5rem);
+    font-size: clamp(2.6rem, 4.2vw, 3.8rem);
     font-weight: 500;
     letter-spacing: -0.055em;
     line-height: 1.04;
@@ -181,77 +179,62 @@
   .donor-wall-section-detail {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding-bottom: 0.3rem;
+    gap: 1.1rem;
+    padding-bottom: 0.35rem;
   }
   .donor-wall-section-line {
-    flex: 0 0 2rem;
+    flex: 0 0 2.1rem;
     height: 2px;
     background: var(--dw-brand);
   }
   .donor-wall-section-detail p {
-    max-width: 370px;
+    max-width: 390px;
     margin: 0;
     color: var(--dw-muted);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     line-height: 1.8;
   }
   .donor-grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 1px;
+    gap: 0.75rem;
 
     width: 100%;
-    margin-top: 2.1rem;
-    padding: 1px;
-
-    background: var(--dw-line);
-    border: 1px solid var(--dw-line-strong);
-    box-shadow: 0 10px 30px rgba(24, 51, 26, 0.035);
+    margin-top: 2.25rem;
   }
   .donor-card {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 
     min-width: 0;
-    min-height: 84px;
-    padding: 1rem 0.8rem;
+    min-height: 82px;
+    padding: 1rem 0.9rem;
 
     background: var(--dw-surface);
     color: var(--dw-ink);
+    border-radius: 4px;
+    border: 1px solid var(--dw-line);
 
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.55;
     text-align: center;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
     hyphens: auto;
 
     transition:
+      background-color 180ms ease,
+      border-color 180ms ease,
       color 180ms ease,
-      background-color 180ms ease;
-  }
-  .donor-card::after {
-    content: "";
-    position: absolute;
-    right: 50%;
-    bottom: 0;
-    left: 50%;
-    height: 2px;
-    background: var(--dw-brand);
-
-    transition:
-      right 180ms ease,
-      left 180ms ease;
+      transform 180ms ease;
   }
   .donor-wall-closing {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.1rem;
-    margin-top: clamp(3.5rem, 5.5vw, 4.5rem);
+    gap: 1.15rem;
+    margin-top: clamp(3.5rem, 5vw, 4.5rem);
     text-align: center;
   }
   .donor-wall-closing-rule {
@@ -272,41 +255,52 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .donor-card,
-    .donor-card::after {
+    .donor-card {
       transition: none;
     }
   }
 
   @media (hover: hover) and (pointer: fine) {
     .donor-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(71, 173, 50, 0.35);
       background: var(--dw-surface-hover);
       color: var(--dw-brand-deep);
     }
-    .donor-card:hover::after {
-      right: 35%;
-      left: 35%;
-    }
   }
 
-  /* Donor Wall Tablet Media Query Styles. */
-  @media (max-width: 900px) {
-    .donor-wall-section-heading {
-      gap: 2rem;
+  @media (max-width: 1100px) {
+    .donor-wall-container {
+      width: min(100%, 1200px);
     }
     .donor-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+    .donor-wall-section-heading {
+      gap: 2.25rem;
+    }
+  }
+
+  /* Donor Wall Tablet Media Query Styles. */
+  @media (max-width: 800px) {
+    .donor-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
     .donor-card {
-      min-height: 84px;
-      padding-inline: 0.65rem;
+      min-height: 78px;
+      padding: 0.9rem 0.7rem;
+    }
+    .donor-wall-section-heading {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+      gap: 1.75rem;
     }
   }
 
   /* Donor Wall Mobile Media Query Styles. */
-  @media (max-width: 640px) {
+  @media (max-width: 600px) {
     .donor-wall-hero {
-      padding: 4.25rem 1.25rem 3.5rem;
+      padding: 4rem 1.25rem 3.25rem;
     }
     .donor-wall-title {
       font-size: clamp(3rem, 12vw, 4.25rem);
@@ -316,7 +310,7 @@
       line-height: 1.75;
     }
     .donor-wall-stat {
-      margin-top: 1.6rem;
+      margin-top: 1.5rem;
     }
     .donor-wall-content {
       padding-inline: 1rem;
@@ -324,17 +318,21 @@
     }
     .donor-wall-section-heading {
       grid-template-columns: minmax(0, 1fr);
-      gap: 1.35rem;
-      padding-top: 2rem;
+      gap: 1.25rem;
+      padding-top: 1.9rem;
     }
     .donor-wall-section-intro h2 {
-      font-size: clamp(2.45rem, 9vw, 3.15rem);
+      font-size: clamp(2.55rem, 9vw, 3.25rem);
     }
     .donor-wall-section-detail {
       gap: 0.85rem;
     }
+    .donor-wall-section-detail p {
+      font-size: 0.9rem;
+    }
     .donor-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
       margin-top: 1.75rem;
     }
     .donor-card {
@@ -352,6 +350,9 @@
     .donor-wall-stat {
       flex-direction: column;
       gap: 0.45rem;
+    }
+    .donor-grid {
+      gap: 0.5rem;
     }
     .donor-card {
       min-height: 72px;
